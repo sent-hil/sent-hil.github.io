@@ -153,6 +153,10 @@ ul.posts span {
   margin-left: 1.35em;
 }
 
+#post ul li {
+  padding-bottom: 1em;
+}
+
 #post code {
   border: 1px solid #ddd;
   background-color: #eef;
