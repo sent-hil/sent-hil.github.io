@@ -104,6 +104,8 @@ ul.posts span {
 
 .site .meta {
   color: #aaa;
+  font-family: Monaco, "Courier New", monospace;
+  font-size: 80%;
 }
 
 .site .footer {
