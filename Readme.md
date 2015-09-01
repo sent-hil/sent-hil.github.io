@@ -7,4 +7,4 @@ License
 -------
 `_posts` directory is copyright of Senthil Arivudainambi. You may not reuse anything therein without my permission.
 
-All other directories and files are MIT Licensed. This is the same license of the original repo: http://github.com/mojombo/jekyll.
+All other directories and files are MIT Licensed. This is the same license of the original repo: https://github.com/mojombo/mojombo.github.io
