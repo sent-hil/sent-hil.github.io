@@ -94,5 +94,10 @@ func titleize(str string) (title string) {
 
 // parameterize splits string on spaces and joins them with `-`
 func parameterize(str string) string {
-	return strings.Join(strings.Split(str, " "), "-")
+	splitStr := strings.Split(str, " ")
+	for i, s := range splitStr {
+		splitStr[i] = strings.ToLower(s)
+	}
+
+	return strings.Join(splitStr, "-")
 }
