@@ -49,7 +49,9 @@ func createPost(title string) error {
 		return err
 	}
 
-	t := parameterize(filepath.Join(blogPath, title))
+	titleWithDate := fmt.Sprintf("%s-%s", date, title)
+
+	t := parameterize(filepath.Join(blogPath, titleWithDate))
 	if _, err = os.Stat(t); os.IsExist(err) {
 		return fmt.Errorf("File: %s with title already exists", t)
 	}
