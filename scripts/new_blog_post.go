@@ -27,6 +27,8 @@ title: %s
 
 	// blogPath is home relative path to blog posts
 	blogPath = "play/sent-hil.github.io/_posts"
+
+	extension = "md"
 )
 
 func main() {
@@ -49,7 +51,7 @@ func createPost(title string) error {
 		return err
 	}
 
-	titleWithDate := fmt.Sprintf("%s-%s", date, title)
+	titleWithDate := fmt.Sprintf("%s-%s.%s", date, title, extension)
 
 	t := parameterize(filepath.Join(blogPath, titleWithDate))
 	if _, err = os.Stat(t); os.IsExist(err) {
