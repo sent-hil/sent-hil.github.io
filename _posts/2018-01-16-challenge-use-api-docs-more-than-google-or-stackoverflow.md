@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Challenge: use api docs more than Google or Stackoverflow
+title: Challenge - use api docs more than Google or Stackoverflow
 ---
 
 {{ page.title }}
