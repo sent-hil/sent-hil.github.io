@@ -87,13 +87,16 @@ func getBlogPath() (string, error) {
 // titleize splits given string on spaces on uppercase the 1st char and
 // lowercases the rest of chars and join them
 func titleize(str string) (title string) {
+	titles := []string{}
 	for _, str := range strings.Split(str, " ") {
-		title += strings.ToUpper(string(str[0]))
-		title += strings.ToLower(string(str[1:]))
-		title += " "
+		var t string
+		t += strings.ToUpper(string(str[0]))
+		t += strings.ToLower(string(str[1:]))
+
+		titles = append(titles, t)
 	}
 
-	return title
+	return strings.Join(titles, " ")
 }
 
 // parameterize splits string on spaces and joins them with `-`
