@@ -22,8 +22,9 @@ title: %s
 <p class="meta">%s</p>
 `
 
-	title = flag.String("title", "", "Title of blog post")
-	date  = time.Now().Format("2006-01-02")
+	title      = flag.String("title", "", "Title of blog post")
+	date       = time.Now().Format("2006-01-02")
+	prettyDate = time.Now().Format("01 May, 2006")
 
 	// blogPath is home relative path to blog posts
 	blogPath = "play/sent-hil.github.io/_posts"
@@ -65,7 +66,7 @@ func createPost(title string) error {
 
 	defer file.Close()
 
-	_, err = file.WriteString(fmt.Sprintf(blogTemplate, titleize(title), date))
+	_, err = file.WriteString(fmt.Sprintf(blogTemplate, titleize(title), prettyDate))
 	return err
 }
 
