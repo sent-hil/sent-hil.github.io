@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+   <title>Consistent hashing, a guide & Go library</title>
+   <meta name="author" content="sent-hil" />
+
+   <!-- syntax highlighting CSS -->
+   <link rel="stylesheet" href="/css/syntax.css" type="text/css" />
+
+   <!-- Homepage CSS -->
+   <link rel="stylesheet" href="/css/screen.css" type="text/css" media="screen, projection" />
+</head>
+<body>
+
+<div class="site">
+  <div class="title">
+    <a href="/">Senthil Arivudainambi</a>
+  </div>
+
+  <div id="post">
+<h1 id="consistent-hashing-a-guide--go-library">Consistent hashing, a guide &amp; Go library</h1>
+
+<p>Consistent hashing is deceptively simple yet very powerful, but I didn’t quite
+understand what it was till I sat down and worked it out for myself. Before I
+tell you about consistent hashing, you need to understand the problem we’re
+trying to solve:</p>
+
+<p><img src="https://cdn-images-1.medium.com/max/1440/1*AHzeEycsTXnNAkgojeixxA.png" alt="" /></p>
+
+<p>How to determine which server to store and retrieve keys in a distributed
+network? Requirements are: all nodes get relatively equal number of keys, be
+able to add and remove nodes such as fewest number of keys are moved around.</p>
+
+<p>Let’s assume couple things: There are four servers in the network: Chico, Harpo,
+Groucho and Zeppo. All four servers are identical, but have no knowledge of each
+other.</p>
+
+<p><img src="https://cdn-images-1.medium.com/max/1440/1*JSsWI9-0SS35tKX6GjmaDg.png" alt="" /></p>
+
+<p>To keep things simple in this example the keys are incrementing integers.
+Usually you run the key against a checksum to return a number. Once you have
+that number, you can take the modulo of that number against the number of nodes.
+This works surprisingly when the network is stable, ie no nodes are leaving or
+joining the network.</p>
+
+<p>But, what happens if a node, ie Harpo goes down, like he’s always prone to
+doing. Then we’ve a big problem. Using the same hash function, we get the same
+result, but apply modulo operation we get different results than before, since
+the number of nodes is reduced by one.</p>
+
+<p>Note how nearly all the keys from all nodes need to be remapped as well. This
+make no sense, why should the keys that in servers that are functioning properly
+have to be remapped?! Do you share my exclamation yet? Well now we’ve arrived at
+the need for consistent hashing.</p>
+
+<blockquote>
+  <p><strong>Consistent hashing</strong> is a special kind of hashing such that when a hash table
+is resized and consistent hashing is used, only K/n keys need to be remapped on
+average, where K is the number of keys, and n is the number of slots.<br />
+Source:
+<a href="https://en.wikipedia.org/wiki/Consistent_hashing">https://en.wikipedia.org/wiki/Consistent_hashing</a></p>
+</blockquote>
+
+<p>If we had used consistent hashing above, then only the keys from Harpo need to
+be moved around. Usually this is when most posts include a picture of an unit
+circle and explain it in terms of that. Let’s do it:</p>
+
+<p>For time being ignore how the nodes were placed onto the unit circle. Instead of
+applying modulo function on the hash of the key, let’s map the hash onto the
+unit circle. (I know this is hand waving, but we’ll get to the implementation
+soon enough). To determine which node the key maps to, we simply go clockwise
+till we find a node. So for key 1, Harpo is the node it should be stored and
+retrieved from.</p>
+
+<p>So what if Harpo goes down? You’ll need to get and retrieve key 1 from a
+different node, however note how rest of the key mappings haven’t changed. The
+only keys that have changed are the ones that used to live in Harpo node. Voila!
+This works if you add new nodes as well. Say you add Gummo to the network. You
+don’t need to change the residence of existing keys.</p>
+
+<p>Consistent hashing also covers situations where nodes differ in size. What you
+do is create virtual nodes and make them onto the unit circle. Depending on the
+hash function you chose, the virtual nodes can be made to place randomly on the
+unit circle. For nodes with more capacity, you should add more virtual nodes.
+This way when a node goes down, the keys are distributed evenly across other
+nodes, not just to the next one.</p>
+
+<p><strong>Implementation</strong></p>
+
+<p>Let’s go the extra mile here and implement a consistent hash library in Go. I
+didn’t quite understand it till I found a good implementation and put print
+statements everywhere and changed the code. This implementation is heavily
+inspired by <a href="https://github.com/stathat/consistent">stathat’s</a> implementation.
+The original paper calls for using trees for implementation, however I prefer
+the way stathat did it.</p>
+
+<p>Let’s define a bird’s eye view:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// Initializes new distribute network of nodes or a ring.
+func NewRing() *Ring
+
+// Adds node to the ring.
+func (r *Ring) AddNode(id string)
+
+// Removes node from the ring if it exists, else returns
+// ErrNodeNotFound.
+func (r *Ring) RemoveNode(id string) error
+
+// Gets node which is mapped to the key. Return value is identifer
+// of the node given in `AddNode`.
+func (r *Ring) Get(key string) string
+</code></pre></div></div>
+
+<p>We’ll use <a href="https://golang.org/pkg/hash/crc32/">crc32</a> for generating a
+checksum of the key. Explaining what crc32 does and how it does it is beyond
+scope of this blog post. Just know that given an input, it returns a 32 uint.
+Input in this case is the ipaddress of the node.</p>
+
+<p>The gist of it is we use an array to hold the result of node id checksums. For
+each key we run the checksum and determine the position the key should be added
+and return the node closet to that. If it’s out of bounds of array, we return
+the first node.</p>
+
+<p>First, let’s define <code class="language-plaintext highlighter-rouge">Ring</code>, which is just a collection of <code class="language-plaintext highlighter-rouge">Node</code></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>package consistenthash
+
+// Ring is a network of distributed nodes.
+type Ring struct {
+  Nodes Nodes
+}
+
+// Nodes is an array of nodes.
+type Nodes []Node
+
+// Node is a single entity in a ring.
+type Node struct {
+ Id     string
+ HashId uint32
+}
+</code></pre></div></div>
+
+<p>Next, let’s write the initializer functions for <code class="language-plaintext highlighter-rouge">Ring</code> and <code class="language-plaintext highlighter-rouge">Node</code>:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>package consistenthash
+
+func NewRing() *Ring {
+  return &amp;Ring{Nodes : Nodes{}}
+}
+
+func NewNode(id string) *Node{
+  return &amp;Node{
+    Id        : id,
+    hashedKey : crc32.Checksum([]byte(id)),
+  }
+}
+</code></pre></div></div>
+
+<p>Now we’re finally ready to fill in <code class="language-plaintext highlighter-rouge">AddNode</code>:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>func (r *Ring) AddNode(id string) {
+  node := NewNode(id)
+  r.Nodes = append(r.Nodes, node)
+
+  sort.Sort(r.Nodes)
+}
+</code></pre></div></div>
+
+<p>Why <code class="language-plaintext highlighter-rouge">sort.Sort</code>? This goes back to the unit circle. How exactly do you implement
+an unit circle? One way is to have an array with the last item pointing to the
+first item in the entry. We can use a linked list for this, but you’ll see soon
+enough why that’s unnecessary.</p>
+
+<p>If you run what we’ve so far, Go compiler will throw something at you because
+<code class="language-plaintext highlighter-rouge">Nodes</code> doesn’t implement <code class="language-plaintext highlighter-rouge">sort.Sort</code> interface. That’s pretty easy to do:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>package consistenthash
+
+func (n Nodes) Len() int           { return len(n) }
+func (n Nodes) Less(i, j int) bool { return n[i].HashId &lt; n[j].HashId }
+func (n Nodes) Swap(i, j int)      { n[i], n[j] = n[j], n[i] }
+</code></pre></div></div>
+
+<p>Let’s continue with <code class="language-plaintext highlighter-rouge">Get</code> which is the point of this all:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>func (r *Ring) Get(key string) string {
+  searchfn := func(i int) bool {
+    return r.Nodes[i].HashId &gt;= crc32.Checksum([]byte(key))
+  }
+
+  i := sort.Search(r.Nodes.Len(), searchfn)
+  if i &gt;= r.Nodes.Len() {
+    i = 0
+  }
+
+  return r.Nodes[i].Id
+}
+</code></pre></div></div>
+
+<p><a href="https://golang.org/pkg/sort/#Search"><code class="language-plaintext highlighter-rouge">sort.Search</code></a> uses binary search to find
+exitense of node in array. If it doesn’t exist, it returns the place where the
+node should be added if we were to add it. If the node cheksum is greater than
+the last node, then we add it to the first node. And that’s it.</p>
+
+<p>If you want to check the rest of the code, it’s open sourced
+<a href="https://github.com/sent-hil/consistenthash">here</a>, along with some tests.</p>
+
+<p>Remember how it told you in the beginning consistent hashing was deceptively
+simple, yet powerful? Believe me yet? You should know consistent hashing was
+first introduce in a <a href="https://www.google.com/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=7&amp;cad=rja&amp;uact=8&amp;ved=0CFIQFjAG&amp;url=http://www.akamai.com/dl/technical_publications/ConsistenHashingandRandomTreesDistributedCachingprotocolsforrelievingHotSpotsontheworldwideweb.pdf&amp;ei=6IVAVbq9HcX6oQThqYHgDg&amp;usg=AFQjCNH2IBIOHYdoFYZae_kJsR4-H-_m-A&amp;bvm=bv.91665533,d.cGU">paper by
+Akamai</a>
+who know a thing or two about distributed systems. An improved version of
+consistent hashing is used in the
+<a href="https://en.wikipedia.org/wiki/Chord_(peer-to-peer)">Chord</a> algorithm which is a
+distributed hash table. (earlier version said Chord is behind Amazon dynamodb,
+<a href="https://twitter.com/ernesto_jimenez/status/593550482737635328">which is
+incorrect.</a>)</p>
+
+<p>I’m still in the process of reading and understanding chord, not to mention
+implementing it myself, will do a blog post here once that’s done. I had a lot
+of fun learning about consistent hashing, implementing it, not to mention
+writing this blog post, hope you learned a thing or do. If you find an error or
+think something can be said better, you can tweet me @sent-hil.</p>
+
+</div>
+
+<!-- <div id="related"> -->
+<!-- <h2>Related Posts</h2> -->
+<!-- <ul class="posts"> -->
+<!--    -->
+<!--     <li><span>13 Mar 2019</span> &raquo; <a href="/2019/03/13/sqlite3.h-is-missing-when-doing-gem-install-sqlite3-in-mojave-osx.html">sqlite3.h Is Missing When Doing 'gem install sqlite3' In Mojave OSX</a></li> -->
+<!--    -->
+<!--     <li><span>17 Feb 2018</span> &raquo; <a href="/2018/02/17/week-07-links.html">Week-07-links</a></li> -->
+<!--    -->
+<!--     <li><span>16 Jan 2018</span> &raquo; <a href="/2018/01/16/challenge-use-api-docs-more-than-google-or-stackoverflow.html">Challenge - use api docs more than Google or Stackoverflow</a></li> -->
+<!--    -->
+<!-- </ul> -->
+<!-- </div> -->
+
+
+  <div class="footer">
+    <div class="contact-left">
+      <p>
+        A dump of my personal thoughts, ideas, links etc.<br />
+        Powered by Jekyll. Original theme by <a target="_blank" href="http://tom.preston-werner.com/">Tom Preston-Werner</a>
+      </p>
+
+    </div>
+
+    <div class="contact-right">
+      <p>
+        <a target="_blank" href="https://github.com/sent-hil">github.com/sent-hil</a><br />
+        <a target="_blank" href="https://www.instagram.com/senthil196/">instagram.com/senthil196</a><br />
+      </p>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
