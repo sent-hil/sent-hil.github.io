@@ -11,6 +11,30 @@ To create a new empty post do
 
 This'll create a new file in `_posts` prefixed with today's date and title of blog post.
 
+## Dokku
+
+This blog is deployed using [dokku](http://dokku.viewdocs.io/dokku/).
+
+### Setup
+
+    # create new app
+    git remote add dokku dokku@sent-hil.com:sent-hil.com
+    git push dokku master
+
+    ssh <ip of machine with dokku>
+
+    dokku domains:set-global sent-hil.com
+    dokku config:set sent-hil.com NGINX_ROOT=_site
+
+    # setup https
+    dokku plugin:install https://github.com/dokku/dokku-letsencrypt.git
+    dokku config:set --no-restart myapp DOKKU_LETSENCRYPT_EMAIL=your@email.tld
+    dokku letsencrypt sent-hil.com
+
+### Deploy
+
+    git push dokku master
+
 License
 -------
 `_posts` directory is copyright of Senthil Arivudainambi. You may not reuse anything therein without my permission.
