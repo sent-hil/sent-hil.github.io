@@ -1,2 +1,3 @@
 markdown: kramdown
 highlighter: rouge
+exclude: [scripts, CHECK, Readme.md]
