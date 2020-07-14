@@ -4,7 +4,6 @@ import (
 	"flag"
 	"fmt"
 	"os"
-	"os/user"
 	"path/filepath"
 	"strings"
 	"time"
@@ -27,7 +26,7 @@ title: %s
 	prettyDate = time.Now().Format("01 May, 2006")
 
 	// blogPath is home relative path to blog posts
-	blogPath = "play/sent-hil.github.io/_posts"
+	blogPath = "_posts"
 
 	extension = "md"
 )
@@ -72,13 +71,13 @@ func createPost(title string) error {
 
 // getBlogPath returns full path to blog directory
 func getBlogPath() (string, error) {
-	u, err := user.Current()
+	pwd, err := os.Getwd()
 	if err != nil {
 		return "", err
 	}
 
-	p := filepath.Join(u.HomeDir, blogPath)
-	if _, err := os.Open(filepath.Join(u.HomeDir, blogPath)); err != nil {
+	p := filepath.Join(pwd, blogPath)
+	if _, err := os.Open(p); err != nil {
 		return "", err
 	}
 
