@@ -11,7 +11,7 @@
    <email>senthil196@gmail.com</email>
  </author>
 
- 
+
  <entry>
    <title>ALERTWildfire</title>
    <link href="http://sent-hil.com/2020/08/20/alertwildfire.html"/>
@@ -40,7 +40,7 @@
 &lt;p&gt;Thank you to The University of Nevada, Reno (UNR), University of California San Diego (UCSD), and the University of Oregon (UO) which run ALERTWildfire and the various sponors of the webcams.&lt;/p&gt;
 </content>
  </entry>
- 
+
  <entry>
    <title>Dokku powered personal hub</title>
    <link href="http://sent-hil.com/2020/07/13/a-new-setup-for-this-site.html"/>
@@ -72,7 +72,7 @@
 &lt;p&gt;Overrall I’m pretty happy with the setup. It’s fairly easy to manage, cheap and I can always ssh into the instance to debug. That’s something I sorely missed when trying to work with the hosted solutions.&lt;/p&gt;
 </content>
  </entry>
- 
+
  <entry>
    <title>sqlite3.h Is Missing When Doing 'gem install sqlite3' In Mojave OSX</title>
    <link href="http://sent-hil.com/2019/03/13/sqlite3.h-is-missing-when-doing-gem-install-sqlite3-in-mojave-osx.html"/>
@@ -107,7 +107,7 @@ need configuration options.
 &lt;/ul&gt;
 </content>
  </entry>
- 
+
  <entry>
    <title>Week-07-links</title>
    <link href="http://sent-hil.com/2018/02/17/week-07-links.html"/>
@@ -139,7 +139,7 @@ need configuration options.
 &lt;/ul&gt;
 </content>
  </entry>
- 
+
  <entry>
    <title>Challenge - use api docs more than Google or Stackoverflow</title>
    <link href="http://sent-hil.com/2018/01/16/challenge-use-api-docs-more-than-google-or-stackoverflow.html"/>
@@ -156,7 +156,7 @@ need configuration options.
 &lt;p&gt;Luckily for Ruby and other languages there’s &lt;a href=&quot;https://kapeli.com/dash&quot;&gt;Dash&lt;/a&gt;. Dash helps you navigate docus of different languages with just a keyboard. For standard libraries, Dash is now my go to source, for libraries it’s less than ideal. I’ve been &lt;a href=&quot;https://github.com/sent-hil/go-dashgen&quot;&gt;experimenting&lt;/a&gt; with auto generating docs per project that can be used in Dash, but haven’t made much progress yet. Will keep you posted.&lt;/p&gt;
 </content>
  </entry>
- 
+
  <entry>
    <title>Programming Arduino with Assembly</title>
    <link href="http://sent-hil.com/2016/10/23/arduino-assembly.html"/>
@@ -270,7 +270,7 @@ the one without &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&
 frankly without it this process would’ve been much longer and way more tedious.&lt;/p&gt;
 </content>
  </entry>
- 
+
  <entry>
    <title>Single vs Double dash in cli args</title>
    <link href="http://sent-hil.com/2016/05/28/single-vs-double-dash-in-cli-args.html"/>
@@ -295,7 +295,7 @@ frankly without it this process would’ve been much longer and way more tedious
 &lt;p&gt;– is not in POSIX, but GNU recommends it and it makes for better readability.&lt;/p&gt;
 </content>
  </entry>
- 
+
  <entry>
    <title>Links</title>
    <link href="http://sent-hil.com/2016/05/25/links.html"/>
@@ -317,7 +317,7 @@ frankly without it this process would’ve been much longer and way more tedious
 &lt;/ul&gt;
 </content>
  </entry>
- 
+
  <entry>
    <title>The 1 in cat(1)</title>
    <link href="http://sent-hil.com/2015/09/05/1-in-cat(1).html"/>
@@ -348,7 +348,7 @@ NAME
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 </content>
  </entry>
- 
+
  <entry>
    <title>Links</title>
    <link href="http://sent-hil.com/2015/08/31/links.html"/>
@@ -365,7 +365,7 @@ NAME
 &lt;/ul&gt;
 </content>
  </entry>
- 
+
  <entry>
    <title>Here we go again</title>
    <link href="http://sent-hil.com/2015/08/31/here-we-go-again.html"/>
@@ -380,7 +380,7 @@ NAME
 &lt;p&gt;Like most Jekyll blog this too is hosted on &lt;a href=&quot;https://github.com&quot;&gt;Github&lt;/a&gt;. You can view the source &lt;a href=&quot;https://github.com/sent-hil/sent-hil.github.io&quot;&gt;here&lt;/a&gt;. The design is originally from &lt;a href=&quot;https://github.com/mojombo/mojombo.github.io&quot;&gt;Tom Preston-Werner&lt;/a&gt;. I forked the original repo and made some minor changes.&lt;/p&gt;
 </content>
  </entry>
- 
+
  <entry>
    <title>Consistent hashing, a guide & Go library</title>
    <link href="http://sent-hil.com/2015/04/22/consistent-hashing.html"/>
@@ -591,6 +591,6 @@ writing this blog post, hope you learned a thing or do. If you find an error or
 think something can be said better, you can tweet me @sent-hil.&lt;/p&gt;
 </content>
  </entry>
- 
+
 
 </feed>
