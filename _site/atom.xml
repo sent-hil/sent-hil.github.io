@@ -4,13 +4,42 @@
  <title>Senthil Arivudainambi</title>
  <link href="http://sent-hil.com/atom.xml" rel="self"/>
  <link href="http://sent-hil.com/"/>
- <updated>2020-07-13T20:45:40-07:00</updated>
+ <updated>2020-08-21T00:36:12-07:00</updated>
  <id>http://sent-hil.com/</id>
  <author>
    <name>Senthil Arivudainambi</name>
    <email>senthil196@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>ALERTWildfire</title>
+   <link href="http://sent-hil.com/2020/08/20/alertwildfire.html"/>
+   <updated>2020-08-20T00:00:00-07:00</updated>
+   <id>http://sent-hil.com/2020/08/20/alertwildfire</id>
+   <content type="html">&lt;h1 id=&quot;alertwildfire&quot;&gt;ALERTWildfire&lt;/h1&gt;
+
+&lt;p class=&quot;meta&quot;&gt;08 May, 2020&lt;/p&gt;
+
+&lt;p&gt;My past time the last few hours has been switching through the various live webcam feeds on http://www.alertwildfire.org and checking if I can catch a glimpse of smoke or the various fires that are burning up in California right now.&lt;/p&gt;
+
+&lt;iframe width=&quot;800&quot; height=&quot;500&quot; src=&quot;https://www.youtube.com/embed/LnhNYWkGkPg?color=white&amp;amp;theme=light\&quot;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;The above video was taken two days ago by one of the webcams located south of Boulder Creek, California. You can see the CZU Ligtning Complex fire creeping up and eventually destroy it.&lt;/p&gt;
+
+&lt;p&gt;Here are few interesting feeds:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.alertwildfire.org/southeastbay/index.html?camera=Axis-Oso&amp;amp;v=81e002f&quot;&gt;Link1&lt;/a&gt; - shows the north portion of SCU fires. Looked like Mars around sunset today. This is the only webcam that’s consistently looking at the SCU fires.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.alertwildfire.org/southeastbay/index.html?camera=Axis-MtBielawski&amp;amp;v=81e002f&quot;&gt;Link2&lt;/a&gt; - can see CZU fire.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.alertwildfire.org/southeastbay/index.html?camera=Axis-MtRodoni2&amp;amp;v=81e002f&quot;&gt;Link3&lt;/a&gt; - can smoke from the CZU fire, as that fire moves south, this webcam should catch it.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.alertwildfire.org/southeastbay/index.html?camera=Axis-SanJoseFoothills&amp;amp;v=81e002f&quot;&gt;Link4&lt;/a&gt; - shows south east of san jose.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I have also been staring at &lt;a href=&quot;https://maps.nwcg.gov/sa/#/%3F/%3F/37.176/-122.0395/11&quot;&gt;this&lt;/a&gt; which I belive uses satellite to detect the boundaries of the fires. As you can see, a lot of Norther California is burning. The closest fire at the moment is the SCU fire, about 10 miles south of my current location. Good news for people north of the fires like me is the wind is blowing south west. Bad news for everyone south of the fire.&lt;/p&gt;
+
+&lt;p&gt;Thank you to The University of Nevada, Reno (UNR), University of California San Diego (UCSD), and the University of Oregon (UO) which run ALERTWildfire and the various sponors of the webcams.&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Dokku powered personal hub</title>
