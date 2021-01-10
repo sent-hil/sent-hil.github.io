@@ -31,6 +31,16 @@ This blog is deployed using [dokku](http://dokku.viewdocs.io/dokku/).
     dokku config:set --no-restart myapp DOKKU_LETSENCRYPT_EMAIL=your@email.tld
     dokku letsencrypt sent-hil.com
 
+### Docker development
+
+```
+docker run --rm \
+    --volume="$PWD:/srv/jekyll" \
+    -p 4000:4000 \
+    -it jekyll/jekyll:$JEKYLL_VERSION \
+    jekyll serve
+```
+
 ### .git/hooks/pre-commit
 
 This pre-commit script will build jekyll and add the built files to the commit. It makes commit a tad bit slow, but worth it.
