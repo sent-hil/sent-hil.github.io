@@ -99,7 +99,7 @@ the way stathat did it.</p>
 
 <p>Let’s define a bird’s eye view:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// Initializes new distribute network of nodes or a ring.
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// Initializes new distribute network of nodes or a ring.
 func NewRing() *Ring
 
 // Adds node to the ring.
@@ -124,44 +124,44 @@ each key we run the checksum and determine the position the key should be added
 and return the node closet to that. If it’s out of bounds of array, we return
 the first node.</p>
 
-<p>First, let’s define <code class="language-plaintext highlighter-rouge">Ring</code>, which is just a collection of <code class="language-plaintext highlighter-rouge">Node</code></p>
+<p>First, let’s define <code class="highlighter-rouge">Ring</code>, which is just a collection of <code class="highlighter-rouge">Node</code></p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>package consistenthash
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">package</span> <span class="n">consistenthash</span>
 
-// Ring is a network of distributed nodes.
-type Ring struct {
-  Nodes Nodes
-}
+<span class="p">//</span> <span class="n">Ring</span> <span class="n">is</span> <span class="n">a</span> <span class="n">network</span> <span class="k">of</span> <span class="n">distributed</span> <span class="n">nodes</span><span class="p">.</span>
+<span class="n">type</span> <span class="n">Ring</span> <span class="n">struct</span> <span class="p">{</span>
+  <span class="n">Nodes</span> <span class="n">Nodes</span>
+<span class="p">}</span>
 
-// Nodes is an array of nodes.
-type Nodes []Node
+<span class="p">//</span> <span class="n">Nodes</span> <span class="n">is</span> <span class="n">an</span> <span class="k">array</span> <span class="k">of</span> <span class="n">nodes</span><span class="p">.</span>
+<span class="n">type</span> <span class="n">Nodes</span> <span class="p">[]</span><span class="n">Node</span>
 
-// Node is a single entity in a ring.
-type Node struct {
- Id     string
- HashId uint32
-}
+<span class="p">//</span> <span class="n">Node</span> <span class="n">is</span> <span class="n">a</span> <span class="n">single</span> <span class="n">entity</span> <span class="k">in</span> <span class="n">a</span> <span class="n">ring</span><span class="p">.</span>
+<span class="n">type</span> <span class="n">Node</span> <span class="n">struct</span> <span class="p">{</span>
+ <span class="n">Id</span>     <span class="k">string</span>
+ <span class="n">HashId</span> <span class="n">uint32</span>
+<span class="p">}</span>
 </code></pre></div></div>
 
-<p>Next, let’s write the initializer functions for <code class="language-plaintext highlighter-rouge">Ring</code> and <code class="language-plaintext highlighter-rouge">Node</code>:</p>
+<p>Next, let’s write the initializer functions for <code class="highlighter-rouge">Ring</code> and <code class="highlighter-rouge">Node</code>:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>package consistenthash
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">package</span> <span class="n">consistenthash</span>
 
-func NewRing() *Ring {
-  return &amp;Ring{Nodes : Nodes{}}
-}
+<span class="n">func</span> <span class="n">NewRing</span><span class="p">()</span> <span class="p">*</span><span class="n">Ring</span> <span class="p">{</span>
+  <span class="n">return</span> <span class="p">&amp;</span><span class="n">Ring</span><span class="p">{</span><span class="n">Nodes</span> <span class="p">:</span> <span class="n">Nodes</span><span class="p">{}}</span>
+<span class="p">}</span>
 
-func NewNode(id string) *Node{
-  return &amp;Node{
-    Id        : id,
-    hashedKey : crc32.Checksum([]byte(id)),
-  }
-}
+<span class="n">func</span> <span class="n">NewNode</span><span class="p">(</span><span class="n">id</span> <span class="k">string</span><span class="p">)</span> <span class="p">*</span><span class="n">Node</span><span class="p">{</span>
+  <span class="n">return</span> <span class="p">&amp;</span><span class="n">Node</span><span class="p">{</span>
+    <span class="n">Id</span>        <span class="p">:</span> <span class="n">id</span><span class="p">,</span>
+    <span class="n">hashedKey</span> <span class="p">:</span> <span class="n">crc32</span><span class="p">.</span><span class="n">Checksum</span><span class="p">([]</span><span class="n">byte</span><span class="p">(</span><span class="n">id</span><span class="p">)),</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 </code></pre></div></div>
 
-<p>Now we’re finally ready to fill in <code class="language-plaintext highlighter-rouge">AddNode</code>:</p>
+<p>Now we’re finally ready to fill in <code class="highlighter-rouge">AddNode</code>:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>func (r *Ring) AddNode(id string) {
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>func (r *Ring) AddNode(id string) {
   node := NewNode(id)
   r.Nodes = append(r.Nodes, node)
 
@@ -169,24 +169,24 @@ func NewNode(id string) *Node{
 }
 </code></pre></div></div>
 
-<p>Why <code class="language-plaintext highlighter-rouge">sort.Sort</code>? This goes back to the unit circle. How exactly do you implement
+<p>Why <code class="highlighter-rouge">sort.Sort</code>? This goes back to the unit circle. How exactly do you implement
 an unit circle? One way is to have an array with the last item pointing to the
 first item in the entry. We can use a linked list for this, but you’ll see soon
 enough why that’s unnecessary.</p>
 
 <p>If you run what we’ve so far, Go compiler will throw something at you because
-<code class="language-plaintext highlighter-rouge">Nodes</code> doesn’t implement <code class="language-plaintext highlighter-rouge">sort.Sort</code> interface. That’s pretty easy to do:</p>
+<code class="highlighter-rouge">Nodes</code> doesn’t implement <code class="highlighter-rouge">sort.Sort</code> interface. That’s pretty easy to do:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>package consistenthash
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">package</span> <span class="n">consistenthash</span>
 
-func (n Nodes) Len() int           { return len(n) }
-func (n Nodes) Less(i, j int) bool { return n[i].HashId &lt; n[j].HashId }
-func (n Nodes) Swap(i, j int)      { n[i], n[j] = n[j], n[i] }
+<span class="n">func</span> <span class="p">(</span><span class="n">n</span> <span class="n">Nodes</span><span class="p">)</span> <span class="n">Len</span><span class="p">()</span> <span class="n">int</span>           <span class="p">{</span> <span class="n">return</span> <span class="n">len</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="p">}</span>
+<span class="n">func</span> <span class="p">(</span><span class="n">n</span> <span class="n">Nodes</span><span class="p">)</span> <span class="n">Less</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="n">int</span><span class="p">)</span> <span class="n">bool</span> <span class="p">{</span> <span class="n">return</span> <span class="n">n</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">HashId</span> <span class="p">&lt;</span> <span class="n">n</span><span class="p">[</span><span class="n">j</span><span class="p">].</span><span class="n">HashId</span> <span class="p">}</span>
+<span class="n">func</span> <span class="p">(</span><span class="n">n</span> <span class="n">Nodes</span><span class="p">)</span> <span class="n">Swap</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="n">int</span><span class="p">)</span>      <span class="p">{</span> <span class="n">n</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">n</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="p">=</span> <span class="n">n</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">n</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="p">}</span>
 </code></pre></div></div>
 
-<p>Let’s continue with <code class="language-plaintext highlighter-rouge">Get</code> which is the point of this all:</p>
+<p>Let’s continue with <code class="highlighter-rouge">Get</code> which is the point of this all:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>func (r *Ring) Get(key string) string {
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>func (r *Ring) Get(key string) string {
   searchfn := func(i int) bool {
     return r.Nodes[i].HashId &gt;= crc32.Checksum([]byte(key))
   }
@@ -200,7 +200,7 @@ func (n Nodes) Swap(i, j int)      { n[i], n[j] = n[j], n[i] }
 }
 </code></pre></div></div>
 
-<p><a href="https://golang.org/pkg/sort/#Search"><code class="language-plaintext highlighter-rouge">sort.Search</code></a> uses binary search to find
+<p><a href="https://golang.org/pkg/sort/#Search"><code class="highlighter-rouge">sort.Search</code></a> uses binary search to find
 exitense of node in array. If it doesn’t exist, it returns the place where the
 node should be added if we were to add it. If the node cheksum is greater than
 the last node, then we add it to the first node. And that’s it.</p>
@@ -253,7 +253,7 @@ think something can be said better, you can tweet me @sent-hil.</p>
     <div class="contact-right">
       <p>
         <a target="_blank" href="https://twitter.com/sent0hil">twitter.com/sent0hil</a><br />
-        <a target="_blank" href="https://www.instagram.com/senthil196/">instagram.com/senthil196</a><br />
+        <a target="_blank" href="https://www.instagram.com/senthilsworkshop">instagram.com/senthilsworkshop/</a><br />
         <a target="_blank" href="https://github.com/sent-hil">github.com/sent-hil</a><br />
       </p>
     </div>
