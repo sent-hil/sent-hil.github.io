@@ -54,6 +54,7 @@ git add _site
 
 ### Deploy
 
+    git remote add dokku dokku@sent-hil.com:sent-hil.com
     git push dokku master
 
 License
