@@ -28,7 +28,7 @@
 <p>Arduino is typically programmed with Arduino IDE with a set of C/C++ functions.
 The canonical blink sketch which turns a led on/off every 1 second looks like:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>void setup() {
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>void setup() {
   pinMode(13, OUTPUT);      // initialize digital pin 13 as an output
 }
 
@@ -40,22 +40,22 @@ void loop() {
 }
 </code></pre></div></div>
 
-<p><code class="highlighter-rouge">pinMode</code>, <code class="highlighter-rouge">digitalWrite</code> and <code class="highlighter-rouge">delay</code> functions are defined by the Arduino
+<p><code class="language-plaintext highlighter-rouge">pinMode</code>, <code class="language-plaintext highlighter-rouge">digitalWrite</code> and <code class="language-plaintext highlighter-rouge">delay</code> functions are defined by the Arduino
 standard library. For the most part this works pretty well, and there are plenty
 of libraries and example sketches.</p>
 
 <p>For the sake of getting close to the metal, let’s write the above sketch in
 assembly instead. Before we do that we need to install couple depedencies. Assuming you’re on OSX and you have brew install you’ll need to do:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brew tap osx-cross/avr
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brew tap osx-cross/avr
 brew install avr-libc avrdude
 </code></pre></div></div>
 
 <p>Here’s an example from
 <a href="https://www.cypherpunk.at/2014/09/native-assembler-programming-on-arduino/">here</a>.
-Save it as <code class="highlighter-rouge">simple_led_blink.s</code></p>
+Save it as <code class="language-plaintext highlighter-rouge">simple_led_blink.s</code></p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.equ RAMEND, 0x8ff
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.equ RAMEND, 0x8ff
 .equ SREG, 0x3f
 .equ SPL, 0x3d
 .equ SPH, 0x3e
@@ -114,15 +114,15 @@ post.</p>
 <p>Now connect your Arduino to your computer with usb and run the following
 commands from your terminal:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>avr-as -g -mmcu=atmega328p -o simple_led_blink.o simple_led_blink.s
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>avr-as -g -mmcu=atmega328p -o simple_led_blink.o simple_led_blink.s
 avr-ld -o simple_led_blink.elf simple_led_blink.o
 avr-objcopy -O ihex -R .eeprom simple_led_blink.elf simple_led_blink.hex
 avrdude  -p atmega328p -c arduino -P /dev/tty.usbmodem14221 -b 115200 -D -U flash:w:simple_led_blink.hex:i
 </code></pre></div></div>
 
-<p>You’ll most likely need to change <code class="highlighter-rouge">/dev/tty.usbmodem14221</code> to whatever usb port
-your Arduino is connected to. To find which one run <code class="highlighter-rouge">ls /deve/tty.*</code> and pick
-the one without <code class="highlighter-rouge">Bluetooth</code> in the file name.</p>
+<p>You’ll most likely need to change <code class="language-plaintext highlighter-rouge">/dev/tty.usbmodem14221</code> to whatever usb port
+your Arduino is connected to. To find which one run <code class="language-plaintext highlighter-rouge">ls /deve/tty.*</code> and pick
+the one without <code class="language-plaintext highlighter-rouge">Bluetooth</code> in the file name.</p>
 
 <p>Most of the above instructions are from
 <a href="https://www.cypherpunk.at/2014/09/native-assembler-programming-on-arduino/">here</a>,

@@ -2,29 +2,114 @@
 layout: default
 title: Senthil Arivudainambi
 ---
-<p>Hello! I'm a California based developer, currently Head of Engineering for <a target="blank" href="http://walkerandcompany.com/">Walker & Company.</a> Previous gigs include Koding, MajesticMedia and Twitlens. These days I write Ruby professionally and Go for fun.</p>I have an ever increasing interest in woodworking, maker culture, tennis, microcontrollers, single board computers and climate change to name a few.
-<br>
-<br>
+
+<div>
+  <p>
+    Hello! I'm a web developer and entrepreneur, currently working on
+    <a target="blank" href="https://toolwallhq.com">ToolWall.</a> Previous roles
+    include:
+  </p>
+
+  <ul>
+    <li>
+      <a target="blank" href="https://walkerandcompany.com/"
+        >Walker & Company:
+      </a>
+      Health and beauty products for people of color, <b>acquired by P&G</b> in
+      2018.
+    </li>
+    <li>
+      <a target="blank" href="https://koding.com">Koding: </a>modern development
+      environment.
+    </li>
+    <li>MajesticMedia: a design and development agency.</li>
+    <li>
+      <a target="blank" href="https://twitlens.com/">TwitLens:</a> photosharing
+      site for Twitter, <b>acquired</b>.
+    </li>
+    <li>
+      <a target="blank" href="https://www.linkedin.com/in/sent-hil/"
+        >See my LinkedIn for more info.</a
+      >
+    </li>
+  </ul>
+
+  <p>
+    These days I write Ruby and React professionally and QCAD for fun. I have an
+    ever increasing interest in woodworking, maker culture, tennis,
+    microcontrollers, single board computers and climate change to name a few.
+  </p>
+  <br />
+</div>
 
 <div id="home">
   <h1>Open Source Projects</h1>
   <ul class="posts">
-    <li><a target="blank" href="https://github.com/sent-hil/bitesized/">bitesized:</a> Redis bitmap powered analytics in Go.</li>
-    <li><a target="blank" href="https://github.com/sent-hil/runeio">runeio:</a> Library that provides functions for manipulating runes in Go.</li>
-    <li><a target="blank" href="https://github.com/sfbrigade/planetbot">planebot:</a> A bot that connects you to actions to help the environment.</li>
-    <li><a target="blank" href="https://github.com/sent-hil/open_auth2">open_auth2:</a> Thin OAuth2 wrapper written on top of Faraday in Ruby.</li>
-    <li><a target="blank" href="https://github.com/sfbrigade/sfsbook">sfsbook:</a> A repository for the reduce violence against women in SF project in Ruby.</li>
-    <li><a target="blank" href="https://github.com/sent-hil/caltrain-realtime">caltrain-realtime:</a> Realtime train timings for various train stations in both directions in Go.</li>
-    <li><a target="blank" href="https://github.com/sent-hil/adler32">adler32:</a> Just a small library for calculating adler32 checksum in Go.</li>
-    <li><a target="blank" href="https://github.com/sent-hil/go-yamlconfig">go-yamlconfig:</a> Small library for parsing (ala Rails) yaml config files in Go.</li>
-    <li><a target="blank" href="https://github.com/sent-hil/peak">peak:</a> Anamoly detection service for your metrics in Ruby.</li>
-    <li><a target="blank" href="https://github.com/sent-hil/bitlang">bitlang:</a> Half finished programming language in Go.</li>
+    <li>
+      <a target="blank" href="https://github.com/sent-hil/bitesized/"
+        >bitesized:</a
+      >
+      Redis bitmap powered analytics in Go.
+    </li>
+    <li>
+      <a target="blank" href="https://github.com/sent-hil/runeio">runeio:</a>
+      Library that provides functions for manipulating runes in Go.
+    </li>
+    <li>
+      <a target="blank" href="https://github.com/sfbrigade/planetbot"
+        >planebot:</a
+      >
+      A bot that connects you to actions to help the environment.
+    </li>
+    <li>
+      <a target="blank" href="https://github.com/sent-hil/open_auth2"
+        >open_auth2:</a
+      >
+      Thin OAuth2 wrapper written on top of Faraday in Ruby.
+    </li>
+    <li>
+      <a target="blank" href="https://github.com/sfbrigade/sfsbook">sfsbook:</a>
+      A repository for the reduce violence against women in SF project in Ruby.
+    </li>
+    <li>
+      <a target="blank" href="https://github.com/sent-hil/caltrain-realtime"
+        >caltrain-realtime:</a
+      >
+      Realtime train timings for various train stations in both directions in
+      Go.
+    </li>
+    <li>
+      <a target="blank" href="https://github.com/sent-hil/adler32">adler32:</a>
+      Just a small library for calculating adler32 checksum in Go.
+    </li>
+    <li>
+      <a target="blank" href="https://github.com/sent-hil/go-yamlconfig"
+        >go-yamlconfig:</a
+      >
+      Small library for parsing (ala Rails) yaml config files in Go.
+    </li>
+    <li>
+      <a target="blank" href="https://github.com/sent-hil/peak">peak:</a>
+      Anamoly detection service for your metrics in Ruby.
+    </li>
+    <li>
+      <a target="blank" href="https://github.com/sent-hil/bitlang">bitlang:</a>
+      Half finished programming language in Go.
+    </li>
   </ul>
 
   <h1>Blog Posts</h1>
   <ul class="posts">
+    <li>
+      <a href="https://blog.toolwallhq.com"
+        >See ToolWall blog for more latest posts.</a
+      >
+    </li>
     {% for post in site.posts %}
-      <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
+    <li>
+      <span>{{ post.date | date_to_string }}</span> &raquo;
+      <a href="{{ post.url }}">{{ post.title }}</a>
+    </li>
     {% endfor %}
   </ul>
 </div>
