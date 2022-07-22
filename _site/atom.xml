@@ -4,7 +4,7 @@
  <title>Senthil Arivudainambi</title>
  <link href="http://sent-hil.com/atom.xml" rel="self"/>
  <link href="http://sent-hil.com/"/>
- <updated>2021-01-23T14:21:00-06:00</updated>
+ <updated>2022-07-22T14:36:25-07:00</updated>
  <id>http://sent-hil.com/</id>
  <author>
    <name>Senthil Arivudainambi</name>
@@ -15,7 +15,7 @@
  <entry>
    <title>ALERTWildfire</title>
    <link href="http://sent-hil.com/2020/08/20/alertwildfire.html"/>
-   <updated>2020-08-20T00:00:00-05:00</updated>
+   <updated>2020-08-20T00:00:00-07:00</updated>
    <id>http://sent-hil.com/2020/08/20/alertwildfire</id>
    <content type="html">&lt;h1 id=&quot;alertwildfire&quot;&gt;ALERTWildfire&lt;/h1&gt;
 
@@ -44,7 +44,7 @@
  <entry>
    <title>Dokku powered personal hub</title>
    <link href="http://sent-hil.com/2020/07/13/a-new-setup-for-this-site.html"/>
-   <updated>2020-07-13T00:00:00-05:00</updated>
+   <updated>2020-07-13T00:00:00-07:00</updated>
    <id>http://sent-hil.com/2020/07/13/a-new-setup-for-this-site</id>
    <content type="html">&lt;h1 id=&quot;dokku-powered-personal-hub&quot;&gt;Dokku powered personal hub&lt;/h1&gt;
 
@@ -63,7 +63,7 @@
   &lt;li&gt;stats - &lt;a href=&quot;https://www.goatcounter.com&quot;&gt;Goatcounter&lt;/a&gt; app (private) for analytics.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;To deploy I do &lt;code class=&quot;highlighter-rouge&quot;&gt;git push dokku master&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;To deploy I do &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git push dokku master&lt;/code&gt;.&lt;/p&gt;
 
 &lt;h2 id=&quot;downsides&quot;&gt;Downsides&lt;/h2&gt;
 
@@ -76,20 +76,20 @@
  <entry>
    <title>sqlite3.h Is Missing When Doing 'gem install sqlite3' In Mojave OSX</title>
    <link href="http://sent-hil.com/2019/03/13/sqlite3.h-is-missing-when-doing-gem-install-sqlite3-in-mojave-osx.html"/>
-   <updated>2019-03-13T00:00:00-05:00</updated>
+   <updated>2019-03-13T00:00:00-07:00</updated>
    <id>http://sent-hil.com/2019/03/13/sqlite3.h-is-missing-when-doing-gem-install-sqlite3-in-mojave-osx</id>
    <content type="html">&lt;h1 id=&quot;sqlite3h-is-missing-when-doing-gem-install-sqlite3-in-mojave-osx&quot;&gt;sqlite3.h Is Missing When Doing ‘gem install sqlite3’ In Mojave OSX&lt;/h1&gt;
 
 &lt;p class=&quot;meta&quot;&gt;03 May, 2019&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Fetching sqlite3 1.3.12
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Fetching sqlite3 1.3.12
 Installing sqlite3 1.3.12 with native extensions
 Gem::Ext::BuildError: ERROR: Failed to build gem native extension.
 
 extconf.rb
 checking for sqlite3.h... no
-sqlite3.h is missing. Try 'brew install sqlite3',
-'yum install sqlite-devel' or 'apt-get install libsqlite3-dev'
+sqlite3.h is missing. Try &apos;brew install sqlite3&apos;,
+&apos;yum install sqlite-devel&apos; or &apos;apt-get install libsqlite3-dev&apos;
 and check your shared library search path (the
 location where your sqlite3 shared library is located).
 *** extconf.rb failed ***
@@ -98,12 +98,12 @@ libraries and/or headers.  Check the mkmf.log file for more details.  You may
 need configuration options.
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;If &lt;code class=&quot;highlighter-rouge&quot;&gt;gem install sqlite3&lt;/code&gt; fails, you probably:&lt;/p&gt;
+&lt;p&gt;If &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gem install sqlite3&lt;/code&gt; fails, you probably:&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;Haven’t agreed to XCode license: &lt;code class=&quot;highlighter-rouge&quot;&gt;xcode-select --install&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;Missing sqlite3 homebrew package. You can do with &lt;code class=&quot;highlighter-rouge&quot;&gt;brew install sqlite3&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;Need to install with &lt;code class=&quot;highlighter-rouge&quot;&gt;gem install sqlite3 -- --with-sqlite3-dir=/opt/local&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Haven’t agreed to XCode license: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;xcode-select --install&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Missing sqlite3 homebrew package. You can do with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;brew install sqlite3&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Need to install with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gem install sqlite3 -- --with-sqlite3-dir=/opt/local&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </content>
  </entry>
@@ -111,7 +111,7 @@ need configuration options.
  <entry>
    <title>Week-07-links</title>
    <link href="http://sent-hil.com/2018/02/17/week-07-links.html"/>
-   <updated>2018-02-17T00:00:00-06:00</updated>
+   <updated>2018-02-17T00:00:00-08:00</updated>
    <id>http://sent-hil.com/2018/02/17/week-07-links</id>
    <content type="html">&lt;h1 id=&quot;week-07-links&quot;&gt;Week-07-links&lt;/h1&gt;
 
@@ -122,7 +122,7 @@ need configuration options.
     &lt;p&gt;&lt;a href=&quot;https://github.com/WalkerAndCoBrandsInc/ghhook&quot;&gt;ghhook&lt;/a&gt;: “Go library that makes working with Github webhooks delivered with AWS APIGateway easier.” NOTE, this is mine :) It started as few one off scripts, run as AWS Lambda function, to help automate some tasks based on Github webhooks at work; eventually extracted out some common functionality into this library.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;serverless.com&quot;&gt;serverless&lt;/a&gt;: “Folder specific env variable config; especially useful for managing multiple &lt;code class=&quot;highlighter-rouge&quot;&gt;GOPATH&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;GOBIN&lt;/code&gt;”. Using this to deploy the scripts written with the above project. I made a Lambda function from scratch which took forever, with serverless it took less than a minute. Only downside is updating functions take longer since it does entire Cloudformation stack update vs just uploading a Lambda function. I’m not entirely sold on the serverless architecture to be honest, it’s quite tedious to even do/debug basic stuff, serverless makes some it easier.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;serverless.com&quot;&gt;serverless&lt;/a&gt;: “Folder specific env variable config; especially useful for managing multiple &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;GOPATH&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;GOBIN&lt;/code&gt;”. Using this to deploy the scripts written with the above project. I made a Lambda function from scratch which took forever, with serverless it took less than a minute. Only downside is updating functions take longer since it does entire Cloudformation stack update vs just uploading a Lambda function. I’m not entirely sold on the serverless architecture to be honest, it’s quite tedious to even do/debug basic stuff, serverless makes some it easier.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;&lt;a href=&quot;https://github.com/go-task/task&quot;&gt;task&lt;/a&gt;: “A task runner / simpler Make alternative written in Go.” I never took the time to properly learn make and whenever I spend some time with it I always end up quitting scratching my head. I’m a huge fan of &lt;a href=&quot;https://github.com/ruby/rake&quot;&gt;rake&lt;/a&gt; for Rails projects, but for others the overhead is too much. Found this make alternative where you specify commands in yaml. It also has common features like accessing env variables, task depedency etc.&lt;/p&gt;
@@ -143,7 +143,7 @@ need configuration options.
  <entry>
    <title>Challenge - use api docs more than Google or Stackoverflow</title>
    <link href="http://sent-hil.com/2018/01/16/challenge-use-api-docs-more-than-google-or-stackoverflow.html"/>
-   <updated>2018-01-16T00:00:00-06:00</updated>
+   <updated>2018-01-16T00:00:00-08:00</updated>
    <id>http://sent-hil.com/2018/01/16/challenge-use-api-docs-more-than-google-or-stackoverflow</id>
    <content type="html">&lt;h1 id=&quot;challenge---use-api-docs-more-than-google-or-stackoverflow&quot;&gt;Challenge - use api docs more than Google or Stackoverflow&lt;/h1&gt;
 
@@ -151,7 +151,7 @@ need configuration options.
 
 &lt;p&gt;Few days ago I challenged myself to not use Google or Stackoverflow, but to check the language/api docs whenever I need to lookup something. This is part of my other long running project to remove abstractions and move closer to the core. I’m hoping this lets me better understand the code and be more idiomatic.&lt;/p&gt;
 
-&lt;p&gt;For Go, there’s https://godoc.org, which is an easily accessible way to browse the library signatures. In Ruby, there’s http://ruby-doc.org/ for standard library docs and http://www.rubydoc.info for library specific docs, though I find I use far less, generally I just Google it (especially when it comes to Rails) or I go into the source directly with &lt;code class=&quot;highlighter-rouge&quot;&gt;bundle open &amp;lt;gem&amp;gt;&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;For Go, there’s https://godoc.org, which is an easily accessible way to browse the library signatures. In Ruby, there’s http://ruby-doc.org/ for standard library docs and http://www.rubydoc.info for library specific docs, though I find I use far less, generally I just Google it (especially when it comes to Rails) or I go into the source directly with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;bundle open &amp;lt;gem&amp;gt;&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;Luckily for Ruby and other languages there’s &lt;a href=&quot;https://kapeli.com/dash&quot;&gt;Dash&lt;/a&gt;. Dash helps you navigate docus of different languages with just a keyboard. For standard libraries, Dash is now my go to source, for libraries it’s less than ideal. I’ve been &lt;a href=&quot;https://github.com/sent-hil/go-dashgen&quot;&gt;experimenting&lt;/a&gt; with auto generating docs per project that can be used in Dash, but haven’t made much progress yet. Will keep you posted.&lt;/p&gt;
 </content>
@@ -160,7 +160,7 @@ need configuration options.
  <entry>
    <title>Programming Arduino with Assembly</title>
    <link href="http://sent-hil.com/2016/10/23/arduino-assembly.html"/>
-   <updated>2016-10-23T00:00:00-05:00</updated>
+   <updated>2016-10-23T00:00:00-07:00</updated>
    <id>http://sent-hil.com/2016/10/23/arduino-assembly</id>
    <content type="html">&lt;h1 id=&quot;programming-arduino-with-assembly&quot;&gt;Programming Arduino with Assembly&lt;/h1&gt;
 
@@ -169,7 +169,7 @@ need configuration options.
 &lt;p&gt;Arduino is typically programmed with Arduino IDE with a set of C/C++ functions.
 The canonical blink sketch which turns a led on/off every 1 second looks like:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;void setup() {
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;void setup() {
   pinMode(13, OUTPUT);      // initialize digital pin 13 as an output
 }
 
@@ -181,22 +181,22 @@ void loop() {
 }
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;pinMode&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;digitalWrite&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;delay&lt;/code&gt; functions are defined by the Arduino
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;pinMode&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;digitalWrite&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;delay&lt;/code&gt; functions are defined by the Arduino
 standard library. For the most part this works pretty well, and there are plenty
 of libraries and example sketches.&lt;/p&gt;
 
 &lt;p&gt;For the sake of getting close to the metal, let’s write the above sketch in
 assembly instead. Before we do that we need to install couple depedencies. Assuming you’re on OSX and you have brew install you’ll need to do:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;brew tap osx-cross/avr
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;brew tap osx-cross/avr
 brew install avr-libc avrdude
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Here’s an example from
 &lt;a href=&quot;https://www.cypherpunk.at/2014/09/native-assembler-programming-on-arduino/&quot;&gt;here&lt;/a&gt;.
-Save it as &lt;code class=&quot;highlighter-rouge&quot;&gt;simple_led_blink.s&lt;/code&gt;&lt;/p&gt;
+Save it as &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;simple_led_blink.s&lt;/code&gt;&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;.equ RAMEND, 0x8ff
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;.equ RAMEND, 0x8ff
 .equ SREG, 0x3f
 .equ SPL, 0x3d
 .equ SPH, 0x3e
@@ -255,15 +255,15 @@ post.&lt;/p&gt;
 &lt;p&gt;Now connect your Arduino to your computer with usb and run the following
 commands from your terminal:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;avr-as -g -mmcu=atmega328p -o simple_led_blink.o simple_led_blink.s
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;avr-as -g -mmcu=atmega328p -o simple_led_blink.o simple_led_blink.s
 avr-ld -o simple_led_blink.elf simple_led_blink.o
 avr-objcopy -O ihex -R .eeprom simple_led_blink.elf simple_led_blink.hex
 avrdude  -p atmega328p -c arduino -P /dev/tty.usbmodem14221 -b 115200 -D -U flash:w:simple_led_blink.hex:i
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;You’ll most likely need to change &lt;code class=&quot;highlighter-rouge&quot;&gt;/dev/tty.usbmodem14221&lt;/code&gt; to whatever usb port
-your Arduino is connected to. To find which one run &lt;code class=&quot;highlighter-rouge&quot;&gt;ls /deve/tty.*&lt;/code&gt; and pick
-the one without &lt;code class=&quot;highlighter-rouge&quot;&gt;Bluetooth&lt;/code&gt; in the file name.&lt;/p&gt;
+&lt;p&gt;You’ll most likely need to change &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/dev/tty.usbmodem14221&lt;/code&gt; to whatever usb port
+your Arduino is connected to. To find which one run &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ls /deve/tty.*&lt;/code&gt; and pick
+the one without &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Bluetooth&lt;/code&gt; in the file name.&lt;/p&gt;
 
 &lt;p&gt;Most of the above instructions are from
 &lt;a href=&quot;https://www.cypherpunk.at/2014/09/native-assembler-programming-on-arduino/&quot;&gt;here&lt;/a&gt;,
@@ -274,7 +274,7 @@ frankly without it this process would’ve been much longer and way more tedious
  <entry>
    <title>Single vs Double dash in cli args</title>
    <link href="http://sent-hil.com/2016/05/28/single-vs-double-dash-in-cli-args.html"/>
-   <updated>2016-05-28T00:00:00-05:00</updated>
+   <updated>2016-05-28T00:00:00-07:00</updated>
    <id>http://sent-hil.com/2016/05/28/single-vs-double-dash-in-cli-args</id>
    <content type="html">&lt;h1 id=&quot;single-vs-double-dash-in-cli-args&quot;&gt;Single vs Double dash in cli args&lt;/h1&gt;
 
@@ -289,8 +289,8 @@ frankly without it this process would’ve been much longer and way more tedious
 
 &lt;p&gt;&lt;a href=&quot;http://serverfault.com/a/387938&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;One exception I found was &lt;code class=&quot;highlighter-rouge&quot;&gt;find&lt;/code&gt; which uses single dash, but full names like
-&lt;code class=&quot;highlighter-rouge&quot;&gt;find /usr/src -name CVS&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;One exception I found was &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;find&lt;/code&gt; which uses single dash, but full names like
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;find /usr/src -name CVS&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;– is not in POSIX, but GNU recommends it and it makes for better readability.&lt;/p&gt;
 </content>
@@ -299,7 +299,7 @@ frankly without it this process would’ve been much longer and way more tedious
  <entry>
    <title>Links</title>
    <link href="http://sent-hil.com/2016/05/25/links.html"/>
-   <updated>2016-05-25T00:00:00-05:00</updated>
+   <updated>2016-05-25T00:00:00-07:00</updated>
    <id>http://sent-hil.com/2016/05/25/links</id>
    <content type="html">&lt;h1 id=&quot;links&quot;&gt;Links&lt;/h1&gt;
 
@@ -321,23 +321,23 @@ frankly without it this process would’ve been much longer and way more tedious
  <entry>
    <title>The 1 in cat(1)</title>
    <link href="http://sent-hil.com/2015/09/05/1-in-cat(1).html"/>
-   <updated>2015-09-05T00:00:00-05:00</updated>
+   <updated>2015-09-05T00:00:00-07:00</updated>
    <id>http://sent-hil.com/2015/09/05/1-in-cat(1)</id>
    <content type="html">&lt;h1 id=&quot;the-1-in-cat1&quot;&gt;The 1 in cat(1)&lt;/h1&gt;
 
 &lt;p class=&quot;meta&quot;&gt;5 Sept 2015 2.35p&lt;/p&gt;
 
-&lt;p&gt;When you do &lt;code class=&quot;highlighter-rouge&quot;&gt;man cat&lt;/code&gt;, you get an output like:&lt;/p&gt;
+&lt;p&gt;When you do &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;man cat&lt;/code&gt;, you get an output like:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;CAT(1)                    BSD General Commands Manual                   CAT(1)
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;CAT(1)                    BSD General Commands Manual                   CAT(1)
 
 NAME
     cat -- concatenate and print files
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Ever wonder what the 1 in &lt;code class=&quot;highlighter-rouge&quot;&gt;CAT(1)&lt;/code&gt; stands for? It’s the section for command as defined in &lt;a href=&quot;http://plan9.bell-labs.com/7thEdMan/v7vol1.pdf&quot;&gt;Unix Programmer’s manual&lt;/a&gt;. Here’re the sections:&lt;/p&gt;
+&lt;p&gt;Ever wonder what the 1 in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CAT(1)&lt;/code&gt; stands for? It’s the section for command as defined in &lt;a href=&quot;http://plan9.bell-labs.com/7thEdMan/v7vol1.pdf&quot;&gt;Unix Programmer’s manual&lt;/a&gt;. Here’re the sections:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;1. Commands
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;1. Commands
 2. System calls
 3. Subroutines
 4. Special files
@@ -352,14 +352,14 @@ NAME
  <entry>
    <title>Links</title>
    <link href="http://sent-hil.com/2015/08/31/links.html"/>
-   <updated>2015-08-31T00:00:00-05:00</updated>
+   <updated>2015-08-31T00:00:00-07:00</updated>
    <id>http://sent-hil.com/2015/08/31/links</id>
    <content type="html">&lt;h1 id=&quot;links&quot;&gt;Links&lt;/h1&gt;
 
 &lt;p class=&quot;meta&quot;&gt;31 Aug 2015&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/direnv/direnv&quot;&gt;direnv&lt;/a&gt;: Folder specific env variable config; especially useful for managing multiple &lt;code class=&quot;highlighter-rouge&quot;&gt;GOPATH&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;GOBIN&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/direnv/direnv&quot;&gt;direnv&lt;/a&gt;: Folder specific env variable config; especially useful for managing multiple &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;GOPATH&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;GOBIN&lt;/code&gt;.&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://github.com/koding/multiconfig&quot;&gt;multiconfig&lt;/a&gt;: Load configuration from multiple sources in Go; Only thing missing is ability to specify description for various config.&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;http://www.amazon.com/The-Power-Habit-What-Business/dp/081298160X&quot;&gt;Power of Habit&lt;/a&gt;: The best self help book isn’t a self help book at all. It’s more of an inquiry into how habits are formed and how to change them. In one of the chapters, there’s talk of ‘keystone habit’, ie something that enables you to change your life for the better. Usually it’s exercise. But for me it’s putting everything into writing. Goals, lists, todos etc.&lt;/li&gt;
 &lt;/ul&gt;
@@ -369,7 +369,7 @@ NAME
  <entry>
    <title>Here we go again</title>
    <link href="http://sent-hil.com/2015/08/31/here-we-go-again.html"/>
-   <updated>2015-08-31T00:00:00-05:00</updated>
+   <updated>2015-08-31T00:00:00-07:00</updated>
    <id>http://sent-hil.com/2015/08/31/here-we-go-again</id>
    <content type="html">&lt;h1 id=&quot;here-we-go-again&quot;&gt;Here we go again&lt;/h1&gt;
 
@@ -384,7 +384,7 @@ NAME
  <entry>
    <title>Consistent hashing, a guide & Go library</title>
    <link href="http://sent-hil.com/2015/04/22/consistent-hashing.html"/>
-   <updated>2015-04-22T00:00:00-05:00</updated>
+   <updated>2015-04-22T00:00:00-07:00</updated>
    <id>http://sent-hil.com/2015/04/22/consistent-hashing</id>
    <content type="html">&lt;h1 id=&quot;consistent-hashing-a-guide--go-library&quot;&gt;Consistent hashing, a guide &amp;amp; Go library&lt;/h1&gt;
 
@@ -464,7 +464,7 @@ the way stathat did it.&lt;/p&gt;
 
 &lt;p&gt;Let’s define a bird’s eye view:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;// Initializes new distribute network of nodes or a ring.
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;// Initializes new distribute network of nodes or a ring.
 func NewRing() *Ring
 
 // Adds node to the ring.
@@ -489,44 +489,44 @@ each key we run the checksum and determine the position the key should be added
 and return the node closet to that. If it’s out of bounds of array, we return
 the first node.&lt;/p&gt;
 
-&lt;p&gt;First, let’s define &lt;code class=&quot;highlighter-rouge&quot;&gt;Ring&lt;/code&gt;, which is just a collection of &lt;code class=&quot;highlighter-rouge&quot;&gt;Node&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;First, let’s define &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Ring&lt;/code&gt;, which is just a collection of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Node&lt;/code&gt;&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;package&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;consistenthash&lt;/span&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;package consistenthash
 
-&lt;span class=&quot;p&quot;&gt;//&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Ring&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;is&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;network&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;of&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;distributed&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nodes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Ring&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;Nodes&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Nodes&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+// Ring is a network of distributed nodes.
+type Ring struct {
+  Nodes Nodes
+}
 
-&lt;span class=&quot;p&quot;&gt;//&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Nodes&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;is&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;an&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;array&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;of&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nodes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Nodes&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Node&lt;/span&gt;
+// Nodes is an array of nodes.
+type Nodes []Node
 
-&lt;span class=&quot;p&quot;&gt;//&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Node&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;is&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;single&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;entity&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ring&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Node&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
- &lt;span class=&quot;n&quot;&gt;Id&lt;/span&gt;     &lt;span class=&quot;k&quot;&gt;string&lt;/span&gt;
- &lt;span class=&quot;n&quot;&gt;HashId&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;uint32&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+// Node is a single entity in a ring.
+type Node struct {
+ Id     string
+ HashId uint32
+}
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Next, let’s write the initializer functions for &lt;code class=&quot;highlighter-rouge&quot;&gt;Ring&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;Node&lt;/code&gt;:&lt;/p&gt;
+&lt;p&gt;Next, let’s write the initializer functions for &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Ring&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Node&lt;/code&gt;:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;package&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;consistenthash&lt;/span&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;package consistenthash
 
-&lt;span class=&quot;n&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;NewRing&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Ring&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Ring&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Nodes&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Nodes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{}}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+func NewRing() *Ring {
+  return &amp;amp;Ring{Nodes : Nodes{}}
+}
 
-&lt;span class=&quot;n&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;NewNode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;id&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Node&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Node&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;Id&lt;/span&gt;        &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;hashedKey&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;crc32&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Checksum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([]&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;byte&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)),&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+func NewNode(id string) *Node{
+  return &amp;amp;Node{
+    Id        : id,
+    hashedKey : crc32.Checksum([]byte(id)),
+  }
+}
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Now we’re finally ready to fill in &lt;code class=&quot;highlighter-rouge&quot;&gt;AddNode&lt;/code&gt;:&lt;/p&gt;
+&lt;p&gt;Now we’re finally ready to fill in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;AddNode&lt;/code&gt;:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;func (r *Ring) AddNode(id string) {
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;func (r *Ring) AddNode(id string) {
   node := NewNode(id)
   r.Nodes = append(r.Nodes, node)
 
@@ -534,24 +534,24 @@ the first node.&lt;/p&gt;
 }
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Why &lt;code class=&quot;highlighter-rouge&quot;&gt;sort.Sort&lt;/code&gt;? This goes back to the unit circle. How exactly do you implement
+&lt;p&gt;Why &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;sort.Sort&lt;/code&gt;? This goes back to the unit circle. How exactly do you implement
 an unit circle? One way is to have an array with the last item pointing to the
 first item in the entry. We can use a linked list for this, but you’ll see soon
 enough why that’s unnecessary.&lt;/p&gt;
 
 &lt;p&gt;If you run what we’ve so far, Go compiler will throw something at you because
-&lt;code class=&quot;highlighter-rouge&quot;&gt;Nodes&lt;/code&gt; doesn’t implement &lt;code class=&quot;highlighter-rouge&quot;&gt;sort.Sort&lt;/code&gt; interface. That’s pretty easy to do:&lt;/p&gt;
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Nodes&lt;/code&gt; doesn’t implement &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;sort.Sort&lt;/code&gt; interface. That’s pretty easy to do:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;package&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;consistenthash&lt;/span&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;package consistenthash
 
-&lt;span class=&quot;n&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Nodes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;int&lt;/span&gt;           &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Nodes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Less&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;bool&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;HashId&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;HashId&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Nodes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Swap&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;      &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+func (n Nodes) Len() int           { return len(n) }
+func (n Nodes) Less(i, j int) bool { return n[i].HashId &amp;lt; n[j].HashId }
+func (n Nodes) Swap(i, j int)      { n[i], n[j] = n[j], n[i] }
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Let’s continue with &lt;code class=&quot;highlighter-rouge&quot;&gt;Get&lt;/code&gt; which is the point of this all:&lt;/p&gt;
+&lt;p&gt;Let’s continue with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Get&lt;/code&gt; which is the point of this all:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;func (r *Ring) Get(key string) string {
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;func (r *Ring) Get(key string) string {
   searchfn := func(i int) bool {
     return r.Nodes[i].HashId &amp;gt;= crc32.Checksum([]byte(key))
   }
@@ -565,7 +565,7 @@ enough why that’s unnecessary.&lt;/p&gt;
 }
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://golang.org/pkg/sort/#Search&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;sort.Search&lt;/code&gt;&lt;/a&gt; uses binary search to find
+&lt;p&gt;&lt;a href=&quot;https://golang.org/pkg/sort/#Search&quot;&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;sort.Search&lt;/code&gt;&lt;/a&gt; uses binary search to find
 exitense of node in array. If it doesn’t exist, it returns the place where the
 node should be added if we were to add it. If the node cheksum is greater than
 the last node, then we add it to the first node. And that’s it.&lt;/p&gt;
