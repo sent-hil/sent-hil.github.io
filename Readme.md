@@ -1,5 +1,4 @@
-sent-hil.github.io
-------------------
+## sent-hil.github.io
 
 Jekyll blog that powers [sent-hil.com](http://sent-hil.com). This is a fork of the [original repo](https://github.com/mojombo/mojombo.github.io) with some minor modifications.
 
@@ -11,34 +10,11 @@ To create a new empty post do
 
 This'll create a new file in `_posts` prefixed with today's date and title of blog post.
 
-## Dokku
-
-This blog is deployed using [dokku](http://dokku.viewdocs.io/dokku/).
-
-### Setup
-
-    # create new app
-    git remote add dokku dokku@sent-hil.com:sent-hil.com
-    git push dokku master
-
-    ssh <ip of machine with dokku>
-
-    dokku domains:set-global sent-hil.com
-    dokku config:set sent-hil.com NGINX_ROOT=_site
-
-    # setup https
-    dokku plugin:install https://github.com/dokku/dokku-letsencrypt.git
-    dokku config:set --no-restart myapp DOKKU_LETSENCRYPT_EMAIL=your@email.tld
-    dokku letsencrypt sent-hil.com
-
-### Docker development
+## Setup
 
 ```
-docker run --rm \
-    --volume="$PWD:/srv/jekyll" \
-    -p 4000:4000 \
-    -it jekyll/jekyll:$JEKYLL_VERSION \
-    jekyll serve
+bundle
+bundle exec jekyll server
 ```
 
 ### .git/hooks/pre-commit
@@ -52,13 +28,12 @@ jekyll build
 git add _site
 ```
 
-### Deploy
+## Deploy
 
-    git remote add dokku dokku@sent-hil.com:sent-hil.com
-    git push dokku master
+    git push origin master
 
-License
--------
+## License
+
 `_posts` directory is copyright of Senthil Arivudainambi. You may not reuse anything therein without my permission.
 
 All other directories and files are MIT Licensed. This is the same license of the original repo: https://github.com/mojombo/mojombo.github.io
