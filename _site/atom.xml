@@ -4,7 +4,7 @@
  <title>Senthil Arivudainambi</title>
  <link href="http://sent-hil.com/atom.xml" rel="self"/>
  <link href="http://sent-hil.com/"/>
- <updated>2024-11-17T10:47:00-08:00</updated>
+ <updated>2024-11-17T19:25:42-08:00</updated>
  <id>http://sent-hil.com/</id>
  <author>
    <name>Senthil Arivudainambi</name>
@@ -21,68 +21,100 @@
 
 &lt;p class=&quot;meta&quot;&gt;20 March, 2023&lt;/p&gt;
 
-&lt;p&gt;A few days ago, I was trying to set up Jasmine to output the description of the tests while running it. It wasn’t as straightforward as passing in a command line argument, so I turned to everyone’s favorite boogeyman, ChatGPT, to help. Here is the complete conversation: https://gpt.best/c0JV9sJt. TLDR: It helped, but I had to hand-hold it a few times.&lt;/p&gt;
+&lt;p&gt;A few days ago, I was trying to set up Jasmine to output the description of the
+tests while running it. It wasn’t as straightforward as passing in a command
+line argument, so I turned to everyone’s favorite boogeyman, ChatGPT, to help.
+Here is the &lt;a href=&quot;https://gpt.best/c0JV9sJt&quot;&gt;complete conversation&lt;/a&gt;. TLDR: It helped,
+but I had to hand-hold it a few times.&lt;/p&gt;
 
-&lt;p&gt;In the end, I asked ChatGPT to generate a blog post with my findings, and here’s what it outputted.&lt;/p&gt;
+&lt;p&gt;In the end, I asked ChatGPT to generate a blog post with my findings, and
+here’s what it outputted.&lt;/p&gt;
 
 &lt;hr /&gt;
-&lt;p&gt;When working with Jasmine for testing JavaScript applications, you may want to have a global configuration that automatically includes a custom reporter, such as jasmine-spec-reporter, for all your projects. This blog post will guide you through the process of setting up a global Jasmine configuration file and using the custom reporter to display test results in a more human-readable format.&lt;/p&gt;
+
+&lt;p&gt;When working with Jasmine for testing JavaScript applications, you may want to
+have a global configuration that automatically includes a custom reporter, such
+as jasmine-spec-reporter, for all your projects. This blog post will guide you
+through the process of setting up a global Jasmine configuration file and using
+the custom reporter to display test results in a more human-readable format.&lt;/p&gt;
 
 &lt;p&gt;Step 1: Install jasmine-spec-reporter&lt;/p&gt;
 
 &lt;p&gt;First, you’ll need to install the jasmine-spec-reporter package globally:&lt;/p&gt;
 
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;npm install -g jasmine-spec-reporter
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;npm &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-g&lt;/span&gt; jasmine-spec-reporter
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Step 2: Create a global Jasmine configuration file&lt;/p&gt;
 
-&lt;p&gt;Next, create a global Jasmine configuration file named jasmine-global.json. You can store this file in a convenient location, such as your home directory. In this file, specify the helpers key with an absolute path to a custom helper file that will configure the reporter:&lt;/p&gt;
+&lt;p&gt;Next, create a global Jasmine configuration file named jasmine-global.json. You
+can store this file in a convenient location, such as your home directory. In
+this file, specify the helpers key with an absolute path to a custom helper
+file that will configure the reporter:&lt;/p&gt;
 
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;{
-  &quot;helpers&quot;: [&quot;/path/to/your/req-jasmine-reporter.js&quot;]
-}
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;helpers&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;/path/to/your/req-jasmine-reporter.js&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Replace /path/to/your with the correct path to the directory where you’ll store the req-jasmine-reporter.js file.&lt;/p&gt;
+&lt;p&gt;Replace /path/to/your with the correct path to the directory where you’ll store
+the req-jasmine-reporter.js file.&lt;/p&gt;
 
 &lt;p&gt;Step 3: Create the custom helper file&lt;/p&gt;
 
-&lt;p&gt;Now, create a file named req-jasmine-reporter.js in the directory specified in the previous step. This file will configure the jasmine-spec-reporter. Add the following code to the file:&lt;/p&gt;
+&lt;p&gt;Now, create a file named req-jasmine-reporter.js in the directory specified in
+the previous step. This file will configure the jasmine-spec-reporter. Add the
+following code to the file:&lt;/p&gt;
 
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;const SpecReporter = require(&apos;jasmine-spec-reporter&apos;).SpecReporter;
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;SpecReporter&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;jasmine-spec-reporter&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;SpecReporter&lt;/span&gt;
 
-jasmine.getEnv().clearReporters();
-jasmine.getEnv().addReporter(new SpecReporter({
-  spec: {
-    displayPending: true,
-    displayStacktrace: &apos;specs&apos;
-  }
-}));
+&lt;span class=&quot;nx&quot;&gt;jasmine&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;getEnv&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;clearReporters&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;jasmine&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;getEnv&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;addReporter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;SpecReporter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;spec&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;displayPending&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;displayStacktrace&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;specs&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Step 4: Set the JASMINE_CONFIG_PATH environment variable&lt;/p&gt;
+&lt;p&gt;Step 4: Set the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;JASMINE_CONFIG_PATH&lt;/code&gt; environment variable&lt;/p&gt;
 
-&lt;p&gt;To tell Jasmine to use your global configuration file, set an environment variable named JASMINE_CONFIG_PATH to the path of your jasmine-global.json file.&lt;/p&gt;
+&lt;p&gt;To tell Jasmine to use your global configuration file, set an environment
+variable named &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;JASMINE_CONFIG_PATH&lt;/code&gt; to the path of your jasmine-global.json
+file.&lt;/p&gt;
 
-&lt;p&gt;For Unix-based systems, add the following line to your shell profile file (e.g., .bashrc, .bash_profile, .zshrc, etc.):&lt;/p&gt;
+&lt;p&gt;For Unix-based systems, add the following line to your shell profile file
+(e.g., &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.bashrc&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.bash_profile&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.zshrc&lt;/code&gt;, etc.):&lt;/p&gt;
 
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;export JASMINE_CONFIG_PATH=&quot;/path/to/your/jasmine-global.json&quot;
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;JASMINE_CONFIG_PATH&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;/path/to/your/jasmine-global.json&quot;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;For Windows, open the Environment Variables dialog (search for “Environment Variables” in the Start menu) and add a new user or system variable named JASMINE_CONFIG_PATH with the value set to the path of your jasmine-global.json file.&lt;/p&gt;
+&lt;p&gt;For Windows, open the Environment Variables dialog (search for “Environment
+Variables” in the Start menu) and add a new user or system variable named
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;JASMINE_CONFIG_PATH&lt;/code&gt; with the value set to the path of your &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;jasmine-global.json&lt;/code&gt;
+file.&lt;/p&gt;
 
 &lt;p&gt;Step 5: Run Jasmine tests with the custom reporter&lt;/p&gt;
 
-&lt;p&gt;Now, when you run Jasmine tests using the command npx jasmine &lt;file&gt;, the test results will be displayed using the jasmine-spec-reporter with your specified configuration.&lt;/file&gt;&lt;/p&gt;
+&lt;p&gt;Now, when you run Jasmine tests using the command &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;npx jasmine &amp;lt;file&amp;gt;&lt;/code&gt;, the test
+results will be displayed using the jasmine-spec-reporter with your specified
+configuration.&lt;/p&gt;
 
 &lt;p&gt;Conclusion:&lt;/p&gt;
 
-&lt;p&gt;By following these steps, you can create a global Jasmine configuration that includes a custom reporter for all your projects. This setup can help you maintain consistent test output formatting and streamline your testing process. Keep in mind that using a global configuration may not be suitable for every project, especially when working with multiple developers or projects with different dependencies. In such cases, it’s recommended to maintain separate configurations for each project.&lt;/p&gt;
+&lt;p&gt;By following these steps, you can create a global Jasmine configuration that
+includes a custom reporter for all your projects. This setup can help you
+maintain consistent test output formatting and streamline your testing process.
+Keep in mind that using a global configuration may not be suitable for every
+project, especially when working with multiple developers or projects with
+different dependencies. In such cases, it’s recommended to maintain separate
+configurations for each project.&lt;/p&gt;
 
 &lt;hr /&gt;
 
-&lt;p&gt;The resulting blog post is boring, to the point and devoid of personality, but it gets the job done.&lt;/p&gt;
+&lt;p&gt;The result is boring, to the point and devoid of personality, but it gets the job done.&lt;/p&gt;
 </content>
  </entry>
  
