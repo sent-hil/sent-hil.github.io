@@ -16,8 +16,7 @@ body {
 
 body {
   background-color: white;
-  font: 13.34px helvetica, arial, clean, sans-serif;
-  *font-size: small;
+  font-family: -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
   text-align: center;
 }
 
@@ -67,7 +66,7 @@ ul.posts li {
 
 ul.posts span {
   color: #aaa;
-  font-family: Monaco, "Courier New", monospace;
+  font-family: Monaco, 'Courier New', monospace;
   font-size: 80%;
 }
 
@@ -76,17 +75,23 @@ ul.posts span {
 /*****************************************************************************/
 
 .site {
-  font-size: 110%;
   text-align: left;
-  width: 42em;
-  margin: 3em auto 2em auto;
-  line-height: 1.5em;
+  width: 90%;
+  margin: 40px auto;
+  line-height: 1.6rem;
+}
+
+@media only screen and (min-width: 769px) {
+  .site {
+    width: 42rem;
+    line-height: 1.5rem;
+  }
 }
 
 .title {
   color: #a00;
   font-weight: bold;
-  margin-bottom: 2em;
+  margin-bottom: 3em;
 }
 
 .site .title a {
@@ -110,25 +115,28 @@ ul.posts span {
 
 .site .meta {
   color: #aaa;
-  font-family: Monaco, "Courier New", monospace;
-  font-size: 80%;
+  font-family: Monaco, 'Courier New', monospace;
 }
 
 .site .footer {
-  font-size: 80%;
   color: #666;
   border-top: 4px solid #eee;
   margin-top: 2em;
   overflow: hidden;
 }
 
-.site .footer .contact-left {
-  float: left;
-  margin-right: 3em;
+.footer {
+  display: block;
 }
 
-.contact-right {
-  float: right;
+@media only screen and (min-width: 769px) {
+  .footer {
+    display: flex;
+  }
+}
+
+.site .footer .contact-left {
+  margin-right: 3em;
 }
 
 .site .footer .contact-left .contact-right a {
@@ -167,7 +175,7 @@ ul.posts span {
 #post code {
   border: 1px solid #ddd;
   background-color: #eef;
-  font-size: 85%;
+  font-size: 120%;
   padding: 0 0.2em;
 }
 
