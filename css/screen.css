@@ -91,7 +91,7 @@ ul.posts span {
 .title {
   color: #a00;
   font-weight: bold;
-  margin-bottom: 3em;
+  margin-bottom: 4rem;
 }
 
 .site .title a {
@@ -121,8 +121,15 @@ ul.posts span {
 .site .footer {
   color: #666;
   border-top: 4px solid #eee;
-  margin-top: 2em;
   overflow: hidden;
+}
+
+.site {
+  margin-top: 3rem;
+}
+
+.footer {
+  margin-top: 10rem;
 }
 
 .footer {
