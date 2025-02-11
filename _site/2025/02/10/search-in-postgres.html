@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>Search In Postgres</title>
+    <meta name="author" content="sent-hil" />
+
+    <!-- syntax highlighting CSS -->
+    <link rel="stylesheet" href="/css/syntax.css" type="text/css" />
+
+    <!-- Homepage CSS -->
+    <link
+      rel="stylesheet"
+      href="/css/screen.css"
+      type="text/css"
+      media="screen, projection"
+    />
+  </head>
+  <body>
+    <div class="site">
+      <div class="title">
+        <a href="/">Senthil Arivudainambi</a>
+      </div>
+
+      <div id="post">
+<h1 id="search-in-postgres">Search In Postgres</h1>
+
+<p class="meta">02 May, 2025</p>
+
+<p>It’s inevitable at some point you’ll need to implement user facing search on one of more fields in your database. I had to implement searching file and user given title for the file, but not the contents of the file.</p>
+
+<p>Here’s an example table <code class="language-plaintext highlighter-rouge">files</code>.</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="k">public</span><span class="p">.</span><span class="n">files</span> <span class="p">(</span>
+	<span class="n">id</span> <span class="nb">SERIAL</span> <span class="k">PRIMARY</span> <span class="k">KEY</span><span class="p">,</span>
+	<span class="n">path</span> <span class="nb">text</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+	<span class="n">title</span> <span class="nb">text</span> <span class="k">NOT</span> <span class="k">NULL</span>
+<span class="p">);</span>
+
+
+<span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">files</span> <span class="p">(</span><span class="n">title</span><span class="p">,</span> <span class="n">path</span><span class="p">)</span>
+<span class="k">VALUES</span>
+    <span class="p">(</span><span class="s1">'document'</span><span class="p">,</span> <span class="s1">'/documents/document.pdf'</span><span class="p">),</span>
+    <span class="p">(</span><span class="s1">'image'</span><span class="p">,</span> <span class="s1">'/images/image.jpg'</span><span class="p">),</span>
+    <span class="p">(</span><span class="s1">'script'</span><span class="p">,</span> <span class="s1">'/code/script.rb'</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>If you’re thinking that’s easy, Postgres has <a href="https://www.postgresql.org/docs/current/textsearch.html">full text search</a>, yes that’s true, but that wouldn’t work in this scenarios where user might search partial names and also wouldn’t work with stop words like ‘a’.</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">postgres</span><span class="o">=#</span> <span class="k">SELECT</span> <span class="n">title</span>
+<span class="k">FROM</span> <span class="n">files</span>
+<span class="k">WHERE</span> <span class="n">to_tsvector</span><span class="p">(</span><span class="s1">'english'</span><span class="p">,</span> <span class="n">title</span><span class="p">)</span> <span class="o">@@</span> <span class="n">to_tsquery</span><span class="p">(</span><span class="s1">'english'</span><span class="p">,</span> <span class="s1">'document'</span><span class="p">);</span>
+  <span class="n">title</span>
+<span class="c1">----------</span>
+ <span class="n">document</span>
+<span class="p">(</span><span class="mi">1</span> <span class="k">row</span><span class="p">)</span>
+
+<span class="n">postgres</span><span class="o">=#</span> <span class="k">SELECT</span> <span class="n">title</span>
+<span class="k">FROM</span> <span class="n">files</span>
+<span class="k">WHERE</span> <span class="n">to_tsvector</span><span class="p">(</span><span class="s1">'english'</span><span class="p">,</span> <span class="n">title</span><span class="p">)</span> <span class="o">@@</span> <span class="n">to_tsquery</span><span class="p">(</span><span class="s1">'english'</span><span class="p">,</span> <span class="s1">'doc'</span><span class="p">);</span>
+ <span class="n">title</span>
+<span class="c1">-------</span>
+<span class="p">(</span><span class="mi">0</span> <span class="k">rows</span><span class="p">)</span>
+
+<span class="n">postgres</span><span class="o">=#</span> <span class="k">SELECT</span> <span class="n">title</span>
+<span class="k">FROM</span> <span class="n">files</span>
+<span class="k">WHERE</span> <span class="n">to_tsvector</span><span class="p">(</span><span class="s1">'english'</span><span class="p">,</span> <span class="n">title</span><span class="p">)</span> <span class="o">@@</span> <span class="n">to_tsquery</span><span class="p">(</span><span class="s1">'english'</span><span class="p">,</span> <span class="s1">'a'</span><span class="p">);</span>
+<span class="n">NOTICE</span><span class="p">:</span>  <span class="nb">text</span><span class="o">-</span><span class="k">search</span> <span class="n">query</span> <span class="k">contains</span> <span class="k">only</span> <span class="n">stop</span> <span class="n">words</span> <span class="k">or</span> <span class="n">doesn</span><span class="s1">'t contain lexemes, ignored
+ title
+-------
+(0 rows)
+</span></code></pre></div></div>
+
+<p>Well, that’s not really full text search, but</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">postgres</span><span class="o">=#</span> <span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">files</span> <span class="k">WHERE</span> <span class="n">title</span> <span class="k">LIKE</span> <span class="s1">'doc%'</span><span class="p">;</span>
+ <span class="n">id</span> <span class="o">|</span>          <span class="n">path</span>           <span class="o">|</span>  <span class="n">title</span>
+<span class="c1">----+-------------------------+----------</span>
+  <span class="mi">1</span> <span class="o">|</span> <span class="o">/</span><span class="n">documents</span><span class="o">/</span><span class="n">document</span><span class="p">.</span><span class="n">pdf</span> <span class="o">|</span> <span class="n">document</span>
+<span class="p">(</span><span class="mi">1</span> <span class="k">row</span><span class="p">)</span>
+
+<span class="n">postgres</span><span class="o">=#</span> <span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">files</span> <span class="k">WHERE</span> <span class="n">title</span> <span class="k">LIKE</span> <span class="s1">'%c%'</span><span class="p">;</span>
+ <span class="n">id</span> <span class="o">|</span>          <span class="n">path</span>           <span class="o">|</span>  <span class="n">title</span>
+<span class="c1">----+-------------------------+----------</span>
+  <span class="mi">1</span> <span class="o">|</span> <span class="o">/</span><span class="n">documents</span><span class="o">/</span><span class="n">document</span><span class="p">.</span><span class="n">pdf</span> <span class="o">|</span> <span class="n">document</span>
+  <span class="mi">3</span> <span class="o">|</span> <span class="o">/</span><span class="n">code</span><span class="o">/</span><span class="n">script</span><span class="p">.</span><span class="n">rb</span>         <span class="o">|</span> <span class="n">script</span>
+<span class="p">(</span><span class="mi">2</span> <span class="k">rows</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>This works great, but using wildcard in the beginning of the search query (<code class="language-plaintext highlighter-rouge">%c%</code> ) means you can’t use BTree indexes.</p>
+
+<blockquote>
+  <p>The optimizer can also use a B-tree index for queries involving the pattern matching operators <code class="language-plaintext highlighter-rouge">LIKE</code> and <code class="language-plaintext highlighter-rouge">~</code> <em>if</em> the pattern is a constant and is anchored to the beginning of the string — for example, <code class="language-plaintext highlighter-rouge">col LIKE 'foo%'</code> or <code class="language-plaintext highlighter-rouge">col ~ '^foo'</code>, but not <code class="language-plaintext highlighter-rouge">col LIKE '%bar'</code></p>
+</blockquote>
+
+<p>Source: https://www.postgresql.org/docs/current/indexes-types.html#INDEXES-TYPES-BTREE</p>
+
+<p>The other option is to use trigrams through <code class="language-plaintext highlighter-rouge">pg_tgrm</code> module, which works great however will only use index for searches 3 characters or more.</p>
+
+</div>
+
+<!-- <div id="related"> -->
+<!-- <h2>Related Posts</h2> -->
+<!-- <ul class="posts"> -->
+<!--    -->
+<!--     <li><span>23 Nov 2024</span> &raquo; <a href="/2024/11/23/installing-latexocr-on-osx.html">Installing LaTeX-OCR On Osx</a></li> -->
+<!--    -->
+<!--     <li><span>20 Mar 2023</span> &raquo; <a href="/2023/03/20/chatgpt-generated-blog-post.html">This blog post was generated by ChatGPT</a></li> -->
+<!--    -->
+<!--     <li><span>20 Aug 2020</span> &raquo; <a href="/2020/08/20/alertwildfire.html">ALERTWildfire</a></li> -->
+<!--    -->
+<!-- </ul> -->
+<!-- </div> -->
+
+
+      <div class="footer">
+        <div class="contact-left">
+          <p>
+            A dump of my personal thoughts, ideas, links etc.<br />
+            Powered by Jekyll. Original theme by
+            <a target="_blank" href="http://tom.preston-werner.com/"
+              >Tom Preston-Werner</a
+            >
+          </p>
+        </div>
+
+        <div class="contact-right">
+          <p>
+            <a target="_blank" href="https://twitter.com/sent0hil"
+              >twitter.com/sent0hil</a
+            ><br />
+            <a target="_blank" href="https://www.instagram.com/senthilsworkshop"
+              >instagram.com/senthilsworkshop/</a
+            ><br />
+            <a target="_blank" href="https://github.com/sent-hil"
+              >github.com/sent-hil</a
+            ><br />
+          </p>
+        </div>
+      </div>
+    </div>
+    <script
+      data-goatcounter="https://senthil.goatcounter.com/count"
+      async
+      src="//gc.zgo.at/count.js"
+    ></script>
+  </body>
+</html>
