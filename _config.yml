@@ -4,3 +4,5 @@ exclude: [scripts, CHECK, Readme.md]
 defaults:
   - scope:
       path: 'resources'
+plugins:
+  - jekyll-seo-tag
