@@ -66,7 +66,7 @@ ul.posts li {
 
 ul.posts span {
   color: #aaa;
-  font-family: Monaco, 'Courier New', monospace;
+  font-family: Monaco, "Courier New", monospace;
   font-size: 80%;
 }
 
@@ -83,7 +83,7 @@ ul.posts span {
 
 @media only screen and (min-width: 769px) {
   .site {
-    width: 42rem;
+    width: 55rem;
     line-height: 1.5rem;
   }
 }
@@ -115,7 +115,7 @@ ul.posts span {
 
 .site .meta {
   color: #aaa;
-  font-family: Monaco, 'Courier New', monospace;
+  font-family: Monaco, "Courier New", monospace;
 }
 
 .site .footer {
@@ -139,6 +139,7 @@ ul.posts span {
 @media only screen and (min-width: 769px) {
   .footer {
     display: flex;
+    justify-content: space-between;
   }
 }
 
