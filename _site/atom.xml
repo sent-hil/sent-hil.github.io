@@ -4,13 +4,75 @@
  <title>Senthil Arivudainambi</title>
  <link href="http://sent-hil.com/atom.xml" rel="self"/>
  <link href="http://sent-hil.com/"/>
- <updated>2025-02-10T23:39:35-08:00</updated>
+ <updated>2025-04-01T16:57:05-07:00</updated>
  <id>http://sent-hil.com/</id>
  <author>
    <name>Senthil Arivudainambi</name>
    <email>senthil196@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Logits, Softmax and Temperature in LLMs</title>
+   <link href="http://sent-hil.com/2025/03/07/logits-and-softmax.html"/>
+   <updated>2025-03-07T00:00:00-08:00</updated>
+   <id>http://sent-hil.com/2025/03/07/logits-and-softmax</id>
+   <content type="html">&lt;script src=&quot;https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+
+&lt;h1 id=&quot;logits-softmax-and-temperature-in-llms&quot;&gt;Logits, Softmax and Temperature in LLMs&lt;/h1&gt;
+
+&lt;p class=&quot;meta&quot;&gt;03 May, 2025&lt;/p&gt;
+
+&lt;p&gt;&lt;i&gt;My notes on Logits and Softmax.&lt;/i&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;logits-and-softmax&quot;&gt;Logits and Softmax&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;When LLM processes an input, it generates set of numerical scores (logits) for each possible token in its vocabulary.
+    &lt;ul&gt;
+      &lt;li&gt;These logits aren’t probability yet, they can be positive or negative and don’t sum to \(1\).&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;To turn logics into probabilities, model applies softmax function which normalizes them into a probability distribution over all possible tokens.
+    &lt;ul&gt;
+      &lt;li&gt;Higer logits correspond to higher probabilities after softmax.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Softmax function converts vector of real numbers (logits) into probabilitiy distribution.
+    &lt;ul&gt;
+      &lt;li&gt;Given a vector of logits \(z = [z_1, z_2, ..., z_n]\), softmax function transforms each \(z_i\) into probability.
+  \(\
+  \sigma(z_i) = \Large \frac{e^{z_i}}{\sum_{j = 1}^{n}{e^{z_j}}}\)&lt;/li&gt;
+      &lt;li&gt;\(e^{z_i}\) - exponentiates each logic, ensuring all values are positive.&lt;/li&gt;
+      &lt;li&gt;The denominator sums over all exponentiated logics, normalizing them into a probability distribution.&lt;/li&gt;
+      &lt;li&gt;Sum of all outputs is always \(1\), making it a valid probability distribution.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;From the graph below, you can see the behavior of \(exp(\frac{z_j}{T})\) as \(T\) changes.
+&lt;img src=&quot;/assets/various_e_plot.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h1 id=&quot;temperature-in-llms&quot;&gt;Temperature in LLMs&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;We can think of temperature as generalization of softmax. We can apply a scaling factor \(T\) to softmax function.&lt;/li&gt;
+&lt;/ul&gt;
+
+\[\sigma = Softmax\left( \frac{z_i}{T} \right) = \frac{exp\left( \frac{z_i}{T} \right)}{\sum_{j=1}^{n} exp(\frac{z_j}{T})}\]
+
+&lt;ul&gt;
+  &lt;li&gt;When \(T = 1\), result is exactly same as standard softmax function.&lt;/li&gt;
+  &lt;li&gt;While setting \(T = 1\) implies determinism, since matrix calculations are done as floating point arithmetic, this can lead to rounding errors which can cascade through calculations.
+    &lt;ul&gt;
+      &lt;li&gt;Floating point operations are not associative, ie \((a + b) + c \neq a + (b +c)\).&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;If two tokens have same probability, models need a mechanism to break the tie, which could be non deterministic.&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Search In Postgres</title>
