@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>Logits, Softmax and Temperature in LLMs</title>
+    <meta name="author" content="sent-hil" />
+
+    <!-- syntax highlighting CSS -->
+    <link rel="stylesheet" href="/css/syntax.css" type="text/css" />
+
+    <!-- Homepage CSS -->
+    <link
+      rel="stylesheet"
+      href="/css/screen.css"
+      type="text/css"
+      media="screen, projection"
+    />
+  </head>
+  <body>
+    <div class="site">
+      <div class="title">
+        <a href="/">Senthil Arivudainambi</a>
+      </div>
+
+      <div id="post">
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+
+<h1 id="logits-softmax-and-temperature-in-llms">Logits, Softmax and Temperature in LLMs</h1>
+
+<p class="meta">03 May, 2025</p>
+
+<p><i>My notes on Logits and Softmax.</i></p>
+
+<h1 id="logits-and-softmax">Logits and Softmax</h1>
+
+<ul>
+  <li>When LLM processes an input, it generates set of numerical scores (logits) for each possible token in its vocabulary.
+    <ul>
+      <li>These logits aren’t probability yet, they can be positive or negative and don’t sum to \(1\).</li>
+    </ul>
+  </li>
+  <li>To turn logics into probabilities, model applies softmax function which normalizes them into a probability distribution over all possible tokens.
+    <ul>
+      <li>Higer logits correspond to higher probabilities after softmax.</li>
+    </ul>
+  </li>
+  <li>Softmax function converts vector of real numbers (logits) into probabilitiy distribution.
+    <ul>
+      <li>Given a vector of logits \(z = [z_1, z_2, ..., z_n]\), softmax function transforms each \(z_i\) into probability.
+  \(\
+  \sigma(z_i) = \Large \frac{e^{z_i}}{\sum_{j = 1}^{n}{e^{z_j}}}\)</li>
+      <li>\(e^{z_i}\) - exponentiates each logic, ensuring all values are positive.</li>
+      <li>The denominator sums over all exponentiated logics, normalizing them into a probability distribution.</li>
+      <li>Sum of all outputs is always \(1\), making it a valid probability distribution.</li>
+    </ul>
+  </li>
+</ul>
+
+<p>From the graph below, you can see the behavior of \(exp(\frac{z_j}{T})\) as \(T\) changes.
+<img src="/assets/various_e_plot.png" alt="" /></p>
+
+<p><br /></p>
+<h1 id="temperature-in-llms">Temperature in LLMs</h1>
+
+<ul>
+  <li>We can think of temperature as generalization of softmax. We can apply a scaling factor \(T\) to softmax function.</li>
+</ul>
+
+\[\sigma = Softmax\left( \frac{z_i}{T} \right) = \frac{exp\left( \frac{z_i}{T} \right)}{\sum_{j=1}^{n} exp(\frac{z_j}{T})}\]
+
+<ul>
+  <li>When \(T = 1\), result is exactly same as standard softmax function.</li>
+  <li>While setting \(T = 1\) implies determinism, since matrix calculations are done as floating point arithmetic, this can lead to rounding errors which can cascade through calculations.
+    <ul>
+      <li>Floating point operations are not associative, ie \((a + b) + c \neq a + (b +c)\).</li>
+    </ul>
+  </li>
+  <li>If two tokens have same probability, models need a mechanism to break the tie, which could be non deterministic.</li>
+</ul>
+
+</div>
+
+<!-- <div id="related"> -->
+<!-- <h2>Related Posts</h2> -->
+<!-- <ul class="posts"> -->
+<!--    -->
+<!--     <li><span>10 Feb 2025</span> &raquo; <a href="/2025/02/10/search-in-postgres.html">Search In Postgres</a></li> -->
+<!--    -->
+<!--     <li><span>10 Feb 2025</span> &raquo; <a href="/2025/02/10/rate-limiter-in-redis.html">Rate Limiter In Redis</a></li> -->
+<!--    -->
+<!--     <li><span>23 Nov 2024</span> &raquo; <a href="/2024/11/23/installing-latexocr-on-osx.html">Installing LaTeX-OCR On Osx</a></li> -->
+<!--    -->
+<!-- </ul> -->
+<!-- </div> -->
+
+
+      <div class="footer">
+        <div class="contact-left">
+          <p>
+            A dump of my personal thoughts, ideas, links etc.<br />
+            Powered by Jekyll. Original theme by
+            <a target="_blank" href="http://tom.preston-werner.com/"
+              >Tom Preston-Werner</a
+            >
+          </p>
+        </div>
+
+        <div class="contact-right">
+          <p>
+            <a target="_blank" href="https://twitter.com/sent0hil"
+              >twitter.com/sent0hil</a
+            ><br />
+            <a target="_blank" href="https://www.instagram.com/senthilsworkshop"
+              >instagram.com/senthilsworkshop/</a
+            ><br />
+            <a target="_blank" href="https://github.com/sent-hil"
+              >github.com/sent-hil</a
+            ><br />
+          </p>
+        </div>
+      </div>
+    </div>
+    <script
+      data-goatcounter="https://senthil.goatcounter.com/count"
+      async
+      src="//gc.zgo.at/count.js"
+    ></script>
+  </body>
+</html>
