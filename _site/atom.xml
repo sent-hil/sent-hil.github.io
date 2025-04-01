@@ -4,14 +4,56 @@
  <title>Senthil Arivudainambi</title>
  <link href="http://sent-hil.com/atom.xml" rel="self"/>
  <link href="http://sent-hil.com/"/>
- <updated>2025-04-01T16:57:05-07:00</updated>
+ <updated>2025-04-01T16:57:32-07:00</updated>
  <id>http://sent-hil.com/</id>
  <author>
    <name>Senthil Arivudainambi</name>
    <email>senthil196@gmail.com</email>
  </author>
 
- 
+
+ <entry>
+   <title>How to test sidekiq_return_in_block?</title>
+   <link href="http://sent-hil.com/2025/04/01/how-to-test-sidekiq_return_in_block.html"/>
+   <updated>2025-04-01T00:00:00-07:00</updated>
+   <id>http://sent-hil.com/2025/04/01/how-to-test-sidekiq_return_in_block?</id>
+   <content type="html">&lt;h1 id=&quot;how-to-test-sidekiq_return_in_block&quot;&gt;How to test sidekiq_return_in_block?&lt;/h1&gt;
+
+&lt;p class=&quot;meta&quot;&gt;04 May, 2025&lt;/p&gt;
+
+&lt;p&gt;Sidekiq allows specifying behavior when there is an exception. You can choose to use the default exponential backoff algorithm. I needed a way to change the backoff to be slower and more random. The exact backoff algorithm can be anything.&lt;/p&gt;
+
+&lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;YourWorker&lt;/span&gt;
+  &lt;span class=&quot;kp&quot;&gt;include&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Sidekiq&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Job&lt;/span&gt;
+
+  &lt;span class=&quot;n&quot;&gt;sidekiq_retry_in&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;exception&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;jobhash&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;exception&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;when&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Faraday&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;TooManyRequestsError&lt;/span&gt;
+      &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;minute&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;to_i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;rand&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;I also wanted to test it. Found the simplest way is to just call the block and test that behavior which is what the &lt;a href=&quot;https://github.com/sidekiq/sidekiq/issues/4104&quot;&gt;author&lt;/a&gt; of Sidekiq recommends.&lt;/p&gt;
+
+&lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;describe&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Sidekiq retry in block&quot;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;subject&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;YourWorker&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+  &lt;span class=&quot;n&quot;&gt;let&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:exception&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;
+    &lt;span class=&quot;no&quot;&gt;Faraday&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;TooManyRequestsError&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;new&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Too many requests&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+
+  &lt;span class=&quot;n&quot;&gt;it&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;queues between 5...172 minutes&quot;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;expect&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;subject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;sidekiq_retry_in_block&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;call&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;exception&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{})&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;be_between&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;300&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10300&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+</content>
+ </entry>
+
  <entry>
    <title>Logits, Softmax and Temperature in LLMs</title>
    <link href="http://sent-hil.com/2025/03/07/logits-and-softmax.html"/>
@@ -73,7 +115,7 @@
 &lt;/ul&gt;
 </content>
  </entry>
- 
+
  <entry>
    <title>Search In Postgres</title>
    <link href="http://sent-hil.com/2025/02/10/search-in-postgres.html"/>
@@ -154,7 +196,7 @@
 &lt;p&gt;The other option is to use trigrams through &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;pg_tgrm&lt;/code&gt; module, which works great however will only use index for searches 3 characters or more.&lt;/p&gt;
 </content>
  </entry>
- 
+
  <entry>
    <title>Rate Limiter In Redis</title>
    <link href="http://sent-hil.com/2025/02/10/rate-limiter-in-redis.html"/>
@@ -331,7 +373,7 @@
 &lt;p&gt;By using MULTI we can avoid that, while still ensuring you’re not going over limit. The downside is the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;key&lt;/code&gt; value can get over max since we’re incrementing regardless.&lt;/p&gt;
 </content>
  </entry>
- 
+
  <entry>
    <title>Installing LaTeX-OCR On Osx</title>
    <link href="http://sent-hil.com/2024/11/23/installing-latexocr-on-osx.html"/>
@@ -377,7 +419,7 @@ end
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 </content>
  </entry>
- 
+
  <entry>
    <title>This blog post was generated by ChatGPT</title>
    <link href="http://sent-hil.com/2023/03/20/chatgpt-generated-blog-post.html"/>
@@ -483,7 +525,7 @@ configurations for each project.&lt;/p&gt;
 &lt;p&gt;The result is boring, to the point and devoid of personality, but it gets the job done.&lt;/p&gt;
 </content>
  </entry>
- 
+
  <entry>
    <title>ALERTWildfire</title>
    <link href="http://sent-hil.com/2020/08/20/alertwildfire.html"/>
@@ -512,7 +554,7 @@ configurations for each project.&lt;/p&gt;
 &lt;p&gt;Thank you to The University of Nevada, Reno (UNR), University of California San Diego (UCSD), and the University of Oregon (UO) which run ALERTWildfire and the various sponors of the webcams.&lt;/p&gt;
 </content>
  </entry>
- 
+
  <entry>
    <title>Dokku powered personal hub</title>
    <link href="http://sent-hil.com/2020/07/13/a-new-setup-for-this-site.html"/>
@@ -544,7 +586,7 @@ configurations for each project.&lt;/p&gt;
 &lt;p&gt;Overrall I’m pretty happy with the setup. It’s fairly easy to manage, cheap and I can always ssh into the instance to debug. That’s something I sorely missed when trying to work with the hosted solutions.&lt;/p&gt;
 </content>
  </entry>
- 
+
  <entry>
    <title>sqlite3.h Is Missing When Doing 'gem install sqlite3' In Mojave OSX</title>
    <link href="http://sent-hil.com/2019/03/13/sqlite3.h-is-missing-when-doing-gem-install-sqlite3-in-mojave-osx.html"/>
@@ -579,7 +621,7 @@ need configuration options.
 &lt;/ul&gt;
 </content>
  </entry>
- 
+
  <entry>
    <title>Week-07-links</title>
    <link href="http://sent-hil.com/2018/02/17/week-07-links.html"/>
@@ -611,7 +653,7 @@ need configuration options.
 &lt;/ul&gt;
 </content>
  </entry>
- 
+
  <entry>
    <title>Challenge - use api docs more than Google or Stackoverflow</title>
    <link href="http://sent-hil.com/2018/01/16/challenge-use-api-docs-more-than-google-or-stackoverflow.html"/>
@@ -628,7 +670,7 @@ need configuration options.
 &lt;p&gt;Luckily for Ruby and other languages there’s &lt;a href=&quot;https://kapeli.com/dash&quot;&gt;Dash&lt;/a&gt;. Dash helps you navigate docus of different languages with just a keyboard. For standard libraries, Dash is now my go to source, for libraries it’s less than ideal. I’ve been &lt;a href=&quot;https://github.com/sent-hil/go-dashgen&quot;&gt;experimenting&lt;/a&gt; with auto generating docs per project that can be used in Dash, but haven’t made much progress yet. Will keep you posted.&lt;/p&gt;
 </content>
  </entry>
- 
+
  <entry>
    <title>Programming Arduino with Assembly</title>
    <link href="http://sent-hil.com/2016/10/23/arduino-assembly.html"/>
@@ -742,7 +784,7 @@ the one without &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&
 frankly without it this process would’ve been much longer and way more tedious.&lt;/p&gt;
 </content>
  </entry>
- 
+
  <entry>
    <title>Single vs Double dash in cli args</title>
    <link href="http://sent-hil.com/2016/05/28/single-vs-double-dash-in-cli-args.html"/>
@@ -767,7 +809,7 @@ frankly without it this process would’ve been much longer and way more tedious
 &lt;p&gt;– is not in POSIX, but GNU recommends it and it makes for better readability.&lt;/p&gt;
 </content>
  </entry>
- 
+
  <entry>
    <title>Links</title>
    <link href="http://sent-hil.com/2016/05/25/links.html"/>
@@ -789,7 +831,7 @@ frankly without it this process would’ve been much longer and way more tedious
 &lt;/ul&gt;
 </content>
  </entry>
- 
+
  <entry>
    <title>The 1 in cat(1)</title>
    <link href="http://sent-hil.com/2015/09/05/1-in-cat(1).html"/>
@@ -820,7 +862,7 @@ NAME
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 </content>
  </entry>
- 
+
  <entry>
    <title>Links</title>
    <link href="http://sent-hil.com/2015/08/31/links.html"/>
@@ -837,7 +879,7 @@ NAME
 &lt;/ul&gt;
 </content>
  </entry>
- 
+
  <entry>
    <title>Here we go again</title>
    <link href="http://sent-hil.com/2015/08/31/here-we-go-again.html"/>
@@ -852,7 +894,7 @@ NAME
 &lt;p&gt;Like most Jekyll blog this too is hosted on &lt;a href=&quot;https://github.com&quot;&gt;Github&lt;/a&gt;. You can view the source &lt;a href=&quot;https://github.com/sent-hil/sent-hil.github.io&quot;&gt;here&lt;/a&gt;. The design is originally from &lt;a href=&quot;https://github.com/mojombo/mojombo.github.io&quot;&gt;Tom Preston-Werner&lt;/a&gt;. I forked the original repo and made some minor changes.&lt;/p&gt;
 </content>
  </entry>
- 
+
  <entry>
    <title>Consistent hashing, a guide & Go library</title>
    <link href="http://sent-hil.com/2015/04/22/consistent-hashing.html"/>
@@ -1063,6 +1105,6 @@ writing this blog post, hope you learned a thing or do. If you find an error or
 think something can be said better, you can tweet me @sent-hil.&lt;/p&gt;
 </content>
  </entry>
- 
+
 
 </feed>
