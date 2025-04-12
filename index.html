@@ -16,7 +16,7 @@ title: Senthil Arivudainambi
   </p>
 
   <p>My work history includes:</p>
-  <ul class="posts">
+  <ul class="posts underlined-links">
     <li>
       <a target="blank" href="https://instrumentl.com/">Instrumentl: </a>Grant
       software for non profits.
@@ -26,8 +26,7 @@ title: Senthil Arivudainambi
       The first digital organizer for your physical tools.
     </li>
     <li>
-      <a target="blank" href="https://walkerandcompany.com/"
-        >Walker & Company:
+      <a target="blank" href="https://walkerandcompany.com/">Walker & Company:
       </a>
       Health and beauty products for people of color, acquired by P&G in 2018.
     </li>
@@ -51,12 +50,19 @@ title: Senthil Arivudainambi
 </div>
 
 <div id="home">
-  <h1>Open Source Projects</h1>
+  <h1>Blog Posts</h1>
   <ul class="posts">
+    {% for post in site.posts %}
     <li>
-      <a target="blank" href="https://github.com/sent-hil/bitesized/"
-        >bitesized:</a
-      >
+      <span>{{ post.date | date_to_string }}</span> &raquo;
+      <a href="{{ post.url }}">{{ post.title }}</a>
+    </li>
+    {% endfor %}
+  </ul>
+  <h1>Open Source Projects</h1>
+  <ul class="posts underlined-links">
+    <li>
+      <a target="blank" href="https://github.com/sent-hil/bitesized/">bitesized:</a>
       Redis bitmap powered analytics in Go.
     </li>
     <li>
@@ -64,15 +70,11 @@ title: Senthil Arivudainambi
       Library that provides functions for manipulating runes in Go.
     </li>
     <li>
-      <a target="blank" href="https://github.com/sfbrigade/planetbot"
-        >planebot:</a
-      >
+      <a target="blank" href="https://github.com/sfbrigade/planetbot">planebot:</a>
       A bot that connects you to actions to help the environment.
     </li>
     <li>
-      <a target="blank" href="https://github.com/sent-hil/open_auth2"
-        >open_auth2:</a
-      >
+      <a target="blank" href="https://github.com/sent-hil/open_auth2">open_auth2:</a>
       Thin OAuth2 wrapper written on top of Faraday in Ruby.
     </li>
     <li>
@@ -80,9 +82,7 @@ title: Senthil Arivudainambi
       A repository for the reduce violence against women in SF project in Ruby.
     </li>
     <li>
-      <a target="blank" href="https://github.com/sent-hil/caltrain-realtime"
-        >caltrain-realtime:</a
-      >
+      <a target="blank" href="https://github.com/sent-hil/caltrain-realtime">caltrain-realtime:</a>
       Realtime train timings for various train stations in both directions in
       Go.
     </li>
@@ -91,9 +91,7 @@ title: Senthil Arivudainambi
       Just a small library for calculating adler32 checksum in Go.
     </li>
     <li>
-      <a target="blank" href="https://github.com/sent-hil/go-yamlconfig"
-        >go-yamlconfig:</a
-      >
+      <a target="blank" href="https://github.com/sent-hil/go-yamlconfig">go-yamlconfig:</a>
       Small library for parsing (ala Rails) yaml config files in Go.
     </li>
     <li>
@@ -104,15 +102,5 @@ title: Senthil Arivudainambi
       <a target="blank" href="https://github.com/sent-hil/bitlang">bitlang:</a>
       Half finished programming language in Go.
     </li>
-  </ul>
-
-  <h1>Blog Posts</h1>
-  <ul class="posts">
-    {% for post in site.posts %}
-    <li>
-      <span>{{ post.date | date_to_string }}</span> &raquo;
-      <a href="{{ post.url }}">{{ post.title }}</a>
-    </li>
-    {% endfor %}
   </ul>
 </div>
