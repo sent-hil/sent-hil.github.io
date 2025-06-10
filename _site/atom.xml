@@ -4,7 +4,7 @@
  <title>Senthil Arivudainambi</title>
  <link href="http://sent-hil.com/atom.xml" rel="self"/>
  <link href="http://sent-hil.com/"/>
- <updated>2025-06-09T21:37:24-07:00</updated>
+ <updated>2025-06-09T21:41:00-07:00</updated>
  <id>http://sent-hil.com/</id>
  <author>
    <name>Senthil Arivudainambi</name>
@@ -40,6 +40,10 @@
 &lt;p&gt;I don’t know how long before LLMs get good enough to put software engineers out of a job, but it does raise the bar of what someone can create with just a few dollars, enough knowledge to make good choices, and good taste.&lt;/p&gt;
 
 &lt;p&gt;It’s like when photographers got the ability to see the picture they took on a digital screen. It reduced the feedback cycle between shutter and seeing the photo, and made it accessible to a whole new subset of people. LLMs make writing code accessible to anyone with a computer and few cents.&lt;/p&gt;
+
+&lt;p&gt;This is what my site looks like after replacing the lorem ipsum with my data.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/claude-senthil-portfolio.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 </content>
  </entry>
  
