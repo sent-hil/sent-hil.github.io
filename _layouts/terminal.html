@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title }}</title>
+  <meta name="description" content="Senthil Arivudainambi - Full-stack developer portfolio and blog">
+
+  <!-- Terminal CSS -->
+  <link rel="stylesheet" href="/css/terminal.css" type="text/css" />
+
+  <!-- Jekyll SEO -->
+  {% seo %}
+</head>
+
+<body>
+  <main class="terminal-window" role="main">
+    <header class="terminal-header">
+      <div class="window-controls" role="group" aria-label="Window controls">
+        <button class="control-btn red" aria-label="Close window" type="button"></button>
+        <button class="control-btn yellow" aria-label="Minimize window" type="button"></button>
+        <button class="control-btn green" aria-label="Maximize window" type="button"></button>
+      </div>
+      <h1 class="terminal-title">sent-hil.com: tmux a - tmux</h1>
+    </header>
+
+    <section class="terminal-content" aria-label="Terminal output">
+      <div class="terminal-section">
+        <div class="command-line">
+          <span class="prompt">➜</span>
+          <span class="accent">whoami</span>
+        </div>
+        <div class="output">
+          <span class="command">{{ page.title | default: "Senthil Arivudainambi" }}</span>
+        </div>
+      </div>
+
+      {{ content }}
+
+      <div class="footer-section">
+        <div class="command-line">
+          <span class="prompt">➜</span>
+          <span class="accent">cat contact.txt</span>
+        </div>
+        <div class="output">
+          <p>
+            A dump of my personal thoughts, ideas, links, etc.<br />
+            Powered by Jekyll. Original theme by
+            <a target="_blank" href="http://tom.preston-werner.com/">Tom Preston-Werner</a>.<br />
+            Terminal theme vibe coded with Claude.
+          </p>
+          <p>
+            <a href="https://twitter.com/sent0hil" target="_blank"
+              rel="noopener noreferrer">twitter.com/sent0hil</a><br />
+            <a href="https://www.instagram.com/senthilsworkshop" target="_blank"
+              rel="noopener noreferrer">instagram.com/senthilsworkshop/</a><br />
+            <a href="https://github.com/sent-hil" target="_blank"
+              rel="noopener noreferrer">github.com/sent-hil</a><br />
+          </p>
+        </div>
+      </div>
+
+      <div class="command-line">
+        <span class="prompt">➜</span>
+      </div>
+    </section>
+  </main>
+
+  <script data-goatcounter="https://senthil.goatcounter.com/count" async src="//gc.zgo.at/count.js">
+  </script>
+</body>
+
+</html>
