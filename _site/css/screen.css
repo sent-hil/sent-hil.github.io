@@ -84,7 +84,7 @@ ul.posts span {
 }
 
 @media only screen and (min-width: 769px) {
-  .site {
+  .site, img {
     width: 52rem;
     line-height: 1.5rem;
   }

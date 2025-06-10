@@ -24,3 +24,7 @@ Do I care about the quality of this code? Not really. It's a site that got 37 vi
 I don't know how long before LLMs get good enough to put software engineers out of a job, but it does raise the bar of what someone can create with just a few dollars, enough knowledge to make good choices, and good taste.
 
 It's like when photographers got the ability to see the picture they took on a digital screen. It reduced the feedback cycle between shutter and seeing the photo, and made it accessible to a whole new subset of people. LLMs make writing code accessible to anyone with a computer and few cents.
+
+This is what my site looks like after replacing the lorem ipsum with my data.
+
+![](/assets/claude-senthil-portfolio.png)
