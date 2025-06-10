@@ -1,0 +1,229 @@
+/* Terminal Theme CSS */
+
+:root {
+  --terminal-bg: #1d1f21;
+  --terminal-header: #2d2d2d;
+  --terminal-border: #373b41;
+  --terminal-text: #c5c8c6;
+  --terminal-accent: #f0c674;
+  --terminal-command: #b5bd68;
+  --terminal-prompt: #81a2be;
+  --terminal-highlight: #de935f;
+  --terminal-red: #ff5f56;
+  --terminal-yellow: #ffbd2e;
+  --terminal-green: #27ca3f;
+}
+
+/* Base styles */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(135deg, #171717 0%, #2d2d2d 100%);
+  font-family: 'SF Mono', Monaco, Inconsolata, 'Roboto Mono', 'Source Code Pro', monospace;
+  min-height: 100vh;
+  margin: 0;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1.6;
+}
+
+/* Terminal window */
+.terminal-window {
+  background: var(--terminal-bg);
+  border-radius: 8px;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+  width: 100%;
+  max-width: 64rem;
+  min-height: 500px;
+  overflow: hidden;
+  border: 1px solid var(--terminal-border);
+}
+
+/* Terminal header */
+.terminal-header {
+  background: var(--terminal-header);
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--terminal-border);
+}
+
+.window-controls {
+  display: flex;
+  gap: 0.5rem;
+  margin-right: 1rem;
+}
+
+.control-btn {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.control-btn:hover {
+  opacity: 0.8;
+}
+
+.control-btn:focus {
+  outline: 2px solid var(--terminal-text);
+  outline-offset: 2px;
+}
+
+.control-btn.red {
+  background: var(--terminal-red);
+}
+
+.control-btn.yellow {
+  background: var(--terminal-yellow);
+}
+
+.control-btn.green {
+  background: var(--terminal-green);
+}
+
+.terminal-title {
+  color: var(--terminal-text);
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin: 0;
+}
+
+/* Terminal content */
+.terminal-content {
+  padding: 1.25rem;
+  background: var(--terminal-bg);
+  color: var(--terminal-text);
+  font-size: 1rem;
+  line-height: 1.6;
+  min-height: 400px;
+}
+
+/* Terminal sections */
+.terminal-section {
+  margin-bottom: 1.5rem;
+}
+
+.command-line {
+  margin-bottom: 0.5rem;
+}
+
+.prompt {
+  color: var(--terminal-prompt);
+  margin-right: 0.5rem;
+}
+
+.command {
+  color: var(--terminal-command);
+}
+
+.output {
+  margin: 0.5rem 0 1rem 0;
+}
+
+.output p {
+  margin: 0 0 1rem 0;
+  line-height: 1.6;
+}
+
+/* Styling classes */
+.accent {
+  color: var(--terminal-accent);
+}
+
+.highlight {
+  color: var(--terminal-highlight);
+}
+
+/* Links */
+a {
+  color: var(--terminal-command);
+  text-decoration: none;
+  transition: text-decoration 0.2s;
+}
+
+a:hover,
+a:focus {
+  text-decoration: underline;
+  outline: none;
+}
+
+/* File listings */
+.file-listing {
+  font-family: inherit;
+}
+
+.file-listing div {
+  margin-bottom: 0.25rem;
+  line-height: 1.4;
+}
+
+.file-listing a {
+  color: var(--terminal-command);
+}
+
+.date {
+  color: var(--terminal-text);
+  opacity: 0.7;
+  margin-right: 1rem;
+  font-size: 0.9rem;
+}
+
+/* Footer section */
+.footer-section {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--terminal-border);
+}
+
+.footer-section p {
+  margin: 0.5rem 0;
+  opacity: 0.8;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  body {
+    padding: 1rem;
+  }
+
+  .terminal-content {
+    padding: 1rem;
+    font-size: 0.9rem;
+  }
+
+  .terminal-header {
+    padding: 0.5rem 1rem;
+  }
+
+  .terminal-title {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .terminal-content {
+    padding: 0.75rem;
+    font-size: 0.85rem;
+  }
+
+  .date {
+    display: block;
+    margin-bottom: 0.25rem;
+    margin-right: 0;
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}

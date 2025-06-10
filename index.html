@@ -1,106 +1,106 @@
 ---
-layout: default
+layout: terminal
 title: Senthil Arivudainambi
 ---
 
-<div>
-  <p>
-    Hello! I am an experienced web developer and entrepreneur. My passion and
-    strength lies in rapidly prototyping and validating new ideas through code.
-    I also have experience managing multiple software teams and scaling
-    businesses to millions of dollars. My family and I live in San Jose. I'm
-    always interested in meeting smart people and learning about new
-    opportunities. Please reach out through
-    <a target="blank" href="mailto:me+blog@sent-hil.com">Email</a> or
-    <a target="blank" href="https://www.linkedin.com/in/sent-hil/">LinkedIn</a>.
-  </p>
-
-  <p>My work history includes:</p>
-  <ul class="posts underlined-links">
-    <li>
-      <a target="blank" href="https://instrumentl.com/">Instrumentl: </a>Grant
-      software for non profits.
-    </li>
-    <li>
-      <a target="blank" href="https://toolwallhq.com">ToolWall </a>
-      The first digital organizer for your physical tools.
-    </li>
-    <li>
-      <a target="blank" href="https://walkerandcompany.com/">Walker & Company:
-      </a>
-      Health and beauty products for people of color, acquired by P&G in 2018.
-    </li>
-    <li>
-      <a target="blank" href="https://koding.com">Koding: </a>Modern development
-      environment, now shutdown.
-    </li>
-    <li>MajesticMedia: A design and development agency, acquired.</li>
-    <li>
-      <a target="blank" href="https://twitlens.com/">TwitLens:</a> Photosharing
-      site for Twitter, also acquired.
-    </li>
-  </ul>
-
-  <p>
-    These days I write Ruby and Javascript professionally and Go for fun. My
-    current/past interests include AI, photography, woodworking, CNCs to name a
-    few.
-  </p>
-  <br />
+<div class="terminal-section">
+  <div class="command-line">
+    <span class="prompt">➜</span>
+    <span class="accent">cat about.txt</span>
+  </div>
+  <div class="output">
+    <p>
+      Hello! I am an experienced <span class="text-terminal-highlight">web developer</span> and entrepreneur. My
+      passion and
+      strength lies in rapidly prototyping and validating new ideas through code. I'm
+      currently a Senior AI Engineer @ <a
+        class="text-terminal-command hover:underline focus:underline focus:outline-none" href="https://instrumentl.com"
+        target="_blank" rel="noopener noreferrer">Instrumentl</a>,
+      building an AI-assisted grant writing software, living in San Jose with my wife and
+      very young son. I'm always interested in meeting smart people and learning about new technologies. Please
+      reach out through <a class="text-terminal-command hover:underline focus:underline focus:outline-none"
+        href="mailto:me+blog@sent-hil.com">Email</a> or <a
+        class="text-terminal-command hover:underline focus:underline focus:outline-none"
+        href="https://www.linkedin.com/in/sent-hil/" target="_blank" rel="noopener noreferrer">LinkedIn</a>.
+    </p>
+  </div>
 </div>
 
-<div id="home">
-  <h1>Blog Posts</h1>
-  <ul class="posts">
-    {% for post in site.posts %}
-    <li>
-      <span>{{ post.date | date_to_string }}</span> &raquo;
-      <a href="{{ post.url }}">{{ post.title }}</a>
-    </li>
-    {% endfor %}
-  </ul>
-  <h1>Open Source Projects</h1>
-  <ul class="posts underlined-links">
-    <li>
-      <a target="blank" href="https://github.com/sent-hil/bitesized/">bitesized:</a>
-      Redis bitmap powered analytics in Go.
-    </li>
-    <li>
-      <a target="blank" href="https://github.com/sent-hil/runeio">runeio:</a>
-      Library that provides functions for manipulating runes in Go.
-    </li>
-    <li>
-      <a target="blank" href="https://github.com/sfbrigade/planetbot">planebot:</a>
-      A bot that connects you to actions to help the environment.
-    </li>
-    <li>
-      <a target="blank" href="https://github.com/sent-hil/open_auth2">open_auth2:</a>
-      Thin OAuth2 wrapper written on top of Faraday in Ruby.
-    </li>
-    <li>
-      <a target="blank" href="https://github.com/sfbrigade/sfsbook">sfsbook:</a>
-      A repository for the reduce violence against women in SF project in Ruby.
-    </li>
-    <li>
-      <a target="blank" href="https://github.com/sent-hil/caltrain-realtime">caltrain-realtime:</a>
-      Realtime train timings for various train stations in both directions in
-      Go.
-    </li>
-    <li>
-      <a target="blank" href="https://github.com/sent-hil/adler32">adler32:</a>
-      Just a small library for calculating adler32 checksum in Go.
-    </li>
-    <li>
-      <a target="blank" href="https://github.com/sent-hil/go-yamlconfig">go-yamlconfig:</a>
-      Small library for parsing (ala Rails) yaml config files in Go.
-    </li>
-    <li>
-      <a target="blank" href="https://github.com/sent-hil/peak">peak:</a>
-      Anamoly detection service for your metrics in Ruby.
-    </li>
-    <li>
-      <a target="blank" href="https://github.com/sent-hil/bitlang">bitlang:</a>
-      Half finished programming language in Go.
-    </li>
-  </ul>
+<div class="terminal-section">
+  <div class="command-line">
+    <span class="prompt">➜</span>
+    <span class="accent">ls work-history/</span>
+  </div>
+  <div class="output">
+    <div class="file-listing">
+      <div><a href="https://instrumentl.com/">Instrumentl/</a> - Grant software for non profits</div>
+      <div><a href="https://toolwallhq.com">ToolWall/</a> - The first digital organizer for your physical tools</div>
+      <div><a href="https://walkerandcompany.com/">Walker-Company/</a> - Health and beauty products for people of color,
+        acquired by P&G in 2018</div>
+      <div><a href="https://koding.com">Koding/</a> - Modern development environment, now shutdown</div>
+      <div>MajesticMedia/ - A design and development agency, acquired</div>
+      <div><a href="https://twitlens.com/">TwitLens/</a> - Photosharing site for Twitter, also acquired</div>
+    </div>
+  </div>
+</div>
+
+<div class="terminal-section">
+  <div class="command-line">
+    <span class="prompt">➜</span>
+    <span class="accent">cat skills.txt</span>
+  </div>
+  <div class="output">
+    <p>
+      These days I write <span class="accent">Ruby</span> and <span class="accent">Javascript</span> professionally and
+      <span class="accent">Python</span> for fun. My current/past interests include
+      <span class="accent">AI</span>, photography, woodworking, CNCs to name a
+      few.
+    </p>
+  </div>
+</div>
+
+<div class="terminal-section">
+  <div class="command-line">
+    <span class="prompt">➜</span>
+    <span class="accent">ls open-source/</span>
+  </div>
+  <div class="output">
+    <div class="file-listing">
+      <div><a href="https://github.com/sent-hil/bitesized/">bitesized/</a> - Redis bitmap powered analytics in Go</div>
+      <div><a href="https://github.com/sent-hil/runeio">runeio/</a> - Library that provides functions for manipulating
+        runes in Go</div>
+      <div><a href="https://github.com/sfbrigade/planetbot">planetbot/</a> - A bot that connects you to actions to help
+        the environment</div>
+      <div><a href="https://github.com/sent-hil/open_auth2">open_auth2/</a> - Thin OAuth2 wrapper written on top of
+        Faraday in Ruby</div>
+      <div><a href="https://github.com/sfbrigade/sfsbook">sfsbook/</a> - A repository for the reduce violence against
+        women in SF project in Ruby</div>
+      <div><a href="https://github.com/sent-hil/caltrain-realtime">caltrain-realtime/</a> - Realtime train timings for
+        various train stations in both directions in Go</div>
+      <div><a href="https://github.com/sent-hil/adler32">adler32/</a> - Just a small library for calculating adler32
+        checksum in Go</div>
+      <div><a href="https://github.com/sent-hil/go-yamlconfig">go-yamlconfig/</a> - Small library for parsing (ala
+        Rails) yaml config files in Go</div>
+      <div><a href="https://github.com/sent-hil/peak">peak/</a> - Anomaly detection service for your metrics in Ruby
+      </div>
+      <div><a href="https://github.com/sent-hil/bitlang">bitlang/</a> - Half finished programming language in Go</div>
+    </div>
+  </div>
+</div>
+
+<div class="terminal-section">
+  <div class="command-line">
+    <span class="prompt">➜</span>
+    <span class="accent">ls blog-posts/</span>
+  </div>
+  <div class="output">
+    <div class="file-listing">
+      {% for post in site.posts %}
+      <div>
+        <span class="date">{{ post.date | date_to_string }}</span>
+        <a href="{{ post.url }}">{{ post.title }}</a>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
 </div>
