@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <title>How do Rails/Golang/Python handle canceling a HTTP request mid transaction?</title>
+  <meta name="author" content="sent-hil" />
+
+  <!-- syntax highlighting CSS -->
+  <link rel="stylesheet" href="/css/syntax.css" type="text/css" />
+
+  <!-- Homepage CSS -->
+  <link rel="stylesheet" href="/css/screen.css" type="text/css" media="screen, projection" />
+</head>
+
+<body>
+  <div class="site">
+    <div class="title">
+      <a href="/">Senthil Arivudainambi</a>
+    </div>
+
+    <div id="post">
+  <h1 id="how-do-railsgolangpython-handle-canceling-a-http-request-mid-transaction">How do Rails/Golang/Python handle canceling a HTTP request mid transaction?</h1>
+
+<p class="meta">20 Jul, 2025</p>
+
+<p>Earlier today I saw this <a href="https://x.com/hnasr/status/1946933331611795609">tweet</a>:</p>
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">I enjoy asking this question during interviews, as it opens the door to a wide array of engaging technical discussions. It also shines light at the parts of the system that were assumed to be understood. <br /><br />How would you handle the cancellation of an HTTP request that started a…</p>&mdash; Hussein Nasser (@hnasr) <a href="https://twitter.com/hnasr/status/1946933331611795609?ref_src=twsrc%5Etfw">July 20, 2025</a></blockquote>
+<script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<p>My first thought was the webserver (at my day job it would be Rails/Puma) would cancel the transaction, so nothing gets committed, but then I remembered, especially in local env, a long running transaction would block even after closing the browser.</p>
+
+<p>To test it live I asked Claude Code to generate a 1 file Rails script which mimicked a long running transaction by doing <a href="https://www.postgresql.org/docs/current/functions-datetime.html#FUNCTIONS-DATETIME-DELAY">sleep</a> in postgres before committing a record. If I canceled the request while pg is sleeping and if Rails cancels the transaction when request is canceled, then no record should be committed.</p>
+
+<h2 id="testing-rails">Testing Rails</h2>
+
+<p>I asked Claude Code to use <code class="language-plaintext highlighter-rouge">uni_rails</code>, which is a library to create Rails apps in just a single file, making it’s easier to read.</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#... setup code, see https://github.com/sent-hil/http-connection-cancel-experiments/blob/main/main.rb for full file</span>
+
+<span class="k">class</span> <span class="nc">PagesController</span> <span class="o">&lt;</span> <span class="no">ActionController</span><span class="o">::</span><span class="no">Base</span>
+  <span class="k">def</span> <span class="nf">index</span>
+    <span class="nb">puts</span> <span class="s2">"Starting long-running operation at </span><span class="si">#{</span><span class="no">Time</span><span class="p">.</span><span class="nf">now</span><span class="si">}</span><span class="s2">"</span>
+
+    <span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Base</span><span class="p">.</span><span class="nf">transaction</span> <span class="k">do</span>
+      <span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Base</span><span class="p">.</span><span class="nf">connection</span><span class="p">.</span><span class="nf">execute</span><span class="p">(</span><span class="s2">"SELECT pg_sleep(5);"</span><span class="p">)</span>
+      <span class="n">record</span> <span class="o">=</span> <span class="no">ExperimentRecord</span><span class="p">.</span><span class="nf">create!</span><span class="p">(</span><span class="ss">message: </span><span class="s2">"Operation completed at </span><span class="si">#{</span><span class="no">Time</span><span class="p">.</span><span class="nf">now</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+      <span class="nb">puts</span> <span class="s2">"Record created with ID: </span><span class="si">#{</span><span class="n">record</span><span class="p">.</span><span class="nf">id</span><span class="si">}</span><span class="s2"> at </span><span class="si">#{</span><span class="no">Time</span><span class="p">.</span><span class="nf">now</span><span class="si">}</span><span class="s2">"</span>
+    <span class="k">end</span>
+
+    <span class="nb">puts</span> <span class="s2">"Response stream closed before render attempt: </span><span class="si">#{</span><span class="n">response</span><span class="p">.</span><span class="nf">stream</span><span class="p">.</span><span class="nf">closed?</span><span class="si">}</span><span class="s2"> at </span><span class="si">#{</span><span class="no">Time</span><span class="p">.</span><span class="nf">now</span><span class="si">}</span><span class="s2">"</span>
+
+    <span class="k">begin</span>
+      <span class="n">render</span> <span class="ss">plain: </span><span class="s2">"Long operation completed successfully at </span><span class="si">#{</span><span class="no">Time</span><span class="p">.</span><span class="nf">now</span><span class="si">}</span><span class="s2">"</span>
+      <span class="nb">puts</span> <span class="s2">"Successfully sent response to client at </span><span class="si">#{</span><span class="no">Time</span><span class="p">.</span><span class="nf">now</span><span class="si">}</span><span class="s2">"</span>
+    <span class="k">rescue</span> <span class="o">=&gt;</span> <span class="n">e</span>
+      <span class="nb">puts</span> <span class="s2">"Failed to send response - client likely disconnected: </span><span class="si">#{</span><span class="n">e</span><span class="p">.</span><span class="nf">class</span><span class="si">}</span><span class="s2"> - </span><span class="si">#{</span><span class="n">e</span><span class="p">.</span><span class="nf">message</span><span class="si">}</span><span class="s2"> at </span><span class="si">#{</span><span class="no">Time</span><span class="p">.</span><span class="nf">now</span><span class="si">}</span><span class="s2">"</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="no">UniRails</span><span class="p">.</span><span class="nf">run</span><span class="p">(</span><span class="no">Port</span><span class="p">:</span> <span class="mi">3003</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Ran it with <code class="language-plaintext highlighter-rouge">ruby main.rb</code> to start the server and in another terminal ran <code class="language-plaintext highlighter-rouge">http localhost:3000</code> and canceled it &lt;1sec. Just as suspected I saw:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Starting</span> <span class="n">long</span><span class="o">-</span><span class="n">running</span> <span class="n">operation</span> <span class="n">at</span> <span class="mi">2025</span><span class="o">-</span><span class="mo">07</span><span class="o">-</span><span class="mi">20</span> <span class="mi">19</span><span class="p">:</span><span class="mo">02</span><span class="p">:</span><span class="mi">48</span> <span class="o">-</span><span class="mo">0700</span>
+<span class="no">Record</span> <span class="n">created</span> <span class="n">with</span> <span class="no">ID</span><span class="p">:</span> <span class="mi">10</span> <span class="n">at</span> <span class="mi">2025</span><span class="o">-</span><span class="mo">07</span><span class="o">-</span><span class="mi">20</span> <span class="mi">19</span><span class="p">:</span><span class="mo">02</span><span class="p">:</span><span class="mi">53</span> <span class="o">-</span><span class="mo">0700</span>
+<span class="no">Response</span> <span class="n">stream</span> <span class="n">closed</span> <span class="n">before</span> <span class="n">render</span> <span class="ss">attempt: </span><span class="kp">false</span> <span class="n">at</span> <span class="mi">2025</span><span class="o">-</span><span class="mo">07</span><span class="o">-</span><span class="mi">20</span> <span class="mi">19</span><span class="p">:</span><span class="mo">02</span><span class="p">:</span><span class="mi">53</span> <span class="o">-</span><span class="mo">0700</span>
+</code></pre></div></div>
+
+<p>This indicates Rails does not automatically cancel the transaction if the client cancels the HTTP request before the transaction ends.</p>
+
+<h2 id="testing-go">Testing Go</h2>
+
+<p>This is not the default behavior In Go. When using the <code class="language-plaintext highlighter-rouge">net/http</code> package you have access to <code class="language-plaintext highlighter-rouge">context.Context</code> which you can pass to <code class="language-plaintext highlighter-rouge">database/sql</code> db connection. When this <code class="language-plaintext highlighter-rouge">context</code> closes prematurely, the database will abort the transaction right away. Once again I asked Claude code to generate me a simple Go app to showcase this behavior:</p>
+
+<div class="language-golang highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">package</span> <span class="n">main</span>
+
+<span class="k">import</span> <span class="p">(</span>
+    <span class="c">// ...</span>
+<span class="p">)</span>
+
+<span class="k">func</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c">// setup code, see https://github.com/sent-hil/http-connection-cancel-experiments/blob/main/main.go for full code</span>
+	<span class="n">http</span><span class="o">.</span><span class="n">HandleFunc</span><span class="p">(</span><span class="s">"/"</span><span class="p">,</span> <span class="k">func</span><span class="p">(</span><span class="n">w</span> <span class="n">http</span><span class="o">.</span><span class="n">ResponseWriter</span><span class="p">,</span> <span class="n">r</span> <span class="o">*</span><span class="n">http</span><span class="o">.</span><span class="n">Request</span><span class="p">)</span> <span class="p">{</span>
+		<span class="n">ctx</span> <span class="o">:=</span> <span class="n">r</span><span class="o">.</span><span class="n">Context</span><span class="p">()</span>
+
+		<span class="n">log</span><span class="o">.</span><span class="n">Printf</span><span class="p">(</span><span class="s">"Starting long-running operation at %v"</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">Now</span><span class="p">())</span>
+
+		<span class="n">tx</span><span class="p">,</span> <span class="n">err</span> <span class="o">:=</span> <span class="n">db</span><span class="o">.</span><span class="n">BeginTx</span><span class="p">(</span><span class="n">ctx</span><span class="p">,</span> <span class="no">nil</span><span class="p">)</span>
+		<span class="k">if</span> <span class="n">err</span> <span class="o">!=</span> <span class="no">nil</span> <span class="p">{</span>
+			<span class="n">log</span><span class="o">.</span><span class="n">Printf</span><span class="p">(</span><span class="s">"Failed to begin transaction: %v"</span><span class="p">,</span> <span class="n">err</span><span class="p">)</span>
+			<span class="n">http</span><span class="o">.</span><span class="n">Error</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="s">"Database error"</span><span class="p">,</span> <span class="n">http</span><span class="o">.</span><span class="n">StatusInternalServerError</span><span class="p">)</span>
+			<span class="k">return</span>
+		<span class="p">}</span>
+		<span class="k">defer</span> <span class="n">tx</span><span class="o">.</span><span class="n">Rollback</span><span class="p">()</span> <span class="c">// Will be a no-op if we commit successfully</span>
+
+		<span class="n">_</span><span class="p">,</span> <span class="n">err</span> <span class="o">=</span> <span class="n">tx</span><span class="o">.</span><span class="n">ExecContext</span><span class="p">(</span><span class="n">ctx</span><span class="p">,</span> <span class="s">"SELECT pg_sleep(5)"</span><span class="p">)</span>
+		<span class="k">if</span> <span class="n">err</span> <span class="o">!=</span> <span class="no">nil</span> <span class="p">{</span>
+			<span class="n">log</span><span class="o">.</span><span class="n">Printf</span><span class="p">(</span><span class="s">"Sleep was interrupted: %v at %v"</span><span class="p">,</span> <span class="n">err</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">Now</span><span class="p">())</span>
+			<span class="k">return</span>
+		<span class="p">}</span>
+
+		<span class="k">var</span> <span class="n">recordID</span> <span class="kt">int</span>
+		<span class="n">err</span> <span class="o">=</span> <span class="n">tx</span><span class="o">.</span><span class="n">QueryRowContext</span><span class="p">(</span><span class="n">ctx</span><span class="p">,</span> <span class="s">`
+			INSERT INTO experiment_records (message)
+			VALUES ($1)
+			RETURNING id
+		`</span><span class="p">,</span> <span class="n">fmt</span><span class="o">.</span><span class="n">Sprintf</span><span class="p">(</span><span class="s">"Operation completed at %v"</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">Now</span><span class="p">()))</span><span class="o">.</span><span class="n">Scan</span><span class="p">(</span><span class="o">&amp;</span><span class="n">recordID</span><span class="p">)</span>
+
+		<span class="k">if</span> <span class="n">err</span> <span class="o">!=</span> <span class="no">nil</span> <span class="p">{</span>
+			<span class="n">log</span><span class="o">.</span><span class="n">Printf</span><span class="p">(</span><span class="s">"Failed to insert record: %v at %v"</span><span class="p">,</span> <span class="n">err</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">Now</span><span class="p">())</span>
+			<span class="k">return</span>
+		<span class="p">}</span>
+
+		<span class="n">err</span> <span class="o">=</span> <span class="n">tx</span><span class="o">.</span><span class="n">Commit</span><span class="p">()</span>
+		<span class="k">if</span> <span class="n">err</span> <span class="o">!=</span> <span class="no">nil</span> <span class="p">{</span>
+			<span class="n">log</span><span class="o">.</span><span class="n">Printf</span><span class="p">(</span><span class="s">"Failed to commit transaction: %v at %v"</span><span class="p">,</span> <span class="n">err</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">Now</span><span class="p">())</span>
+			<span class="k">return</span>
+		<span class="p">}</span>
+
+		<span class="n">log</span><span class="o">.</span><span class="n">Printf</span><span class="p">(</span><span class="s">"Record created with ID: %d at %v"</span><span class="p">,</span> <span class="n">recordID</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">Now</span><span class="p">())</span>
+
+		<span class="n">fmt</span><span class="o">.</span><span class="n">Fprintf</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="s">"Long operation completed successfully at %v</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">Now</span><span class="p">())</span>
+	<span class="p">})</span>
+
+	<span class="n">log</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="s">"Starting server on :3003"</span><span class="p">)</span>
+	<span class="n">log</span><span class="o">.</span><span class="n">Fatal</span><span class="p">(</span><span class="n">http</span><span class="o">.</span><span class="n">ListenAndServe</span><span class="p">(</span><span class="s">":3003"</span><span class="p">,</span> <span class="no">nil</span><span class="p">))</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>This is what I see when I run <code class="language-plaintext highlighter-rouge">go run main.go</code> in one terminal and <code class="language-plaintext highlighter-rouge">http localhost:3003</code> in another and canceling the request in &lt;1s.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>2025/07/20 19:27:38 Starting long-running operation at 2025-07-20 19:27:38.452558 -0700 PDT m=+1.313060460
+2025/07/20 19:27:38 Sleep was interrupted: pq: canceling statement due to user request at 2025-07-20 19:27:38.809391 -0700 PDT m=+1.669896835
+</code></pre></div></div>
+
+<p>Just to confirm I checked the db with psql and as expected with Go, no record was created.</p>
+
+<p>Looking at the Go <code class="language-plaintext highlighter-rouge">database/sql</code> source code, <a href="https://cs.opensource.google/go/go/+/refs/tags/go1.24.5:src/database/sql/sql.go;l=2212">this</a> seems to be place where the behavior is defined:</p>
+
+<h4 id="source-code-of-behavior-in-go">Source code of behavior in Go</h4>
+
+<div class="language-golang highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">// awaitDone blocks until the context in Tx is canceled and rolls back</span>
+<span class="c">// the transaction if it's not already done.</span>
+<span class="k">func</span> <span class="p">(</span><span class="n">tx</span> <span class="o">*</span><span class="n">Tx</span><span class="p">)</span> <span class="n">awaitDone</span><span class="p">()</span> <span class="p">{</span>
+	<span class="c">// Wait for either the transaction to be committed or rolled</span>
+	<span class="c">// back, or for the associated context to be closed.</span>
+	<span class="o">&lt;-</span><span class="n">tx</span><span class="o">.</span><span class="n">ctx</span><span class="o">.</span><span class="n">Done</span><span class="p">()</span>
+
+	<span class="c">// Discard and close the connection used to ensure the</span>
+	<span class="c">// transaction is closed and the resources are released.  This</span>
+	<span class="c">// rollback does nothing if the transaction has already been</span>
+	<span class="c">// committed or rolled back.</span>
+	<span class="c">// Do not discard the connection if the connection knows</span>
+	<span class="c">// how to reset the session.</span>
+	<span class="n">discardConnection</span> <span class="o">:=</span> <span class="o">!</span><span class="n">tx</span><span class="o">.</span><span class="n">keepConnOnRollback</span>
+	<span class="n">tx</span><span class="o">.</span><span class="n">rollback</span><span class="p">(</span><span class="n">discardConnection</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>I did the same thing with Python/FastAPI and it seems to have the same behavior as Rails. All the above code is available <a href="https://github.com/sent-hil/http-connection-cancel-experiments">here</a>, including <code class="language-plaintext highlighter-rouge">main.py</code> which shows the Python example. NOTE, when I first asked Claude Code to generate the files, it did this weird thing were it checked if connection was closed in between the sleep and insert lines in transaction which is not the behavior I wanted to test.</p>
+
+<h3 id="closing-thoughts">Closing thoughts</h3>
+
+<p>Generating throwaway code for quick experiments/prototypes is an excellent use case for LLMs. I wouldn’t have been able to do the above tests if it wasn’t for LLMs. It took about couple hours spread out throughout a sunday while taking care of a baby and doing chores. I don’t care about the quality of the code generated, just wanted to test out something real fast. That said the first LLM generated code was incorrect and I wouldn’t have known if I hadn’t read the code, so maybe there’s hope for developers after all.</p>
+
+</div>
+
+<div id="related">
+  <h2>Related Posts</h2>
+  <ul class="posts">
+    
+    <li><span>01 Jul 2025</span> &raquo; <a href="/2025/07/01/learning-about-vectors-through-rgb.html">Learning About Vectors Through Rgb</a></li>
+    
+    <li><span>01 Jul 2025</span> &raquo; <a href="/2025/07/01/judging-llm-through-ruby-scope.html">Judging Llm Through Ruby Scope</a></li>
+    
+    <li><span>09 Jun 2025</span> &raquo; <a href="/2025/06/09/vibe-coding-my-way-to-a-new-terminal-blog-theme.html">Vibe Coding My Way To A New Terminal Blog Theme</a></li>
+    
+  </ul>
+</div>
+
+
+    <div class="footer">
+      <div class="contact-left">
+        <p>
+          A dump of my personal thoughts, ideas, links etc.<br />
+          Powered by Jekyll. Original theme by
+          <a target="_blank" href="http://tom.preston-werner.com/">Tom Preston-Werner</a>.<br />
+          Terminal theme vibe coded with Claude.
+        </p>
+      </div>
+
+      <div class="contact-right">
+        <p>
+          <a target="_blank" href="https://twitter.com/sent0hil">twitter.com/sent0hil</a><br />
+          <a target="_blank" href="https://www.instagram.com/senthilsworkshop">instagram.com/senthilsworkshop/</a><br />
+          <a target="_blank" href="https://github.com/sent-hil">github.com/sent-hil</a><br />
+        </p>
+      </div>
+    </div>
+  </div>
+  <script data-goatcounter="https://senthil.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+
+</html>
