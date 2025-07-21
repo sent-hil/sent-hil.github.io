@@ -189,6 +189,10 @@ ul.posts span {
   padding: 0 0.2em;
 }
 
+p > code {
+  font-size: 85% !important;
+}
+
 #post pre code {
   border: none;
 }
