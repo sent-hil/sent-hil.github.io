@@ -3,11 +3,6 @@ layout: post
 title: Dokku powered personal hub
 ---
 
-{{ page.title }}
-================
-
-<p class="meta">07 May, 2020</p>
-
 Last July 4th weekend I took some time to redo the setup for sent-hil.com. Previously it was Jekyll app running on Github pages. For the amount of blogging I did and traffic it received, it was more than enough. However I wanted to convert sent-hil.com to be a hub for different apps. My first attempt was to use AWS ECS to deploy dockers containers, but after couple days of struggling I gave up. I tried GCP, which was more fruitful, but ultimately I ran into some technical issues.
 
 At that point I gave up wth a hosted solution and started looking around for a DIY solution and ultimately found [dokku](http://dokku.viewdocs.io/dokku/). It took couple hours to figure it out and this is the [result of it](https://github.com/sent-hil/sent-hil.com)

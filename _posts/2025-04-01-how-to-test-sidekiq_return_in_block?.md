@@ -3,11 +3,6 @@ layout: post
 title: How to test sidekiq_return_in_block?
 ---
 
-{{ page.title }}
-================
-
-<p class="meta">04 May, 2025</p>
-
 Sidekiq allows specifying behavior when there is an exception. You can choose to use the default exponential backoff algorithm. I needed a way to change the backoff to be slower and more random. The exact backoff algorithm can be anything.
 
 ```ruby

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" data-scheme="paprika" data-font="inter-figtree">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Senthil Arivudainambi">
+  {% seo %}
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+  <link rel="stylesheet" href="/css/paprika.css" type="text/css">
+  <link rel="alternate" type="application/atom+xml" title="Senthil Arivudainambi" href="/atom.xml">
+</head>
+
+<body class="{{ page.body_class }}">
+
+  <!-- Filled from page.rail on pages, and from the h2s in <main> on posts. -->
+  <nav class="rail" aria-label="On this page">
+    <ul>
+      {% for item in page.rail %}
+      <li><a href="#{{ item[0] }}">{{ item[1] }}</a></li>
+      {% endfor %}
+    </ul>
+  </nav>
+
+  <div class="page">
+
+    {{ content }}
+
+    <footer class="site">
+      {% if page.date %}
+      <div class="related">
+        <h2>Recent posts</h2>
+        <ul>
+          {% for post in site.posts limit:4 %}{% unless post.url == page.url %}
+          <li>
+            <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%d %b %Y" }}</time>
+            <a href="{{ post.url }}">{{ post.title }}</a>
+          </li>
+          {% endunless %}{% endfor %}
+        </ul>
+      </div>
+      {% endif %}
+      {% include colophon.html %}
+    </footer>
+
+  </div>
+
+  <script>
+    (function () {
+      var rail = document.querySelector('.rail');
+      var list = rail && rail.querySelector('ul');
+      if (!rail || !list) return;
+
+      /* Posts declare no rail, so build one from their own section headings. */
+      if (!list.children.length) {
+        var heads = document.querySelectorAll('main h2[id], main h3[id]');
+        if (heads.length < 3) return;
+        Array.prototype.forEach.call(heads, function (h) {
+          var li = document.createElement('li');
+          var a = document.createElement('a');
+          a.href = '#' + h.id;
+          a.textContent = h.textContent;
+          li.appendChild(a);
+          list.appendChild(li);
+        });
+      }
+
+      var links = Array.prototype.slice.call(list.querySelectorAll('a'));
+      var targets = links.map(function (a) { return document.getElementById(a.hash.slice(1)); });
+      if (!('IntersectionObserver' in window)) return;
+      var active = -1;
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (!e.isIntersecting) return;
+          var i = targets.indexOf(e.target);
+          if (i < 0 || i === active) return;
+          active = i;
+          links.forEach(function (a, j) {
+            if (j === i) { a.setAttribute('aria-current', 'true'); }
+            else { a.removeAttribute('aria-current'); }
+          });
+        });
+      }, { rootMargin: '-10% 0px -72% 0px', threshold: 0 });
+      targets.forEach(function (t) { if (t) io.observe(t); });
+    })();
+  </script>
+
+  <script data-goatcounter="https://senthil.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+
+</html>

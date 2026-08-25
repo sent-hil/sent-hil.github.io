@@ -3,11 +3,6 @@ layout: post
 title: Single vs Double dash in cli args
 ---
 
-{{ page.title }}
-================
-
-<p class="meta">28 May 2016</p>
-
 > It all depends on the program. Usually "-" is used for 'short' options
 > (one-letter, -h), and "--" is used for "long"(er) options (--help).
 >

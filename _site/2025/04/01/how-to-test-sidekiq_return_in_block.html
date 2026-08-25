@@ -1,30 +1,57 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<html lang="en" data-scheme="paprika" data-font="inter-figtree">
 
 <head>
-  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-  <title>How to test sidekiq_return_in_block?</title>
-  <meta name="author" content="sent-hil" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Senthil Arivudainambi">
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>How to test sidekiq_return_in_block?</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="How to test sidekiq_return_in_block?" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Sidekiq allows specifying behavior when there is an exception. You can choose to use the default exponential backoff algorithm. I needed a way to change the backoff to be slower and more random. The exact backoff algorithm can be anything." />
+<meta property="og:description" content="Sidekiq allows specifying behavior when there is an exception. You can choose to use the default exponential backoff algorithm. I needed a way to change the backoff to be slower and more random. The exact backoff algorithm can be anything." />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2025-04-01T00:00:00-07:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="How to test sidekiq_return_in_block?" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-04-01T00:00:00-07:00","datePublished":"2025-04-01T00:00:00-07:00","description":"Sidekiq allows specifying behavior when there is an exception. You can choose to use the default exponential backoff algorithm. I needed a way to change the backoff to be slower and more random. The exact backoff algorithm can be anything.","headline":"How to test sidekiq_return_in_block?","mainEntityOfPage":{"@type":"WebPage","@id":"/2025/04/01/how-to-test-sidekiq_return_in_block.html"},"url":"/2025/04/01/how-to-test-sidekiq_return_in_block.html"}</script>
+<!-- End Jekyll SEO tag -->
 
-  <!-- syntax highlighting CSS -->
-  <link rel="stylesheet" href="/css/syntax.css" type="text/css" />
 
-  <!-- Homepage CSS -->
-  <link rel="stylesheet" href="/css/screen.css" type="text/css" media="screen, projection" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+  <link rel="stylesheet" href="/css/paprika.css" type="text/css">
+  <link rel="alternate" type="application/atom+xml" title="Senthil Arivudainambi" href="/atom.xml">
 </head>
 
-<body>
-  <div class="site">
-    <div class="title">
-      <a href="/">Senthil Arivudainambi</a>
-    </div>
+<body class="">
 
-    <div id="post">
-  <h1 id="how-to-test-sidekiq_return_in_block">How to test sidekiq_return_in_block?</h1>
+  <!-- Filled from page.rail on pages, and from the h2s in <main> on posts. -->
+  <nav class="rail" aria-label="On this page">
+    <ul>
+      
+    </ul>
+  </nav>
 
-<p class="meta">04 May, 2025</p>
+  <div class="page">
 
-<p>Sidekiq allows specifying behavior when there is an exception. You can choose to use the default exponential backoff algorithm. I needed a way to change the backoff to be slower and more random. The exact backoff algorithm can be anything.</p>
+    <div class="masthead">
+  <a href="/">Senthil Arivudainambi</a>
+  <span class="meta">01 April 2025</span>
+</div>
+
+<header class="post">
+  <h1>How to test sidekiq_return_in_block?</h1>
+  
+</header>
+
+<main>
+  <p>Sidekiq allows specifying behavior when there is an exception. You can choose to use the default exponential backoff algorithm. I needed a way to change the backoff to be slower and more random. The exact backoff algorithm can be anything.</p>
 
 <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">YourWorker</span>
   <span class="kp">include</span> <span class="no">Sidekiq</span><span class="o">::</span><span class="no">Job</span>
@@ -55,41 +82,93 @@
 <span class="k">end</span>
 </code></pre></div></div>
 
+</main>
+
+
+    <footer class="site">
+      
+      <div class="related">
+        <h2>Recent posts</h2>
+        <ul>
+          
+          <li>
+            <time datetime="2025-07-20T00:00:00-07:00">20 Jul 2025</time>
+            <a href="/2025/07/20/handling-cancellation-of-http-request-with-long-db-transaction.html">How do Rails/Golang/Python handle canceling a HTTP request mid transaction?</a>
+          </li>
+          
+          <li>
+            <time datetime="2025-07-01T00:00:00-07:00">01 Jul 2025</time>
+            <a href="/2025/07/01/learning-about-vectors-through-rgb.html">Learning About Vectors Through Rgb</a>
+          </li>
+          
+          <li>
+            <time datetime="2025-07-01T00:00:00-07:00">01 Jul 2025</time>
+            <a href="/2025/07/01/judging-llm-through-ruby-scope.html">Judging Llm Through Ruby Scope</a>
+          </li>
+          
+          <li>
+            <time datetime="2025-06-09T00:00:00-07:00">09 Jun 2025</time>
+            <a href="/2025/06/09/vibe-coding-my-way-to-a-new-terminal-blog-theme.html">Vibe Coding My Way To A New Terminal Blog Theme</a>
+          </li>
+          
+        </ul>
+      </div>
+      
+      <div class="colophon">
+  <p>A dump of my personal thoughts, ideas, links etc.<br>
+    Powered by Jekyll. Original theme by
+    <a target="_blank" href="http://tom.preston-werner.com/">Tom Preston-Werner</a>.</p>
+  <nav>
+    <a target="_blank" href="https://twitter.com/sent0hil">twitter.com/sent0hil</a>
+    <a target="_blank" href="https://www.instagram.com/senthilsworkshop">instagram.com/senthilsworkshop/</a>
+    <a target="_blank" href="https://github.com/sent-hil">github.com/sent-hil</a>
+  </nav>
 </div>
 
-<div id="related">
-  <h2>Related Posts</h2>
-  <ul class="posts">
-    
-    <li><span>20 Jul 2025</span> &raquo; <a href="/2025/07/20/handling-cancellation-of-http-request-with-long-db-transaction.html">How do Rails/Golang/Python handle canceling a HTTP request mid transaction?</a></li>
-    
-    <li><span>01 Jul 2025</span> &raquo; <a href="/2025/07/01/learning-about-vectors-through-rgb.html">Learning About Vectors Through Rgb</a></li>
-    
-    <li><span>01 Jul 2025</span> &raquo; <a href="/2025/07/01/judging-llm-through-ruby-scope.html">Judging Llm Through Ruby Scope</a></li>
-    
-  </ul>
-</div>
+    </footer>
 
-
-    <div class="footer">
-      <div class="contact-left">
-        <p>
-          A dump of my personal thoughts, ideas, links etc.<br />
-          Powered by Jekyll. Original theme by
-          <a target="_blank" href="http://tom.preston-werner.com/">Tom Preston-Werner</a>.<br />
-          Terminal theme vibe coded with Claude.
-        </p>
-      </div>
-
-      <div class="contact-right">
-        <p>
-          <a target="_blank" href="https://twitter.com/sent0hil">twitter.com/sent0hil</a><br />
-          <a target="_blank" href="https://www.instagram.com/senthilsworkshop">instagram.com/senthilsworkshop/</a><br />
-          <a target="_blank" href="https://github.com/sent-hil">github.com/sent-hil</a><br />
-        </p>
-      </div>
-    </div>
   </div>
+
+  <script>
+    (function () {
+      var rail = document.querySelector('.rail');
+      var list = rail && rail.querySelector('ul');
+      if (!rail || !list) return;
+
+      /* Posts declare no rail, so build one from their own section headings. */
+      if (!list.children.length) {
+        var heads = document.querySelectorAll('main h2[id], main h3[id]');
+        if (heads.length < 3) return;
+        Array.prototype.forEach.call(heads, function (h) {
+          var li = document.createElement('li');
+          var a = document.createElement('a');
+          a.href = '#' + h.id;
+          a.textContent = h.textContent;
+          li.appendChild(a);
+          list.appendChild(li);
+        });
+      }
+
+      var links = Array.prototype.slice.call(list.querySelectorAll('a'));
+      var targets = links.map(function (a) { return document.getElementById(a.hash.slice(1)); });
+      if (!('IntersectionObserver' in window)) return;
+      var active = -1;
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (!e.isIntersecting) return;
+          var i = targets.indexOf(e.target);
+          if (i < 0 || i === active) return;
+          active = i;
+          links.forEach(function (a, j) {
+            if (j === i) { a.setAttribute('aria-current', 'true'); }
+            else { a.removeAttribute('aria-current'); }
+          });
+        });
+      }, { rootMargin: '-10% 0px -72% 0px', threshold: 0 });
+      targets.forEach(function (t) { if (t) io.observe(t); });
+    })();
+  </script>
+
   <script data-goatcounter="https://senthil.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 

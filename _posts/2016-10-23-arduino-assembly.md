@@ -3,11 +3,6 @@ layout: post
 title: Programming Arduino with Assembly
 ---
 
-{{ page.title }}
-================
-
-<p class="meta">23 Oct 2016</p>
-
 Arduino is typically programmed with Arduino IDE with a set of C/C++ functions.
 The canonical blink sketch which turns a led on/off every 1 second looks like:
 

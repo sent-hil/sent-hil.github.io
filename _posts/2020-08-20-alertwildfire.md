@@ -3,11 +3,6 @@ layout: post
 title: ALERTWildfire
 ---
 
-{{ page.title }}
-================
-
-<p class="meta">08 May, 2020</p>
-
 My past time the last few hours has been switching through the various live webcam feeds on http://www.alertwildfire.org and checking if I can catch a glimpse of smoke or the various fires that are burning up in California right now.
 
 <iframe width="800" height="500" src="https://www.youtube.com/embed/LnhNYWkGkPg?color=white&theme=light\"></iframe>

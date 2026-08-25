@@ -3,11 +3,6 @@ layout: post
 title: How do Rails/Golang/Python handle canceling a HTTP request mid transaction?
 ---
 
-{{ page.title }}
-================
-
-<p class="meta">20 Jul, 2025</p>
-
 Earlier today I saw this [tweet](https://x.com/hnasr/status/1946933331611795609):
 
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">I enjoy asking this question during interviews, as it opens the door to a wide array of engaging technical discussions. It also shines light at the parts of the system that were assumed to be understood. <br><br>How would you handle the cancellation of an HTTP request that started a…</p>&mdash; Hussein Nasser (@hnasr) <a href="https://twitter.com/hnasr/status/1946933331611795609?ref_src=twsrc%5Etfw">July 20, 2025</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

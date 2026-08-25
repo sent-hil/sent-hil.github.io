@@ -2,12 +2,9 @@
 layout: post
 title: Logits, Softmax and Temperature in LLMs
 ---
+
 <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 
-{{ page.title }}
-================
-
-<p class="meta">03 May, 2025</p>
 
 <i>My notes on Logits and Softmax.</i>
 

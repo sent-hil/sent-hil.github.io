@@ -3,10 +3,6 @@ layout: post
 title: Vibe Coding My Way To A New Terminal Blog Theme
 ---
 
-# {{ page.title }}
-
-<p class="meta">09 June, 2025</p>
-
 I was very inspired by recent [post](https://x.com/sh_reya/status/1931119169929703827) by [Shreya Shankar](https://x.com/sh_reya/status/1931400666003784008) where she tweeted about vibe coding interfaces to look at the data. In her follow up [post](https://x.com/sh_reya/status/1931400666003784008) she gave some tips about how to get the clean terminal look. Turns out it's as simple as telling Claude 'sleek terminal theme'.
 
 So last night while lying in bed with my phone I told Claude

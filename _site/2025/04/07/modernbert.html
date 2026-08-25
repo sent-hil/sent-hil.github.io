@@ -1,37 +1,64 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<html lang="en" data-scheme="paprika" data-font="inter-figtree">
 
 <head>
-  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-  <title>ModernBERT</title>
-  <meta name="author" content="sent-hil" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Senthil Arivudainambi">
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>ModernBERT</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="ModernBERT" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="My notes on ModernBERT. Source" />
+<meta property="og:description" content="My notes on ModernBERT. Source" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2025-04-07T00:00:00-07:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="ModernBERT" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-04-07T00:00:00-07:00","datePublished":"2025-04-07T00:00:00-07:00","description":"My notes on ModernBERT. Source","headline":"ModernBERT","mainEntityOfPage":{"@type":"WebPage","@id":"/2025/04/07/modernbert.html"},"url":"/2025/04/07/modernbert.html"}</script>
+<!-- End Jekyll SEO tag -->
 
-  <!-- syntax highlighting CSS -->
-  <link rel="stylesheet" href="/css/syntax.css" type="text/css" />
 
-  <!-- Homepage CSS -->
-  <link rel="stylesheet" href="/css/screen.css" type="text/css" media="screen, projection" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+  <link rel="stylesheet" href="/css/paprika.css" type="text/css">
+  <link rel="alternate" type="application/atom+xml" title="Senthil Arivudainambi" href="/atom.xml">
 </head>
 
-<body>
-  <div class="site">
-    <div class="title">
-      <a href="/">Senthil Arivudainambi</a>
-    </div>
+<body class="">
 
-    <div id="post">
-  <h1 id="modernbert">ModernBERT</h1>
+  <!-- Filled from page.rail on pages, and from the h2s in <main> on posts. -->
+  <nav class="rail" aria-label="On this page">
+    <ul>
+      
+    </ul>
+  </nav>
 
-<p class="meta">04 May, 2025</p>
+  <div class="page">
 
-<p><i>My notes on ModernBERT. <a href="https://huggingface.co/blog/modernbert">Source</a></i></p>
+    <div class="masthead">
+  <a href="/">Senthil Arivudainambi</a>
+  <span class="meta">07 April 2025</span>
+</div>
+
+<header class="post">
+  <h1>ModernBERT</h1>
+  
+</header>
+
+<main>
+  <p><i>My notes on ModernBERT. <a href="https://huggingface.co/blog/modernbert">Source</a></i></p>
 
 <ul>
   <li>Family of encoder only (input text, output vector) models, with 8192 sequence length.</li>
   <li>Comes in two sizes: 149M and 395M params.</li>
 </ul>
 
-<p><strong>BERT</strong></p>
+<h2 id="bert">BERT</h2>
 <ul>
   <li><a href="https://en.wikipedia.org/wiki/BERT_(language_model)">Released</a> in 2018 by Google, 2nd most popular model on HuggingFace.</li>
   <li>Encoder only transformer architecture makes it ideal for real world problems like retrieval, classification and entity extraction. Using self supervised learning.</li>
@@ -39,25 +66,25 @@
   <li>Tokenizer is WordPiece, similar to byte pair encoding. Vocab size is 30k.</li>
 </ul>
 
-<p><strong>DECODER ONLY MODELS</strong></p>
+<h2 id="decoder-only-models">DECODER ONLY MODELS</h2>
 <ul>
   <li>OpenAI’s GPT, Llama, Claude etc are decoder only models. But are big, slow and expensive for many jobs.</li>
   <li>Popular buzz around GenAI has obscured role of encoder-only models.</li>
 </ul>
 
-<p><strong>ENCODER ONLY MODELS</strong></p>
+<h2 id="encoder-only-models">ENCODER ONLY MODELS</h2>
 <ul>
   <li>Given text, encoder only models returns a vector, aka embeddings. The vector is compressed representation of models’s input.</li>
   <li>Decoder only models can do work of encoder only models, but are hamstrung by key constraint: they are not mathematically allowed to peek at later tokens, they can only look backwards. Unlike encoder models which can look forwards and backwards.</li>
 </ul>
 
-<p><strong>MODERN BERT</strong></p>
+<h2 id="modern-bert">MODERN BERT</h2>
 <ul>
   <li>Context length of 8192 tokens (16x larger than most existing encoders.)</li>
   <li>2x faster than DeBERTa and uses 1/5 of memory.</li>
 </ul>
 
-<p><strong>USAGE</strong></p>
+<h2 id="usage">USAGE</h2>
 
 <p>To use it as a sentence transformer, we need to use an <a href="https://huggingface.co/answerdotai/ModernBERT-base/discussions/9">unofficial</a>, fine tuned version.</p>
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="n">sentence_transformers</span> <span class="kn">import</span> <span class="n">SentenceTransformer</span>
@@ -106,41 +133,93 @@ organization name
 
 <p>NOTE, if you run into <code class="language-plaintext highlighter-rouge">NameError: name 'init_empty_weights' is not defined</code> error, it’s due to bug in <a href="https://github.com/huggingface/transformers/pull/37337">transformers</a>. You can solve it by doing <code class="language-plaintext highlighter-rouge">pip install accelerate</code> or most likely the fix will be merged and available by the time you read this.</p>
 
+</main>
+
+
+    <footer class="site">
+      
+      <div class="related">
+        <h2>Recent posts</h2>
+        <ul>
+          
+          <li>
+            <time datetime="2025-07-20T00:00:00-07:00">20 Jul 2025</time>
+            <a href="/2025/07/20/handling-cancellation-of-http-request-with-long-db-transaction.html">How do Rails/Golang/Python handle canceling a HTTP request mid transaction?</a>
+          </li>
+          
+          <li>
+            <time datetime="2025-07-01T00:00:00-07:00">01 Jul 2025</time>
+            <a href="/2025/07/01/learning-about-vectors-through-rgb.html">Learning About Vectors Through Rgb</a>
+          </li>
+          
+          <li>
+            <time datetime="2025-07-01T00:00:00-07:00">01 Jul 2025</time>
+            <a href="/2025/07/01/judging-llm-through-ruby-scope.html">Judging Llm Through Ruby Scope</a>
+          </li>
+          
+          <li>
+            <time datetime="2025-06-09T00:00:00-07:00">09 Jun 2025</time>
+            <a href="/2025/06/09/vibe-coding-my-way-to-a-new-terminal-blog-theme.html">Vibe Coding My Way To A New Terminal Blog Theme</a>
+          </li>
+          
+        </ul>
+      </div>
+      
+      <div class="colophon">
+  <p>A dump of my personal thoughts, ideas, links etc.<br>
+    Powered by Jekyll. Original theme by
+    <a target="_blank" href="http://tom.preston-werner.com/">Tom Preston-Werner</a>.</p>
+  <nav>
+    <a target="_blank" href="https://twitter.com/sent0hil">twitter.com/sent0hil</a>
+    <a target="_blank" href="https://www.instagram.com/senthilsworkshop">instagram.com/senthilsworkshop/</a>
+    <a target="_blank" href="https://github.com/sent-hil">github.com/sent-hil</a>
+  </nav>
 </div>
 
-<div id="related">
-  <h2>Related Posts</h2>
-  <ul class="posts">
-    
-    <li><span>20 Jul 2025</span> &raquo; <a href="/2025/07/20/handling-cancellation-of-http-request-with-long-db-transaction.html">How do Rails/Golang/Python handle canceling a HTTP request mid transaction?</a></li>
-    
-    <li><span>01 Jul 2025</span> &raquo; <a href="/2025/07/01/learning-about-vectors-through-rgb.html">Learning About Vectors Through Rgb</a></li>
-    
-    <li><span>01 Jul 2025</span> &raquo; <a href="/2025/07/01/judging-llm-through-ruby-scope.html">Judging Llm Through Ruby Scope</a></li>
-    
-  </ul>
-</div>
+    </footer>
 
-
-    <div class="footer">
-      <div class="contact-left">
-        <p>
-          A dump of my personal thoughts, ideas, links etc.<br />
-          Powered by Jekyll. Original theme by
-          <a target="_blank" href="http://tom.preston-werner.com/">Tom Preston-Werner</a>.<br />
-          Terminal theme vibe coded with Claude.
-        </p>
-      </div>
-
-      <div class="contact-right">
-        <p>
-          <a target="_blank" href="https://twitter.com/sent0hil">twitter.com/sent0hil</a><br />
-          <a target="_blank" href="https://www.instagram.com/senthilsworkshop">instagram.com/senthilsworkshop/</a><br />
-          <a target="_blank" href="https://github.com/sent-hil">github.com/sent-hil</a><br />
-        </p>
-      </div>
-    </div>
   </div>
+
+  <script>
+    (function () {
+      var rail = document.querySelector('.rail');
+      var list = rail && rail.querySelector('ul');
+      if (!rail || !list) return;
+
+      /* Posts declare no rail, so build one from their own section headings. */
+      if (!list.children.length) {
+        var heads = document.querySelectorAll('main h2[id], main h3[id]');
+        if (heads.length < 3) return;
+        Array.prototype.forEach.call(heads, function (h) {
+          var li = document.createElement('li');
+          var a = document.createElement('a');
+          a.href = '#' + h.id;
+          a.textContent = h.textContent;
+          li.appendChild(a);
+          list.appendChild(li);
+        });
+      }
+
+      var links = Array.prototype.slice.call(list.querySelectorAll('a'));
+      var targets = links.map(function (a) { return document.getElementById(a.hash.slice(1)); });
+      if (!('IntersectionObserver' in window)) return;
+      var active = -1;
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (!e.isIntersecting) return;
+          var i = targets.indexOf(e.target);
+          if (i < 0 || i === active) return;
+          active = i;
+          links.forEach(function (a, j) {
+            if (j === i) { a.setAttribute('aria-current', 'true'); }
+            else { a.removeAttribute('aria-current'); }
+          });
+        });
+      }, { rootMargin: '-10% 0px -72% 0px', threshold: 0 });
+      targets.forEach(function (t) { if (t) io.observe(t); });
+    })();
+  </script>
+
   <script data-goatcounter="https://senthil.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 

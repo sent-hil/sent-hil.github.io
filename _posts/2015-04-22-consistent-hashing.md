@@ -3,9 +3,6 @@ layout: post
 title: Consistent hashing, a guide & Go library
 ---
 
-{{ page.title }}
-================
-
 Consistent hashing is deceptively simple yet very powerful, but I didn’t quite
 understand what it was till I sat down and worked it out for myself. Before I
 tell you about consistent hashing, you need to understand the problem we’re
@@ -69,7 +66,7 @@ unit circle. For nodes with more capacity, you should add more virtual nodes.
 This way when a node goes down, the keys are distributed evenly across other
 nodes, not just to the next one.
 
-**Implementation**
+## Implementation
 
 Let’s go the extra mile here and implement a consistent hash library in Go. I
 didn’t quite understand it till I found a good implementation and put print

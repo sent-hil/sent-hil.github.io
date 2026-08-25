@@ -3,10 +3,6 @@ layout: post
 title: Installing LaTeX-OCR On Osx
 ---
 
-# {{ page.title }}
-
-<p class="meta">11 May, 2024</p>
-
 [LaTeX-OCR](https://github.com/lukas-blecher/LaTeX-OCR) is a library for
 converting images to LATEX code. I recently had to reinstall it and ran into
 some issues. I'm documenting them here so it can help someone else.

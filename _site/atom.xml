@@ -4,7 +4,7 @@
  <title>Senthil Arivudainambi</title>
  <link href="http://sent-hil.com/atom.xml" rel="self"/>
  <link href="http://sent-hil.com/"/>
- <updated>2025-07-20T21:03:11-07:00</updated>
+ <updated>2026-08-24T23:21:36-07:00</updated>
  <id>http://sent-hil.com/</id>
  <author>
    <name>Senthil Arivudainambi</name>
@@ -17,11 +17,7 @@
    <link href="http://sent-hil.com/2025/07/20/handling-cancellation-of-http-request-with-long-db-transaction.html"/>
    <updated>2025-07-20T00:00:00-07:00</updated>
    <id>http://sent-hil.com/2025/07/20/handling-cancellation-of-http-request-with-long-db-transaction</id>
-   <content type="html">&lt;h1 id=&quot;how-do-railsgolangpython-handle-canceling-a-http-request-mid-transaction&quot;&gt;How do Rails/Golang/Python handle canceling a HTTP request mid transaction?&lt;/h1&gt;
-
-&lt;p class=&quot;meta&quot;&gt;20 Jul, 2025&lt;/p&gt;
-
-&lt;p&gt;Earlier today I saw this &lt;a href=&quot;https://x.com/hnasr/status/1946933331611795609&quot;&gt;tweet&lt;/a&gt;:&lt;/p&gt;
+   <content type="html">&lt;p&gt;Earlier today I saw this &lt;a href=&quot;https://x.com/hnasr/status/1946933331611795609&quot;&gt;tweet&lt;/a&gt;:&lt;/p&gt;
 
 &lt;blockquote class=&quot;twitter-tweet&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;I enjoy asking this question during interviews, as it opens the door to a wide array of engaging technical discussions. It also shines light at the parts of the system that were assumed to be understood. &lt;br /&gt;&lt;br /&gt;How would you handle the cancellation of an HTTP request that started a…&lt;/p&gt;&amp;mdash; Hussein Nasser (@hnasr) &lt;a href=&quot;https://twitter.com/hnasr/status/1946933331611795609?ref_src=twsrc%5Etfw&quot;&gt;July 20, 2025&lt;/a&gt;&lt;/blockquote&gt;
 &lt;script async=&quot;&quot; src=&quot;https://platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
@@ -351,11 +347,7 @@
    <link href="http://sent-hil.com/2025/06/09/vibe-coding-my-way-to-a-new-terminal-blog-theme.html"/>
    <updated>2025-06-09T00:00:00-07:00</updated>
    <id>http://sent-hil.com/2025/06/09/vibe-coding-my-way-to-a-new-terminal-blog-theme</id>
-   <content type="html">&lt;h1 id=&quot;vibe-coding-my-way-to-a-new-terminal-blog-theme&quot;&gt;Vibe Coding My Way To A New Terminal Blog Theme&lt;/h1&gt;
-
-&lt;p class=&quot;meta&quot;&gt;09 June, 2025&lt;/p&gt;
-
-&lt;p&gt;I was very inspired by recent &lt;a href=&quot;https://x.com/sh_reya/status/1931119169929703827&quot;&gt;post&lt;/a&gt; by &lt;a href=&quot;https://x.com/sh_reya/status/1931400666003784008&quot;&gt;Shreya Shankar&lt;/a&gt; where she tweeted about vibe coding interfaces to look at the data. In her follow up &lt;a href=&quot;https://x.com/sh_reya/status/1931400666003784008&quot;&gt;post&lt;/a&gt; she gave some tips about how to get the clean terminal look. Turns out it’s as simple as telling Claude ‘sleek terminal theme’.&lt;/p&gt;
+   <content type="html">&lt;p&gt;I was very inspired by recent &lt;a href=&quot;https://x.com/sh_reya/status/1931119169929703827&quot;&gt;post&lt;/a&gt; by &lt;a href=&quot;https://x.com/sh_reya/status/1931400666003784008&quot;&gt;Shreya Shankar&lt;/a&gt; where she tweeted about vibe coding interfaces to look at the data. In her follow up &lt;a href=&quot;https://x.com/sh_reya/status/1931400666003784008&quot;&gt;post&lt;/a&gt; she gave some tips about how to get the clean terminal look. Turns out it’s as simple as telling Claude ‘sleek terminal theme’.&lt;/p&gt;
 
 &lt;p&gt;So last night while lying in bed with my phone I told Claude&lt;/p&gt;
 
@@ -491,18 +483,14 @@
    <link href="http://sent-hil.com/2025/04/07/modernbert.html"/>
    <updated>2025-04-07T00:00:00-07:00</updated>
    <id>http://sent-hil.com/2025/04/07/modernbert</id>
-   <content type="html">&lt;h1 id=&quot;modernbert&quot;&gt;ModernBERT&lt;/h1&gt;
-
-&lt;p class=&quot;meta&quot;&gt;04 May, 2025&lt;/p&gt;
-
-&lt;p&gt;&lt;i&gt;My notes on ModernBERT. &lt;a href=&quot;https://huggingface.co/blog/modernbert&quot;&gt;Source&lt;/a&gt;&lt;/i&gt;&lt;/p&gt;
+   <content type="html">&lt;p&gt;&lt;i&gt;My notes on ModernBERT. &lt;a href=&quot;https://huggingface.co/blog/modernbert&quot;&gt;Source&lt;/a&gt;&lt;/i&gt;&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;Family of encoder only (input text, output vector) models, with 8192 sequence length.&lt;/li&gt;
   &lt;li&gt;Comes in two sizes: 149M and 395M params.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;strong&gt;BERT&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&quot;bert&quot;&gt;BERT&lt;/h2&gt;
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/BERT_(language_model)&quot;&gt;Released&lt;/a&gt; in 2018 by Google, 2nd most popular model on HuggingFace.&lt;/li&gt;
   &lt;li&gt;Encoder only transformer architecture makes it ideal for real world problems like retrieval, classification and entity extraction. Using self supervised learning.&lt;/li&gt;
@@ -510,25 +498,25 @@
   &lt;li&gt;Tokenizer is WordPiece, similar to byte pair encoding. Vocab size is 30k.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;strong&gt;DECODER ONLY MODELS&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&quot;decoder-only-models&quot;&gt;DECODER ONLY MODELS&lt;/h2&gt;
 &lt;ul&gt;
   &lt;li&gt;OpenAI’s GPT, Llama, Claude etc are decoder only models. But are big, slow and expensive for many jobs.&lt;/li&gt;
   &lt;li&gt;Popular buzz around GenAI has obscured role of encoder-only models.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;strong&gt;ENCODER ONLY MODELS&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&quot;encoder-only-models&quot;&gt;ENCODER ONLY MODELS&lt;/h2&gt;
 &lt;ul&gt;
   &lt;li&gt;Given text, encoder only models returns a vector, aka embeddings. The vector is compressed representation of models’s input.&lt;/li&gt;
   &lt;li&gt;Decoder only models can do work of encoder only models, but are hamstrung by key constraint: they are not mathematically allowed to peek at later tokens, they can only look backwards. Unlike encoder models which can look forwards and backwards.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;strong&gt;MODERN BERT&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&quot;modern-bert&quot;&gt;MODERN BERT&lt;/h2&gt;
 &lt;ul&gt;
   &lt;li&gt;Context length of 8192 tokens (16x larger than most existing encoders.)&lt;/li&gt;
   &lt;li&gt;2x faster than DeBERTa and uses 1/5 of memory.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;strong&gt;USAGE&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&quot;usage&quot;&gt;USAGE&lt;/h2&gt;
 
 &lt;p&gt;To use it as a sentence transformer, we need to use an &lt;a href=&quot;https://huggingface.co/answerdotai/ModernBERT-base/discussions/9&quot;&gt;unofficial&lt;/a&gt;, fine tuned version.&lt;/p&gt;
 &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sentence_transformers&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SentenceTransformer&lt;/span&gt;
@@ -584,11 +572,7 @@ organization name
    <link href="http://sent-hil.com/2025/04/01/how-to-test-sidekiq_return_in_block.html"/>
    <updated>2025-04-01T00:00:00-07:00</updated>
    <id>http://sent-hil.com/2025/04/01/how-to-test-sidekiq_return_in_block?</id>
-   <content type="html">&lt;h1 id=&quot;how-to-test-sidekiq_return_in_block&quot;&gt;How to test sidekiq_return_in_block?&lt;/h1&gt;
-
-&lt;p class=&quot;meta&quot;&gt;04 May, 2025&lt;/p&gt;
-
-&lt;p&gt;Sidekiq allows specifying behavior when there is an exception. You can choose to use the default exponential backoff algorithm. I needed a way to change the backoff to be slower and more random. The exact backoff algorithm can be anything.&lt;/p&gt;
+   <content type="html">&lt;p&gt;Sidekiq allows specifying behavior when there is an exception. You can choose to use the default exponential backoff algorithm. I needed a way to change the backoff to be slower and more random. The exact backoff algorithm can be anything.&lt;/p&gt;
 
 &lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;YourWorker&lt;/span&gt;
   &lt;span class=&quot;kp&quot;&gt;include&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Sidekiq&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Job&lt;/span&gt;
@@ -627,10 +611,6 @@ organization name
    <updated>2025-03-07T00:00:00-08:00</updated>
    <id>http://sent-hil.com/2025/03/07/logits-and-softmax</id>
    <content type="html">&lt;script src=&quot;https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
-
-&lt;h1 id=&quot;logits-softmax-and-temperature-in-llms&quot;&gt;Logits, Softmax and Temperature in LLMs&lt;/h1&gt;
-
-&lt;p class=&quot;meta&quot;&gt;03 May, 2025&lt;/p&gt;
 
 &lt;p&gt;&lt;i&gt;My notes on Logits and Softmax.&lt;/i&gt;&lt;/p&gt;
 
@@ -688,11 +668,7 @@ organization name
    <link href="http://sent-hil.com/2025/02/10/search-in-postgres.html"/>
    <updated>2025-02-10T00:00:00-08:00</updated>
    <id>http://sent-hil.com/2025/02/10/search-in-postgres</id>
-   <content type="html">&lt;h1 id=&quot;search-in-postgres&quot;&gt;Search In Postgres&lt;/h1&gt;
-
-&lt;p class=&quot;meta&quot;&gt;02 May, 2025&lt;/p&gt;
-
-&lt;p&gt;It’s inevitable at some point you’ll need to implement user facing search on one of more fields in your database. I had to implement searching file and user given title for the file, but not the contents of the file.&lt;/p&gt;
+   <content type="html">&lt;p&gt;It’s inevitable at some point you’ll need to implement user facing search on one of more fields in your database. I had to implement searching file and user given title for the file, but not the contents of the file.&lt;/p&gt;
 
 &lt;p&gt;Here’s an example table &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;files&lt;/code&gt;.&lt;/p&gt;
 
@@ -769,13 +745,9 @@ organization name
    <link href="http://sent-hil.com/2025/02/10/rate-limiter-in-redis.html"/>
    <updated>2025-02-10T00:00:00-08:00</updated>
    <id>http://sent-hil.com/2025/02/10/rate-limiter-in-redis</id>
-   <content type="html">&lt;h1 id=&quot;rate-limiter-in-redis&quot;&gt;Rate Limiter In Redis&lt;/h1&gt;
+   <content type="html">&lt;p&gt;Problem: External APIs limit the number of requests you can send during a time window. We should rate limit ourself instead of sending too many requests and running foul of their limits.&lt;/p&gt;
 
-&lt;p class=&quot;meta&quot;&gt;02 May, 2025&lt;/p&gt;
-
-&lt;p&gt;Problem: External APIs limit the number of requests you can send during a time window. We should rate limit ourself instead of sending too many requests and running foul of their limits.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Implementation using counter&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&quot;implementation-using-counter&quot;&gt;Implementation using counter&lt;/h2&gt;
 
 &lt;ul&gt;
   &lt;li&gt;Check if rate limited, if not, increment counter.&lt;/li&gt;
@@ -807,7 +779,7 @@ organization name
 &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;&lt;strong&gt;Implementation using counter, simpler than above&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&quot;implementation-using-counter-simpler-than-above&quot;&gt;Implementation using counter, simpler than above&lt;/h2&gt;
 
 &lt;ul&gt;
   &lt;li&gt;Instead of checking of key exists, set it with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;NX&lt;/code&gt;, which only sets if key does not exist.&lt;/li&gt;
@@ -856,7 +828,7 @@ organization name
 &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;&lt;strong&gt;Implementation using Sorted Set and Hash&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&quot;implementation-using-sorted-set-and-hash&quot;&gt;Implementation using Sorted Set and Hash&lt;/h2&gt;
 
 &lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;lua_script&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;-&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;EOF&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;
   local now = redis.call(&apos;TIME&apos;)[1]
@@ -887,7 +859,7 @@ organization name
 &lt;span class=&quot;n&quot;&gt;conn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;eval&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;lua_script&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;KEY1&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;&lt;strong&gt;Implementation with just Sorted Sets&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&quot;implementation-with-just-sorted-sets&quot;&gt;Implementation with just Sorted Sets&lt;/h2&gt;
 
 &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;sliding_window_rate_limit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;key&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;limit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;window&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
 	&lt;span class=&quot;n&quot;&gt;r&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;redis&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;StrictRedis&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;host&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;localhost&lt;/span&gt;&lt;span class=&quot;sh&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;port&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;6379&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;db&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
@@ -917,7 +889,7 @@ organization name
   &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ZADD&lt;/code&gt; has &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;O(log n)&lt;/code&gt; time complexity which might be too much for a highly active system. And it’s removing expired keys which has additional &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;O(log n + m)&lt;/code&gt; time complexity.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;strong&gt;Implementation using MULTI&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&quot;implementation-using-multi&quot;&gt;Implementation using MULTI&lt;/h2&gt;
 
 &lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;redis&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Redis&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;new&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;count&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;redis&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;multi&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;
@@ -946,11 +918,7 @@ organization name
    <link href="http://sent-hil.com/2024/11/23/installing-latexocr-on-osx.html"/>
    <updated>2024-11-23T00:00:00-08:00</updated>
    <id>http://sent-hil.com/2024/11/23/installing-latexocr-on-osx</id>
-   <content type="html">&lt;h1 id=&quot;installing-latex-ocr-on-osx&quot;&gt;Installing LaTeX-OCR On Osx&lt;/h1&gt;
-
-&lt;p class=&quot;meta&quot;&gt;11 May, 2024&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/lukas-blecher/LaTeX-OCR&quot;&gt;LaTeX-OCR&lt;/a&gt; is a library for
+   <content type="html">&lt;p&gt;&lt;a href=&quot;https://github.com/lukas-blecher/LaTeX-OCR&quot;&gt;LaTeX-OCR&lt;/a&gt; is a library for
 converting images to LATEX code. I recently had to reinstall it and ran into
 some issues. I’m documenting them here so it can help someone else.&lt;/p&gt;
 
@@ -992,11 +960,7 @@ end
    <link href="http://sent-hil.com/2023/03/20/chatgpt-generated-blog-post.html"/>
    <updated>2023-03-20T00:00:00-07:00</updated>
    <id>http://sent-hil.com/2023/03/20/chatgpt-generated-blog-post</id>
-   <content type="html">&lt;h1 id=&quot;this-blog-post-was-generated-by-chatgpt&quot;&gt;This blog post was generated by ChatGPT&lt;/h1&gt;
-
-&lt;p class=&quot;meta&quot;&gt;20 March, 2023&lt;/p&gt;
-
-&lt;p&gt;A few days ago, I was trying to set up Jasmine to output the description of the
+   <content type="html">&lt;p&gt;A few days ago, I was trying to set up Jasmine to output the description of the
 tests while running it. It wasn’t as straightforward as passing in a command
 line argument, so I turned to everyone’s favorite boogeyman, ChatGPT, to help.
 Here is the &lt;a href=&quot;https://gpt.best/c0JV9sJt&quot;&gt;complete conversation&lt;/a&gt;. TLDR: It helped,
@@ -1098,11 +1062,7 @@ configurations for each project.&lt;/p&gt;
    <link href="http://sent-hil.com/2020/08/20/alertwildfire.html"/>
    <updated>2020-08-20T00:00:00-07:00</updated>
    <id>http://sent-hil.com/2020/08/20/alertwildfire</id>
-   <content type="html">&lt;h1 id=&quot;alertwildfire&quot;&gt;ALERTWildfire&lt;/h1&gt;
-
-&lt;p class=&quot;meta&quot;&gt;08 May, 2020&lt;/p&gt;
-
-&lt;p&gt;My past time the last few hours has been switching through the various live webcam feeds on http://www.alertwildfire.org and checking if I can catch a glimpse of smoke or the various fires that are burning up in California right now.&lt;/p&gt;
+   <content type="html">&lt;p&gt;My past time the last few hours has been switching through the various live webcam feeds on http://www.alertwildfire.org and checking if I can catch a glimpse of smoke or the various fires that are burning up in California right now.&lt;/p&gt;
 
 &lt;iframe width=&quot;800&quot; height=&quot;500&quot; src=&quot;https://www.youtube.com/embed/LnhNYWkGkPg?color=white&amp;amp;theme=light\&quot;&gt;&lt;/iframe&gt;
 
@@ -1127,11 +1087,7 @@ configurations for each project.&lt;/p&gt;
    <link href="http://sent-hil.com/2020/07/13/a-new-setup-for-this-site.html"/>
    <updated>2020-07-13T00:00:00-07:00</updated>
    <id>http://sent-hil.com/2020/07/13/a-new-setup-for-this-site</id>
-   <content type="html">&lt;h1 id=&quot;dokku-powered-personal-hub&quot;&gt;Dokku powered personal hub&lt;/h1&gt;
-
-&lt;p class=&quot;meta&quot;&gt;07 May, 2020&lt;/p&gt;
-
-&lt;p&gt;Last July 4th weekend I took some time to redo the setup for sent-hil.com. Previously it was Jekyll app running on Github pages. For the amount of blogging I did and traffic it received, it was more than enough. However I wanted to convert sent-hil.com to be a hub for different apps. My first attempt was to use AWS ECS to deploy dockers containers, but after couple days of struggling I gave up. I tried GCP, which was more fruitful, but ultimately I ran into some technical issues.&lt;/p&gt;
+   <content type="html">&lt;p&gt;Last July 4th weekend I took some time to redo the setup for sent-hil.com. Previously it was Jekyll app running on Github pages. For the amount of blogging I did and traffic it received, it was more than enough. However I wanted to convert sent-hil.com to be a hub for different apps. My first attempt was to use AWS ECS to deploy dockers containers, but after couple days of struggling I gave up. I tried GCP, which was more fruitful, but ultimately I ran into some technical issues.&lt;/p&gt;
 
 &lt;p&gt;At that point I gave up wth a hosted solution and started looking around for a DIY solution and ultimately found &lt;a href=&quot;http://dokku.viewdocs.io/dokku/&quot;&gt;dokku&lt;/a&gt;. It took couple hours to figure it out and this is the &lt;a href=&quot;https://github.com/sent-hil/sent-hil.com&quot;&gt;result of it&lt;/a&gt;&lt;/p&gt;
 
@@ -1159,11 +1115,7 @@ configurations for each project.&lt;/p&gt;
    <link href="http://sent-hil.com/2019/03/13/sqlite3.h-is-missing-when-doing-gem-install-sqlite3-in-mojave-osx.html"/>
    <updated>2019-03-13T00:00:00-07:00</updated>
    <id>http://sent-hil.com/2019/03/13/sqlite3.h-is-missing-when-doing-gem-install-sqlite3-in-mojave-osx</id>
-   <content type="html">&lt;h1 id=&quot;sqlite3h-is-missing-when-doing-gem-install-sqlite3-in-mojave-osx&quot;&gt;sqlite3.h Is Missing When Doing ‘gem install sqlite3’ In Mojave OSX&lt;/h1&gt;
-
-&lt;p class=&quot;meta&quot;&gt;03 May, 2019&lt;/p&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Fetching sqlite3 1.3.12
+   <content type="html">&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Fetching sqlite3 1.3.12
 Installing sqlite3 1.3.12 with native extensions
 Gem::Ext::BuildError: ERROR: Failed to build gem native extension.
 
@@ -1194,11 +1146,7 @@ need configuration options.
    <link href="http://sent-hil.com/2018/02/17/week-07-links.html"/>
    <updated>2018-02-17T00:00:00-08:00</updated>
    <id>http://sent-hil.com/2018/02/17/week-07-links</id>
-   <content type="html">&lt;h1 id=&quot;week-07-links&quot;&gt;Week-07-links&lt;/h1&gt;
-
-&lt;p class=&quot;meta&quot;&gt;2018-02-17&lt;/p&gt;
-
-&lt;ul&gt;
+   <content type="html">&lt;ul&gt;
   &lt;li&gt;
     &lt;p&gt;&lt;a href=&quot;https://github.com/WalkerAndCoBrandsInc/ghhook&quot;&gt;ghhook&lt;/a&gt;: “Go library that makes working with Github webhooks delivered with AWS APIGateway easier.” NOTE, this is mine :) It started as few one off scripts, run as AWS Lambda function, to help automate some tasks based on Github webhooks at work; eventually extracted out some common functionality into this library.&lt;/p&gt;
   &lt;/li&gt;
@@ -1226,11 +1174,7 @@ need configuration options.
    <link href="http://sent-hil.com/2018/01/16/challenge-use-api-docs-more-than-google-or-stackoverflow.html"/>
    <updated>2018-01-16T00:00:00-08:00</updated>
    <id>http://sent-hil.com/2018/01/16/challenge-use-api-docs-more-than-google-or-stackoverflow</id>
-   <content type="html">&lt;h1 id=&quot;challenge---use-api-docs-more-than-google-or-stackoverflow&quot;&gt;Challenge - use api docs more than Google or Stackoverflow&lt;/h1&gt;
-
-&lt;p class=&quot;meta&quot;&gt;2018-01-16&lt;/p&gt;
-
-&lt;p&gt;Few days ago I challenged myself to not use Google or Stackoverflow, but to check the language/api docs whenever I need to lookup something. This is part of my other long running project to remove abstractions and move closer to the core. I’m hoping this lets me better understand the code and be more idiomatic.&lt;/p&gt;
+   <content type="html">&lt;p&gt;Few days ago I challenged myself to not use Google or Stackoverflow, but to check the language/api docs whenever I need to lookup something. This is part of my other long running project to remove abstractions and move closer to the core. I’m hoping this lets me better understand the code and be more idiomatic.&lt;/p&gt;
 
 &lt;p&gt;For Go, there’s https://godoc.org, which is an easily accessible way to browse the library signatures. In Ruby, there’s http://ruby-doc.org/ for standard library docs and http://www.rubydoc.info for library specific docs, though I find I use far less, generally I just Google it (especially when it comes to Rails) or I go into the source directly with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;bundle open &amp;lt;gem&amp;gt;&lt;/code&gt;.&lt;/p&gt;
 
@@ -1243,11 +1187,7 @@ need configuration options.
    <link href="http://sent-hil.com/2016/10/23/arduino-assembly.html"/>
    <updated>2016-10-23T00:00:00-07:00</updated>
    <id>http://sent-hil.com/2016/10/23/arduino-assembly</id>
-   <content type="html">&lt;h1 id=&quot;programming-arduino-with-assembly&quot;&gt;Programming Arduino with Assembly&lt;/h1&gt;
-
-&lt;p class=&quot;meta&quot;&gt;23 Oct 2016&lt;/p&gt;
-
-&lt;p&gt;Arduino is typically programmed with Arduino IDE with a set of C/C++ functions.
+   <content type="html">&lt;p&gt;Arduino is typically programmed with Arduino IDE with a set of C/C++ functions.
 The canonical blink sketch which turns a led on/off every 1 second looks like:&lt;/p&gt;
 
 &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;void setup() {
@@ -1357,11 +1297,7 @@ frankly without it this process would’ve been much longer and way more tedious
    <link href="http://sent-hil.com/2016/05/28/single-vs-double-dash-in-cli-args.html"/>
    <updated>2016-05-28T00:00:00-07:00</updated>
    <id>http://sent-hil.com/2016/05/28/single-vs-double-dash-in-cli-args</id>
-   <content type="html">&lt;h1 id=&quot;single-vs-double-dash-in-cli-args&quot;&gt;Single vs Double dash in cli args&lt;/h1&gt;
-
-&lt;p class=&quot;meta&quot;&gt;28 May 2016&lt;/p&gt;
-
-&lt;blockquote&gt;
+   <content type="html">&lt;blockquote&gt;
   &lt;p&gt;It all depends on the program. Usually “-“ is used for ‘short’ options
 (one-letter, -h), and “–” is used for “long”(er) options (–help).&lt;/p&gt;
 
@@ -1382,11 +1318,7 @@ frankly without it this process would’ve been much longer and way more tedious
    <link href="http://sent-hil.com/2016/05/25/links.html"/>
    <updated>2016-05-25T00:00:00-07:00</updated>
    <id>http://sent-hil.com/2016/05/25/links</id>
-   <content type="html">&lt;h1 id=&quot;links&quot;&gt;Links&lt;/h1&gt;
-
-&lt;p class=&quot;meta&quot;&gt;25 May 2016&lt;/p&gt;
-
-&lt;p&gt;This link collection is predominantly filesystems; they have been mostly on my mind the last couple weeks, especially network and virtual filesytems like Camilstore, Infinit Storage and Tahoe-LAFS. There are ton of options, but there is also plenty of oppurtunities.&lt;/p&gt;
+   <content type="html">&lt;p&gt;This link collection is predominantly filesystems; they have been mostly on my mind the last couple weeks, especially network and virtual filesytems like Camilstore, Infinit Storage and Tahoe-LAFS. There are ton of options, but there is also plenty of oppurtunities.&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://camlistore.org&quot;&gt;Camlistore&lt;/a&gt; - personal storage system for life; stands for Content-Addressable Multi-Layer Indexed Storage, the idea is to dump whatever you prefer onto it (objects, files etc.) and access them with various interfaces (browser, fuse, phone etc.)&lt;/li&gt;
@@ -1404,11 +1336,7 @@ frankly without it this process would’ve been much longer and way more tedious
    <link href="http://sent-hil.com/2015/09/05/1-in-cat(1).html"/>
    <updated>2015-09-05T00:00:00-07:00</updated>
    <id>http://sent-hil.com/2015/09/05/1-in-cat(1)</id>
-   <content type="html">&lt;h1 id=&quot;the-1-in-cat1&quot;&gt;The 1 in cat(1)&lt;/h1&gt;
-
-&lt;p class=&quot;meta&quot;&gt;5 Sept 2015 2.35p&lt;/p&gt;
-
-&lt;p&gt;When you do &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;man cat&lt;/code&gt;, you get an output like:&lt;/p&gt;
+   <content type="html">&lt;p&gt;When you do &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;man cat&lt;/code&gt;, you get an output like:&lt;/p&gt;
 
 &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;CAT(1)                    BSD General Commands Manual                   CAT(1)
 
@@ -1435,11 +1363,7 @@ NAME
    <link href="http://sent-hil.com/2015/08/31/links.html"/>
    <updated>2015-08-31T00:00:00-07:00</updated>
    <id>http://sent-hil.com/2015/08/31/links</id>
-   <content type="html">&lt;h1 id=&quot;links&quot;&gt;Links&lt;/h1&gt;
-
-&lt;p class=&quot;meta&quot;&gt;31 Aug 2015&lt;/p&gt;
-
-&lt;ul&gt;
+   <content type="html">&lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://github.com/direnv/direnv&quot;&gt;direnv&lt;/a&gt;: Folder specific env variable config; especially useful for managing multiple &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;GOPATH&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;GOBIN&lt;/code&gt;.&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://github.com/koding/multiconfig&quot;&gt;multiconfig&lt;/a&gt;: Load configuration from multiple sources in Go; Only thing missing is ability to specify description for various config.&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;http://www.amazon.com/The-Power-Habit-What-Business/dp/081298160X&quot;&gt;Power of Habit&lt;/a&gt;: The best self help book isn’t a self help book at all. It’s more of an inquiry into how habits are formed and how to change them. In one of the chapters, there’s talk of ‘keystone habit’, ie something that enables you to change your life for the better. Usually it’s exercise. But for me it’s putting everything into writing. Goals, lists, todos etc.&lt;/li&gt;
@@ -1452,11 +1376,7 @@ NAME
    <link href="http://sent-hil.com/2015/08/31/here-we-go-again.html"/>
    <updated>2015-08-31T00:00:00-07:00</updated>
    <id>http://sent-hil.com/2015/08/31/here-we-go-again</id>
-   <content type="html">&lt;h1 id=&quot;here-we-go-again&quot;&gt;Here we go again&lt;/h1&gt;
-
-&lt;p class=&quot;meta&quot;&gt;31 Aug 2015&lt;/p&gt;
-
-&lt;p&gt;It’s been a while since I’ve maintained a blog seriously. After flirting with Ghost, Medium and even Github’s gists, I settled on Jekyll for its ease of use and customization. This is going to be a more of a braindump, somewhere between Twitter and Medium.&lt;/p&gt;
+   <content type="html">&lt;p&gt;It’s been a while since I’ve maintained a blog seriously. After flirting with Ghost, Medium and even Github’s gists, I settled on Jekyll for its ease of use and customization. This is going to be a more of a braindump, somewhere between Twitter and Medium.&lt;/p&gt;
 
 &lt;p&gt;Like most Jekyll blog this too is hosted on &lt;a href=&quot;https://github.com&quot;&gt;Github&lt;/a&gt;. You can view the source &lt;a href=&quot;https://github.com/sent-hil/sent-hil.github.io&quot;&gt;here&lt;/a&gt;. The design is originally from &lt;a href=&quot;https://github.com/mojombo/mojombo.github.io&quot;&gt;Tom Preston-Werner&lt;/a&gt;. I forked the original repo and made some minor changes.&lt;/p&gt;
 </content>
@@ -1467,9 +1387,7 @@ NAME
    <link href="http://sent-hil.com/2015/04/22/consistent-hashing.html"/>
    <updated>2015-04-22T00:00:00-07:00</updated>
    <id>http://sent-hil.com/2015/04/22/consistent-hashing</id>
-   <content type="html">&lt;h1 id=&quot;consistent-hashing-a-guide--go-library&quot;&gt;Consistent hashing, a guide &amp;amp; Go library&lt;/h1&gt;
-
-&lt;p&gt;Consistent hashing is deceptively simple yet very powerful, but I didn’t quite
+   <content type="html">&lt;p&gt;Consistent hashing is deceptively simple yet very powerful, but I didn’t quite
 understand what it was till I sat down and worked it out for myself. Before I
 tell you about consistent hashing, you need to understand the problem we’re
 trying to solve:&lt;/p&gt;
@@ -1534,7 +1452,7 @@ unit circle. For nodes with more capacity, you should add more virtual nodes.
 This way when a node goes down, the keys are distributed evenly across other
 nodes, not just to the next one.&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Implementation&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&quot;implementation&quot;&gt;Implementation&lt;/h2&gt;
 
 &lt;p&gt;Let’s go the extra mile here and implement a consistent hash library in Go. I
 didn’t quite understand it till I found a good implementation and put print

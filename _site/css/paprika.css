@@ -1,0 +1,786 @@
+/* ======================================================================
+   Paprika — sent-hil.com
+   Ported from ~/play/home-design/elements.html. Every colour resolves
+   through the token layer at the top, so a scheme is a token swap and
+   nothing else. <html> carries data-scheme and data-font.
+   ====================================================================== */
+
+/* ---------- colour schemes ---------- */
+
+/* ---- original: achromatic UI, coloured syntax ---- */
+:root,
+:root[data-scheme="original"]{
+  --bg:#FFFFFF;
+  --code-bg:#F7F8F8;
+  --ink:#16181A;
+  --head:#16181A;
+  --muted:#63696E;
+  --faint:#9BA1A6;
+  --rule:#E4E7E9;
+  --rule-strong:#C9CED2;
+  --link:#16181A;
+  --link-rule:#C9CED2;
+  --link-weight:400;
+  --shadow:rgba(22,24,26,.13);
+  --backdrop:rgba(22,24,26,.32);
+
+  --syn-comment:#6E767C;
+  --syn-keyword:#8A3391;
+  --syn-string:#2E7248;
+  --syn-number:#9A5518;
+  --syn-func:#2A5DA8;
+  --syn-const:#146A75;
+  --syn-attr:#3C6E9E;
+  --syn-esc:#B0521C;
+  --syn-punct:#767D83;
+  --syn-error:#B3261E;
+  --syn-add:#1E6B3F;
+  --syn-del:#8E2A22;
+  --syn-add-bg:#EAF6EE;
+  --syn-del-bg:#FBEDEB;
+  --syn-mark-bg:#FFF6D9;
+}
+
+/* ---- paprika: floral white ground, spicy paprika links ---- */
+:root[data-scheme="paprika"]{
+  --bg:#FFFFFF;
+  --code-bg:#F6F1E3;
+  --ink:#252422;
+  --head:#403D39;
+  --muted:#6B6558;
+  --faint:#A79F8E;
+  --rule:#EAE4D6;
+  --rule-strong:#CCC5B9;
+  --link:#EB5E28;
+  --link-rule:#EB5E28;
+  --link-weight:400;
+  --shadow:rgba(37,36,34,.16);
+  --backdrop:rgba(37,36,34,.34);
+
+  --syn-comment:#7C7563;
+  --syn-keyword:#B0451C;
+  --syn-string:#5A6B33;
+  --syn-number:#A8641B;
+  --syn-func:#3E5A63;
+  --syn-const:#7A5B2E;
+  --syn-attr:#4A6470;
+  --syn-esc:#D2500F;
+  --syn-punct:#9A9382;
+  --syn-error:#A32B14;
+  --syn-add:#4C6B2F;
+  --syn-del:#A32B14;
+  --syn-add-bg:#ECF1DE;
+  --syn-del-bg:#F9E5DB;
+  --syn-mark-bg:#FBEFC9;
+}
+
+/* ---- prussian: dark navy ground, orange links ---- */
+:root[data-scheme="prussian"]{
+  --bg:#14213D;
+  --code-bg:#0D1730;
+  --ink:#E5E5E5;
+  --head:#A9B4C6;
+  --muted:#98A3B5;
+  --faint:#67738A;
+  --rule:#26324F;
+  --rule-strong:#3B4A6D;
+  --link:#FCA311;
+  --link-rule:#FCA311;
+  --link-weight:400;
+  --shadow:rgba(0,0,0,.5);
+  --backdrop:rgba(0,0,0,.6);
+
+  --syn-comment:#7A87A0;
+  --syn-keyword:#FCA311;
+  --syn-string:#8FD694;
+  --syn-number:#F3B562;
+  --syn-func:#7FB3E8;
+  --syn-const:#6FD3D8;
+  --syn-attr:#A9C4E8;
+  --syn-esc:#FF9E6B;
+  --syn-punct:#77839B;
+  --syn-error:#FF8A80;
+  --syn-add:#8FD694;
+  --syn-del:#FF8A80;
+  --syn-add-bg:#123020;
+  --syn-del-bg:#3A1512;
+  --syn-mark-bg:#3C2F0B;
+}
+
+/* ---- mono: no hue anywhere; weight and value carry meaning ---- */
+:root[data-scheme="mono"]{
+  --bg:#F2F2F2;
+  --code-bg:#E6E6E6;
+  --ink:#3F3F3F;
+  --head:#7F7F7F;
+  --muted:#7F7F7F;
+  --faint:#A5A5A5;
+  --rule:#D9D9D9;
+  --rule-strong:#CCCCCC;
+  --link:#252525;
+  --link-rule:#A5A5A5;
+  --link-weight:500;
+  --shadow:rgba(0,0,0,.18);
+  --backdrop:rgba(0,0,0,.35);
+
+  --syn-comment:#A5A5A5;
+  --syn-keyword:#252525;
+  --syn-string:#595959;
+  --syn-number:#404040;
+  --syn-func:#333333;
+  --syn-const:#4A4A4A;
+  --syn-attr:#595959;
+  --syn-esc:#252525;
+  --syn-punct:#A5A5A5;
+  --syn-error:#000000;
+  --syn-add:#404040;
+  --syn-del:#767676;
+  --syn-add-bg:#E0E0E0;
+  --syn-del-bg:#DADADA;
+  --syn-mark-bg:#D6D6D6;
+}
+
+:root{
+  /* families — overridden by [data-font] below */
+  --sans:var(--sans-figtree);
+  --sans-head:var(--sans);
+  --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  --sans-scale:1;
+
+  --sans-figtree:"Figtree","Helvetica Neue",Helvetica,Arial,sans-serif;
+  --sans-inter:"Inter","Helvetica Neue",Helvetica,Arial,sans-serif;
+  --sans-jakarta:"Plus Jakarta Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+  --sans-sf:-apple-system,BlinkMacSystemFont,"SF Pro Text","SF Pro Display","Helvetica Neue",Helvetica,Arial,sans-serif;
+
+  /* rail top, derived from the header stack:
+       .masthead padding-top      2.75rem
+     + masthead line box          1.575rem  (--sm x 1.68)
+     + header.post padding-top    5rem
+     = h1 box top                 9.325rem
+     + h1 cap offset              0.595rem  (2.9rem x (1.13/2 - 0.36))
+     - rail link cap offset       0.295rem  (--sm x (1.35/2 - 0.36))
+     = 9.625rem, so the first rail link caps line up with the h1 caps */
+  --rail-top:9.625rem;
+
+  --measure:55rem;
+  --gutter:1.75rem;
+
+  --xs:0.8125rem;
+  --sm:0.9375rem;
+  --base:1.125rem;
+  --lg:1.25rem;
+  --xl:1.5rem;
+  --xxl:clamp(2.1rem,1.5rem + 2.1vw,2.9rem);
+
+  --code:0.9375rem;
+  --code-sm:0.875rem;
+  --code-inline:0.9em;
+}
+*{box-sizing:border-box}
+html{
+  -webkit-text-size-adjust:100%;
+  /* was needing browser zoom at 110% — baked in here instead.
+     A percentage (not px) so a raised OS/browser default still scales.
+     Borders and outlines stay in px, so hairlines remain 1 physical px
+     rather than the 1.1px real zoom would give. */
+  font-size:110%;
+}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font-family:var(--sans);
+  font-size:calc(var(--base) * var(--sans-scale));
+  line-height:1.68;
+  font-weight:400;
+  letter-spacing:-0.003em;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+
+.page{
+  max-width:var(--measure);
+  margin:0 auto;
+  padding:0 var(--gutter);
+}
+
+/* ---------- masthead ---------- */
+.masthead{
+  display:flex;flex-wrap:wrap;gap:.4rem 1rem;
+  align-items:baseline;justify-content:space-between;
+  padding:2.75rem 0 0;
+  font-size:var(--sm);
+}
+.masthead a{font-weight:500;color:var(--ink);text-decoration:none;border-bottom:none}
+.masthead a:hover{box-shadow:inset 0 -1px 0 var(--ink)}
+.masthead .meta{color:var(--faint);font-variant-numeric:tabular-nums}
+
+/* ---------- title ---------- */
+header.post{padding:5rem 0 0}
+h1{
+  margin:0;
+  font-size:var(--xxl);
+  font-weight:600;
+  line-height:1.13;
+  letter-spacing:-0.028em;
+  max-width:34ch;
+  text-wrap:balance;
+}
+.dek{
+  margin:1.35rem 0 0;
+  max-width:60ch;
+  font-size:var(--lg);
+  line-height:1.55;
+  color:var(--muted);
+  letter-spacing:-0.011em;
+  text-wrap:pretty;
+}
+
+/* ---------- results ---------- */
+.results{
+  margin:3.25rem 0 0;
+  border-top:1px solid var(--rule-strong);
+}
+.results dl{
+  margin:0;
+  display:grid;
+  grid-template-columns:11rem 1fr;
+  column-gap:1.75rem;
+}
+.results dt,.results dd{
+  margin:0;
+  padding:.9rem 0;
+  border-bottom:1px solid var(--rule);
+  font-size:var(--sm);
+  line-height:1.5;
+}
+.results dt{font-weight:500}
+.results dd{color:var(--muted)}
+.results dd b{font-weight:500;color:var(--ink)}
+@media (max-width:36rem){
+  .results dl{grid-template-columns:1fr}
+  .results dt{padding-bottom:0;border-bottom:none}
+  .results dd{padding-top:.2rem}
+}
+
+/* ---------- prose ---------- */
+main{padding:.5rem 0 0}
+p{margin:1.4rem 0;max-width:74ch}
+h2{
+  margin:4rem 0 0;
+  font-size:var(--xl);
+  font-weight:600;
+  letter-spacing:-0.021em;
+  line-height:1.22;
+  text-wrap:balance;
+}
+h2 + p{margin-top:.85rem}
+a{
+  color:var(--ink);
+  text-decoration:none;
+  box-shadow:inset 0 -1px 0 var(--rule-strong);
+}
+a:hover{box-shadow:inset 0 -1px 0 var(--ink)}
+a:focus-visible{outline:2px solid var(--ink);outline-offset:2px;border-radius:1px}
+em{font-style:italic}
+
+code{
+  font-family:var(--mono);
+  font-size:var(--code-inline);
+}
+:not(pre) > code{
+  color:var(--ink);
+  background:var(--code-bg);
+  padding:.08em .28em;
+  border-radius:2px;
+}
+
+/* ---------- quote ---------- */
+blockquote{
+  margin:1.5rem 0;
+  padding-left:1.5rem;
+  border-left:1px solid var(--rule-strong);
+  max-width:66ch;
+}
+blockquote p{margin:0;color:var(--muted);font-size:var(--base);line-height:1.6}
+blockquote footer{
+  margin-top:.85rem;
+  font-size:var(--sm);
+  color:var(--faint);
+}
+blockquote footer a{box-shadow:inset 0 -1px 0 var(--rule)}
+
+/* ---------- code ---------- */
+figure{margin:2.35rem 0}
+figcaption{
+  font-family:var(--mono);
+  font-size:var(--xs);
+  color:var(--faint);
+  padding-bottom:.55rem;
+}
+pre{
+  margin:0;
+  overflow-x:auto;
+  padding:1.1rem 1.2rem;
+  background:var(--code-bg);
+  border-radius:3px;
+  font-family:var(--mono);
+  font-size:var(--code);
+  line-height:1.62;
+  tab-size:2;
+}
+pre code{font-size:inherit}
+figure.stdout pre{
+  background:transparent;
+  border-left:1px solid var(--rule-strong);
+  border-radius:0;
+  padding:.1rem 0 .1rem 1.2rem;
+  color:var(--muted);
+  font-size:var(--code-sm);
+}
+
+/* ---------- syntax (Rouge / Pygments token classes) ---------- */
+/* comments */
+.c,.ch,.cm,.cp,.cpf,.c1,.cs,.cd{color:var(--syn-comment);font-style:italic}
+/* keywords & types */
+.k,.kc,.kd,.kn,.kr,.kv{color:var(--syn-keyword);font-weight:600}
+.kp{color:var(--syn-keyword);font-weight:500}
+.kt{color:var(--syn-const);font-weight:500}
+/* names */
+.n,.nx,.nl,.nv,.vc,.vg,.vi,.vm,.py{color:var(--ink)}
+.na{color:var(--syn-attr)}
+.nb,.bp{color:var(--syn-func)}
+.nc,.nn{color:var(--syn-const);font-weight:500}
+.no{color:var(--syn-const)}
+.nd{color:var(--syn-func);font-weight:500}
+.ne{color:var(--syn-error);font-weight:500}
+.nf,.fm{color:var(--syn-func);font-weight:500}
+.ni{color:var(--syn-esc)}
+.nt{color:var(--syn-keyword);font-weight:500}
+/* strings */
+.s,.s1,.s2,.sa,.sb,.sc,.sd,.sh,.sx,.dl{color:var(--syn-string)}
+.ss{color:var(--syn-const)}
+.sr{color:var(--syn-string);font-weight:500}
+.se,.si{color:var(--syn-esc);font-weight:600;font-style:normal}
+/* numbers */
+.m,.mb,.mf,.mh,.mi,.mo,.il{color:var(--syn-number);font-variant-numeric:tabular-nums}
+/* operators & punctuation stay recessive */
+.o,.ow,.p,.pi{color:var(--syn-punct)}
+/* generic / diff */
+.err,.gr,.gt{color:var(--syn-error)}
+.gd{color:var(--syn-del);background:var(--syn-del-bg)}
+.gi{color:var(--syn-add);background:var(--syn-add-bg)}
+.gh{color:var(--syn-const);font-weight:600}
+.gu{color:var(--syn-keyword);font-weight:500}
+.gs{font-weight:600}
+.ge{font-style:italic}
+.gp,.gl,.lineno{color:var(--faint);-webkit-user-select:none;user-select:none}
+.lineno{padding-right:1rem}
+.hll{background:var(--syn-mark-bg);display:block;margin:0 -1.2rem;padding:0 1.2rem}
+.w{color:transparent}
+
+/* ---------- rail ---------- */
+.rail{display:none}
+@media (min-width:1510px){
+  .rail{
+    display:block;
+    position:fixed;
+    top:var(--rail-top);
+    left:max(1.5rem,calc(50% - 41.25rem));
+    width:11.5rem;
+    max-height:calc(100vh - var(--rail-top) - 2rem);
+    overflow-y:auto;
+    overscroll-behavior:contain;
+  }
+  .rail ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:.4rem}
+  .rail a{
+    display:block;box-shadow:none;
+    font-size:var(--sm);color:var(--faint);line-height:1.35;
+    transition:color .18s ease;
+  }
+  .rail a:hover{box-shadow:none;color:var(--muted)}
+  .rail a[aria-current="true"]{color:var(--ink)}
+}
+
+/* ---------- footer ---------- */
+footer.site{
+  margin-top:6rem;
+  border-top:1px solid var(--rule);
+  padding:2.25rem 0 5rem;
+}
+.related h2{
+  margin:0 0 .5rem;
+  font-size:var(--sm);
+  font-weight:500;
+  letter-spacing:0;
+  color:var(--faint);
+}
+.related ul{list-style:none;margin:0;padding:0}
+.related li{
+  display:grid;grid-template-columns:7.5rem 1fr;gap:1rem;align-items:baseline;
+  padding:.65rem 0;border-bottom:1px solid var(--rule);
+}
+.related li time{
+  font-size:var(--sm);color:var(--faint);
+  font-variant-numeric:tabular-nums;
+}
+.related li a{box-shadow:none;font-size:var(--base)}
+.related li a:hover{box-shadow:inset 0 -1px 0 var(--ink)}
+@media (max-width:30rem){.related li{grid-template-columns:1fr;gap:.1rem}}
+
+.colophon{
+  display:flex;flex-wrap:wrap;gap:1.25rem 3rem;justify-content:space-between;
+  margin-top:2.75rem;
+  font-size:var(--sm);color:var(--faint);line-height:1.6;
+}
+.colophon p{margin:0;max-width:40ch}
+.colophon nav{display:flex;flex-direction:column;gap:.25rem;text-align:right}
+.colophon a{box-shadow:inset 0 -1px 0 var(--rule)}
+@media (max-width:32rem){.colophon nav{text-align:left}}
+
+@media (prefers-reduced-motion:reduce){
+  *{transition:none !important;animation:none !important;scroll-behavior:auto !important}
+}
+html{scroll-behavior:smooth}
+:target{scroll-margin-top:2rem}
+
+/* ======================================================================
+   ELEMENTS — rules for everything the article template didn't need yet.
+   Merge what you want back into the main sheet.
+   ====================================================================== */
+
+/* ---------- headings h3–h6 ---------- */
+h3{margin:2.6rem 0 0;font-size:var(--lg);font-weight:600;letter-spacing:-.014em;line-height:1.3}
+h4{margin:2.2rem 0 0;font-size:var(--base);font-weight:600;letter-spacing:-.008em}
+h5{margin:2rem 0 0;font-size:var(--sm);font-weight:600}
+h6{margin:2rem 0 0;font-size:var(--xs);font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--faint)}
+h3+p,h4+p,h5+p,h6+p{margin-top:.6rem}
+hgroup{margin:2.6rem 0 0}
+hgroup>*{margin-top:0}
+hgroup>p{color:var(--muted);font-size:var(--sm);margin:.3rem 0 0}
+
+/* ---------- lists ---------- */
+ul,ol{margin:1.4rem 0;padding-left:1.45rem;max-width:70ch}
+li{margin:.1rem 0}
+li>ul,li>ol{margin:0.2rem 0 0.3rem}
+ul{list-style:square}
+ul ul{list-style:disc}
+ol ol{list-style:lower-alpha}
+li::marker{color:var(--faint)}
+ol li::marker{font-variant-numeric:tabular-nums;font-size:.92em}
+ul.bare{list-style:none;padding-left:0}
+ul.bare li{padding:.55rem 0;border-bottom:1px solid var(--rule)}
+
+dl.plain{margin:1.4rem 0;max-width:70ch}
+dl.plain dt{font-weight:500;margin-top:1.1rem}
+dl.plain dd{margin:.2rem 0 0;color:var(--muted)}
+
+/* ---------- rules ---------- */
+hr{border:0;border-top:1px solid var(--rule);margin:3rem 0}
+hr.strong{border-top-color:var(--rule-strong)}
+
+/* ---------- text-level semantics ---------- */
+strong,b{font-weight:600}
+u{text-decoration-thickness:1px;text-underline-offset:2px}
+mark{background:var(--syn-mark-bg);color:var(--ink);padding:.05em .18em;border-radius:2px}
+del,s{color:var(--faint);text-decoration-thickness:1px}
+ins{text-decoration:none;background:var(--syn-add-bg);padding:.05em .18em;border-radius:2px}
+small{font-size:var(--sm);color:var(--muted)}
+sub,sup{font-size:.68em;line-height:0}
+abbr[title]{text-decoration:underline dotted;text-underline-offset:3px;cursor:help}
+dfn{font-style:italic;font-weight:500}
+cite{font-style:italic;color:var(--muted)}
+q{quotes:"\201C" "\201D" "\2018" "\2019"}
+time,data{font-variant-numeric:tabular-nums}
+var{font-family:var(--mono);font-style:italic;font-size:var(--code-inline);color:var(--syn-func)}
+samp{font-family:var(--mono);font-size:var(--code-inline);color:var(--muted)}
+kbd{
+  font-family:var(--mono);
+  font-size:.8em;background:var(--bg);color:var(--ink);
+  border:1px solid var(--rule-strong);border-bottom-width:2px;border-radius:3px;
+  padding:.12em .38em;white-space:nowrap;
+}
+
+/* ---------- tables ---------- */
+.table-wrap{overflow-x:auto;margin:2.2rem 0}
+table{border-collapse:collapse;width:100%;font-size:var(--sm);line-height:1.5}
+caption{
+  text-align:left;padding-bottom:.6rem;
+  font-family:var(--mono);
+  font-size:var(--xs);color:var(--faint);
+}
+th,td{padding:.7rem 1.35rem .7rem 0;border-bottom:1px solid var(--rule);text-align:left;vertical-align:top}
+th:last-child,td:last-child{padding-right:0}
+thead th{
+  border-bottom:1px solid var(--rule-strong);font-weight:500;color:var(--muted);
+  font-size:var(--xs);letter-spacing:.02em;
+}
+tbody tr:last-child td{border-bottom-color:var(--rule-strong)}
+tfoot td{border-bottom:none;font-weight:500}
+th.num,td.num{text-align:right;font-variant-numeric:tabular-nums}
+colgroup col.hi{background:var(--code-bg)}
+
+/* ---------- embedded media ---------- */
+figure.media{margin:2.35rem 0}
+figure.media>img,figure.media>svg,figure.media>video,figure.media>canvas,figure.media>iframe{
+  display:block;width:100%;height:auto;border-radius:3px;background:var(--code-bg);
+}
+figure.media>iframe{aspect-ratio:16/9;border:1px solid var(--rule)}
+figure.media figcaption{padding:.65rem 0 0}
+audio{width:100%;margin:1.4rem 0}
+picture{display:block}
+
+/* ---------- forms ---------- */
+form{margin:2.2rem 0;max-width:34rem}
+fieldset{border:1px solid var(--rule);border-radius:3px;padding:1rem 1.25rem 1.35rem;margin:0 0 1.6rem}
+legend{padding:0 .4rem;font-size:var(--sm);font-weight:500;color:var(--muted)}
+.field{display:flex;flex-direction:column;gap:.35rem;margin:0 0 1.05rem}
+.field:last-child{margin-bottom:0}
+label{font-size:var(--sm);font-weight:500}
+.hint{font-size:var(--xs);color:var(--faint)}
+.err{font-size:var(--xs);color:var(--syn-error)}
+input,textarea,select{
+  font-family:inherit;font-size:var(--sm);line-height:1.45;
+  color:var(--ink);background:var(--bg);
+  border:1px solid var(--rule-strong);border-radius:3px;
+  padding:.5rem .6rem;width:100%;
+}
+textarea{resize:vertical;min-height:6.5rem;line-height:1.6}
+select{appearance:none;background-image:none;padding-right:.6rem}
+input:focus-visible,textarea:focus-visible,select:focus-visible{
+  outline:2px solid var(--ink);outline-offset:1px;border-color:var(--ink);
+}
+input[type=color]{padding:.2rem;height:2.5rem}
+input[type=file]{border-style:dashed;background:var(--code-bg);font-size:var(--xs);padding:.6rem}
+input[type=range]{padding:0;border:0;background:transparent;accent-color:var(--ink)}
+input[type=checkbox],input[type=radio]{width:auto;margin:0;accent-color:var(--ink)}
+input[aria-invalid=true]{border-color:var(--syn-error)}
+input:disabled,textarea:disabled,select:disabled,button:disabled{
+  opacity:.5;cursor:not-allowed;background:var(--code-bg);
+}
+.check{display:flex;align-items:center;gap:.55rem;margin:.4rem 0;font-size:var(--sm)}
+.check label{font-weight:400}
+.row{display:flex;gap:.6rem;flex-wrap:wrap;align-items:center;margin:1.4rem 0}
+button,input[type=submit],input[type=reset],input[type=button]{
+  font-family:inherit;font-size:var(--sm);font-weight:500;width:auto;
+  padding:.52rem 1rem;border-radius:3px;cursor:pointer;
+  border:1px solid var(--ink);background:var(--ink);color:var(--bg);
+}
+button:hover:not(:disabled){opacity:.86}
+button.secondary{background:var(--bg);color:var(--ink);border-color:var(--rule-strong)}
+button.secondary:hover:not(:disabled){opacity:1;border-color:var(--ink)}
+button.quiet{background:transparent;border-color:transparent;color:var(--muted);padding-left:.3rem;padding-right:.3rem}
+button.quiet:hover:not(:disabled){opacity:1;color:var(--ink);box-shadow:inset 0 -1px 0 var(--ink)}
+progress,meter{width:100%;height:.5rem;accent-color:var(--ink)}
+output{font-size:var(--sm);color:var(--muted);font-variant-numeric:tabular-nums}
+
+/* ---------- interactive ---------- */
+details{border-bottom:1px solid var(--rule);padding:.95rem 0}
+details:first-of-type{border-top:1px solid var(--rule-strong)}
+summary{
+  cursor:pointer;font-size:var(--base);font-weight:500;
+  list-style:none;display:flex;gap:.65rem;align-items:baseline;
+}
+summary::-webkit-details-marker{display:none}
+summary::before{
+  content:"+";color:var(--faint);flex:none;
+  font-family:var(--mono);font-size:.92em;
+}
+details[open]>summary::before{content:"\2013"}
+details[open]>summary{margin-bottom:.35rem}
+details .inner{padding-left:1.3rem}
+details .inner>:first-child{margin-top:.4rem}
+details .inner>:last-child{margin-bottom:.15rem}
+dialog{
+  border:1px solid var(--rule-strong);border-radius:4px;padding:1.6rem 1.75rem;
+  max-width:27rem;color:var(--ink);background:var(--bg);
+  box-shadow:0 14px 44px rgba(22,24,26,.13);
+}
+dialog::backdrop{background:rgba(22,24,26,.32)}
+dialog h3{margin-top:0}
+
+/* ---------- sectioning & misc ---------- */
+address{font-style:normal;color:var(--muted);font-size:var(--sm);margin:1.4rem 0;line-height:1.65}
+aside{
+  margin:2.2rem 0;padding:1rem 1.2rem;
+  background:var(--code-bg);border-radius:3px;
+  font-size:var(--sm);line-height:1.6;color:var(--muted);
+}
+aside>:first-child{margin-top:0}
+aside>:last-child{margin-bottom:0}
+aside strong{color:var(--ink)}
+blockquote blockquote{margin:1.2rem 0;padding-left:1.2rem}
+ruby rt{font-size:.55em;color:var(--faint);font-weight:500}
+:not(pre)>code{overflow-wrap:break-word}
+
+/* ======================================================================
+   TYPEFACES
+   --sans-scale compensates for x-height so a swap does not change the
+   apparent text size. Set data-font on <html>.
+   ====================================================================== */
+:root[data-font="figtree"]{--sans:var(--sans-figtree);--sans-head:var(--sans-figtree);--sans-scale:1}
+:root[data-font="inter"]{--sans:var(--sans-inter);--sans-head:var(--sans-inter);--sans-scale:.97}
+:root[data-font="jakarta"]{--sans:var(--sans-jakarta);--sans-head:var(--sans-jakarta);--sans-scale:.96}
+:root[data-font="sf"]{--sans:var(--sans-sf);--sans-head:var(--sans-sf);--sans-scale:1.02}
+/* paired: Inter reads well at body sizes, Figtree has more character large */
+:root[data-font="inter-figtree"]{--sans:var(--sans-inter);--sans-head:var(--sans-figtree);--sans-scale:.97}
+
+/* Inter and Jakarta both ship the alternate single-storey shapes off by
+   default; keep tabular figures wherever digits line up. */
+:root[data-font="inter"]{font-feature-settings:"cv05" 0,"cv11" 0}
+
+/* ---------- colour routing (keeps every colour on a token) ---------- */
+h1,h2,h3,h4,h5,h6{font-family:var(--sans-head)}
+h1,h2,h3,h4,h5{color:var(--head)}
+a{
+  color:var(--link);
+  font-weight:var(--link-weight);
+  box-shadow:inset 0 -1px 0 var(--link-rule);
+}
+a:hover{box-shadow:inset 0 -2px 0 var(--link)}
+a:focus-visible{outline:2px solid var(--link);outline-offset:2px;border-radius:1px}
+.masthead a{color:var(--ink);font-weight:400;box-shadow:none}
+.masthead a:hover{box-shadow:inset 0 -1px 0 var(--ink)}
+.rail a{box-shadow:none;font-weight:400}
+.rail a[aria-current="true"]{color:var(--link)}
+.related li a{box-shadow:none}
+.related li a:hover{box-shadow:inset 0 -1px 0 var(--link)}
+.colophon a{box-shadow:inset 0 -1px 0 var(--rule)}
+blockquote footer a{box-shadow:inset 0 -1px 0 var(--rule)}
+.gd{color:var(--syn-del)}
+.gi{color:var(--syn-add)}
+dialog{box-shadow:0 14px 44px var(--shadow)}
+dialog::backdrop{background:var(--backdrop)}
+
+
+/* ======================================================================
+   PAPRIKA DARK
+   The same five colours inverted, matching the Obsidian theme's dark mode.
+   Only tokens change; no rule below the token layer knows about it.
+   ====================================================================== */
+@media (prefers-color-scheme:dark){
+  :root[data-scheme="paprika"]{
+    --bg:#252422;
+    --code-bg:#1D1C1A;
+    --ink:#FFFCF2;
+    --head:#CCC5B9;
+    --muted:#B5AE9F;
+    --faint:#7E786C;
+    --rule:#3A3733;
+    --rule-strong:#4A463F;
+    --link:#F26B33;
+    --link-rule:#F26B33;
+    --shadow:rgba(0,0,0,.5);
+    --backdrop:rgba(0,0,0,.6);
+
+    --syn-comment:#8F887A;
+    --syn-keyword:#F0834F;
+    --syn-string:#A9BC7A;
+    --syn-number:#E0A85E;
+    --syn-func:#8FB2BD;
+    --syn-const:#D4B27A;
+    --syn-attr:#A5C0CC;
+    --syn-esc:#FF8552;
+    --syn-punct:#8A8478;
+    --syn-error:#F08063;
+    --syn-add:#9CBF74;
+    --syn-del:#F08063;
+    --syn-add-bg:#1E2A16;
+    --syn-del-bg:#3A1A11;
+    --syn-mark-bg:rgba(242,107,51,.3);
+  }
+  :root[data-scheme="paprika"] img,
+  :root[data-scheme="paprika"] video{filter:brightness(.92)}
+}
+
+/* ======================================================================
+   HOME
+   Two list components, both built the same way the article's .results and
+   .related rows are: hairlines only, a fixed first column, no boxes.
+   ====================================================================== */
+.home main{padding:0}
+
+section.block{margin:4.75rem 0 0}
+section.block > h2{margin:0}
+
+/* date | title — the post index */
+ul.index{list-style:none;margin:1.5rem 0 0;padding:0;max-width:none}
+ul.index li{
+  display:grid;grid-template-columns:7.5rem 1fr;gap:1rem;align-items:baseline;
+  padding:.7rem 0;border-bottom:1px solid var(--rule);
+}
+ul.index li:first-child{border-top:1px solid var(--rule-strong)}
+ul.index time{
+  font-size:var(--sm);color:var(--faint);
+  font-variant-numeric:tabular-nums;
+}
+ul.index a{box-shadow:none;font-size:var(--base);color:var(--ink);text-wrap:pretty}
+ul.index a:hover{box-shadow:inset 0 -1px 0 var(--link)}
+@media (max-width:30rem){ul.index li{grid-template-columns:1fr;gap:.1rem}}
+
+/* name | description — work history and open source */
+.pairs{margin:1.5rem 0 0;border-top:1px solid var(--rule-strong)}
+.pairs dl{margin:0;display:grid;grid-template-columns:11rem 1fr;column-gap:1.75rem}
+.pairs dt,.pairs dd{
+  margin:0;padding:.8rem 0;
+  border-bottom:1px solid var(--rule);
+  font-size:var(--sm);line-height:1.5;
+}
+.pairs dt{font-weight:500}
+.pairs dt a{color:var(--ink);box-shadow:inset 0 -1px 0 var(--rule-strong)}
+.pairs dt a:hover{box-shadow:inset 0 -1px 0 var(--link)}
+.pairs dd{color:var(--muted)}
+@media (max-width:36rem){
+  .pairs dl{grid-template-columns:1fr}
+  .pairs dt{padding-bottom:0;border-bottom:none}
+  .pairs dd{padding-top:.2rem}
+}
+
+/* the home page opens on prose, not a dek, so it needs a touch less air */
+.home header.post + main section.block:first-of-type{margin-top:4rem}
+
+/* ======================================================================
+   JEKYLL
+   What kramdown and Rouge emit that the hand-written style guide did not
+   have to account for. No new colours; margins and wrappers only.
+   ====================================================================== */
+
+/* Rouge wraps every fenced block in
+     div.language-x.highlighter-rouge > div.highlight > pre
+   and the base sheet zeroes pre's margin so a <figure> can own it, so the
+   wrapper has to carry the space instead. An indented (4-space) block has
+   no wrapper at all and gets it directly. */
+.highlighter-rouge{margin:2.35rem 0}
+div.highlight{background:none;margin:0}
+main > pre{margin:2.35rem 0}
+main > pre > code{display:block}
+
+/* Markdown has no figure syntax, so a bare image is the common case. */
+main img{display:block;max-width:100%;height:auto;border-radius:3px}
+/* An image alone in a paragraph is kramdown's only figure; the paragraph
+   carries the figure's space so the image does not double it. */
+main p:has(> img:only-child){margin:2.35rem 0}
+main iframe{display:block;max-width:100%;border:1px solid var(--rule);border-radius:3px}
+
+/* kramdown emits tables with no wrapper; keep a wide one inside the column. */
+main table{margin:2.2rem 0;display:block;overflow-x:auto}
+
+/* Footnote definitions, which kramdown collects at the end of the document. */
+.footnotes{
+  margin-top:3rem;padding-top:1.2rem;
+  border-top:1px solid var(--rule);
+  font-size:var(--sm);color:var(--muted);
+}
+.footnotes ol{margin:0;max-width:70ch}
+.footnotes p{margin:.25rem 0;max-width:none}
+
+/* A post's first heading sits closer to the title than a mid-article one. */
+main > h2:first-child{margin-top:2.5rem}
+
+/* The base sheet caps every ul at 70ch for reading; the two row lists are
+   tables of contents rather than prose, so they take the full column. And
+   in a scheme where --link is a real colour, a whole list of links reads
+   as a wall of orange — the row itself is the affordance, so the title
+   stays ink and the underline arrives on hover. */
+.related ul{max-width:none}
+.related li a{color:var(--ink)}

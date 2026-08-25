@@ -3,35 +3,30 @@ layout: post
 title: ModernBERT
 ---
 
-{{ page.title }}
-================
-
-<p class="meta">04 May, 2025</p>
-
 <i>My notes on ModernBERT. [Source](https://huggingface.co/blog/modernbert)</i>
 
 * Family of encoder only (input text, output vector) models, with 8192 sequence length.
 * Comes in two sizes: 149M and 395M params.
 
-**BERT**
+## BERT
 * [Released](<https://en.wikipedia.org/wiki/BERT_(language_model)>) in 2018 by Google, 2nd most popular model on HuggingFace.
 * Encoder only transformer architecture makes it ideal for real world problems like retrieval, classification and entity extraction. Using self supervised learning.
 * Pareto improvement - improvement to a system when a change harms no one and benefits at least one person.
 * Tokenizer is WordPiece, similar to byte pair encoding. Vocab size is 30k.
 
-**DECODER ONLY MODELS**
+## DECODER ONLY MODELS
 * OpenAI's GPT, Llama, Claude etc are decoder only models. But are big, slow and expensive for many jobs.
 * Popular buzz around GenAI has obscured role of encoder-only models.
 
-**ENCODER ONLY MODELS**
+## ENCODER ONLY MODELS
 * Given text, encoder only models returns a vector, aka embeddings. The vector is compressed representation of models's input.
 * Decoder only models can do work of encoder only models, but are hamstrung by key constraint: they are not mathematically allowed to peek at later tokens, they can only look backwards. Unlike encoder models which can look forwards and backwards.
 
-**MODERN BERT**
+## MODERN BERT
 * Context length of 8192 tokens (16x larger than most existing encoders.)
 * 2x faster than DeBERTa and uses 1/5 of memory.
 
-**USAGE**
+## USAGE
 
 To use it as a sentence transformer, we need to use an [unofficial](https://huggingface.co/answerdotai/ModernBERT-base/discussions/9), fine tuned version.
 ```python

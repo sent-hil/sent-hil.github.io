@@ -3,10 +3,6 @@ layout: post
 title: Search In Postgres
 ---
 
-# {{ page.title }}
-
-<p class="meta">02 May, 2025</p>
-
 It's inevitable at some point you'll need to implement user facing search on one of more fields in your database. I had to implement searching file and user given title for the file, but not the contents of the file.
 
 Here's an example table `files`.

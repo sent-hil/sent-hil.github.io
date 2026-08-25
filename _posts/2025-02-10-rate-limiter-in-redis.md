@@ -3,13 +3,9 @@ layout: post
 title: Rate Limiter In Redis
 ---
 
-# {{ page.title }}
-
-<p class="meta">02 May, 2025</p>
-
 Problem: External APIs limit the number of requests you can send during a time window. We should rate limit ourself instead of sending too many requests and running foul of their limits.
 
-**Implementation using counter**
+## Implementation using counter
 
 - Check if rate limited, if not, increment counter.
 - `-1` result indicates there were already `rate_limit[:max]` number of requests processed in the `rate_limit[:time_window_in_secs]` window and can not proceed anymore.
@@ -40,7 +36,7 @@ conn.eval(
 )
 ```
 
-**Implementation using counter, simpler than above**
+## Implementation using counter, simpler than above
 
 - Instead of checking of key exists, set it with `NX`, which only sets if key does not exist.
 
@@ -87,7 +83,7 @@ conn.eval(
 )
 ```
 
-**Implementation using Sorted Set and Hash**
+## Implementation using Sorted Set and Hash
 
 ```ruby
 lua_script = <<-EOF
@@ -119,7 +115,7 @@ EOF
 conn.eval(lua_script, ["KEY1"])
 ```
 
-**Implementation with just Sorted Sets**
+## Implementation with just Sorted Sets
 
 ```python
 def sliding_window_rate_limit(key, limit, window):
@@ -145,7 +141,7 @@ Multiple things are wrong with the above implementation:
   - Using `TIME` command in Redis will solve this, since Redis is single threaded and no two requests can have the same time.
 - `ZADD` has `O(log n)` time complexity which might be too much for a highly active system. And it's removing expired keys which has additional `O(log n + m)` time complexity.
 
-**Implementation using MULTI**
+## Implementation using MULTI
 
 ```ruby
 redis = Redis.new

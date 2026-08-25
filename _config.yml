@@ -1,6 +1,6 @@
 markdown: kramdown
 highlighter: rouge
-exclude: [scripts, CHECK, Readme.md]
+exclude: [scripts, CHECK, Readme.md, CLAUDE.md]
 defaults:
   - scope:
       path: 'resources'
