@@ -784,3 +784,4 @@ main > h2:first-child{margin-top:2.5rem}
    stays ink and the underline arrives on hover. */
 .related ul{max-width:none}
 .related li a{color:var(--ink)}
+.justify { text-align: justify }
