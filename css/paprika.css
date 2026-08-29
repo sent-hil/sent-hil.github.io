@@ -158,9 +158,9 @@
      + header.post padding-top    5rem
      = h1 box top                 9.325rem
      + h1 cap offset              0.595rem  (2.9rem x (1.13/2 - 0.36))
-     - rail link cap offset       0.295rem  (--sm x (1.35/2 - 0.36))
-     = 9.625rem, so the first rail link caps line up with the h1 caps */
-  --rail-top:9.625rem;
+     - rail link cap offset       0.256rem  (--xs x (1.35/2 - 0.36))
+     = 9.664rem, so the first rail link caps line up with the h1 caps */
+  --rail-top:9.664rem;
 
   --measure:55rem;
   --gutter:1.75rem;
@@ -395,7 +395,8 @@ figure.stdout pre{
   .rail ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:.4rem}
   .rail a{
     display:block;box-shadow:none;
-    font-size:var(--sm);color:var(--faint);line-height:1.35;
+    font-family:var(--mono);font-size:var(--xs);letter-spacing:0;
+    color:var(--faint);line-height:1.35;
     transition:color .18s ease;
   }
   .rail a:hover{box-shadow:none;color:var(--muted)}
