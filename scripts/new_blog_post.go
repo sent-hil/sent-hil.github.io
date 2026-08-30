@@ -15,15 +15,10 @@ layout: post
 title: %s
 ---
 
-{{ page.title }}
-================
-
-<p class="meta">%s</p>
 `
 
-	title      = flag.String("title", "", "Title of blog post")
-	date       = time.Now().Format("2006-01-02")
-	prettyDate = time.Now().Format("01 May, 2006")
+	title = flag.String("title", "", "Title of blog post")
+	date  = time.Now().Format("2006-01-02")
 
 	// blogPath is home relative path to blog posts
 	blogPath = "_posts"
@@ -65,7 +60,7 @@ func createPost(title string) error {
 
 	defer file.Close()
 
-	_, err = file.WriteString(fmt.Sprintf(blogTemplate, titleize(title), prettyDate))
+	_, err = file.WriteString(fmt.Sprintf(blogTemplate, titleize(title)))
 	return err
 }
 
@@ -84,16 +79,18 @@ func getBlogPath() (string, error) {
 	return p, nil
 }
 
-// titleize splits given string on spaces on uppercase the 1st char and
-// lowercases the rest of chars and join them
+// titleize uppercases the first character of each word and leaves the rest as
+// typed, so ModernBERT and LaTeX-OCR survive rather than becoming Modernbert
+// and Latex-ocr.
 func titleize(str string) (title string) {
 	titles := []string{}
-	for _, str := range strings.Split(str, " ") {
-		var t string
-		t += strings.ToUpper(string(str[0]))
-		t += strings.ToLower(string(str[1:]))
+	for _, word := range strings.Split(str, " ") {
+		if word == "" {
+			titles = append(titles, word)
+			continue
+		}
 
-		titles = append(titles, t)
+		titles = append(titles, strings.ToUpper(word[:1])+word[1:])
 	}
 
 	return strings.Join(titles, " ")

@@ -1,0 +1,12 @@
+# Configuration for `rake obsidian`.
+#
+# This file is inside scripts/, which _config.yml excludes from the build, so
+# nothing here is published.
+
+# Where the Obsidian vault lives. The OBSIDIAN_VAULT environment variable wins
+# over this, which is what you want on a second machine.
+vault: /Users/senthil/Senthil Personal
+
+# Notes carrying this tag get published, written without the leading '#'.
+# Matching is word-bounded: '#post' does not match '#postgres' or '#post/draft'.
+tag: post

@@ -4,13 +4,76 @@
  <title>Senthil Arivudainambi</title>
  <link href="http://sent-hil.com/atom.xml" rel="self"/>
  <link href="http://sent-hil.com/"/>
- <updated>2026-08-25T09:26:33-07:00</updated>
+ <updated>2026-08-29T19:09:12-07:00</updated>
  <id>http://sent-hil.com/</id>
  <author>
    <name>Senthil Arivudainambi</name>
    <email>senthil196@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Status Of Vibe Coded Apps 3 Months In</title>
+   <link href="http://sent-hil.com/2026/08/29/status-of-vibe-coded-apps-3-months-in.html"/>
+   <updated>2026-08-29T00:00:00-07:00</updated>
+   <id>http://sent-hil.com/2026/08/29/status-of-vibe-coded-apps-3-months-in</id>
+   <content type="html">&lt;p&gt;Like a lot of developers I started experimenting with Claude Code in late 2025. Since then I have vibe coded a lot of apps for personal use. Given it’s been almost 10 months I wanted to see which ones I do still use.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/sent-hil/mochi-claude-code-gen&quot;&gt;mochi-claude-code-gen&lt;/a&gt; - Mochi Flashcard generator with Claude Code.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/sent-hil/cache-hit&quot;&gt;cache-hit&lt;/a&gt; - Superseded by spaced. A spaced repetition application for reviewing coding problems.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/sent-hil/geometric-art-generator&quot;&gt;geometric-art-generator&lt;/a&gt; - A macOS app that uses AI to generate stunning geometric art from simple text descriptions.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/sent-hil/nee-reads&quot;&gt;nee-reads&lt;/a&gt; - A very simple goodreads alternative for my wife, she never used it.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/sent-hil/agent-sandbox&quot;&gt;agent-sandbox&lt;/a&gt; - Manage Git worktrees per feature.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/sent-hil/saas-ticker&quot;&gt;saas-ticker&lt;/a&gt; - Stock ticker to track see if death of Saas is real.&lt;/li&gt;
+  &lt;li&gt;Fork of &lt;a href=&quot;https://github.com/sent-hil/leaf&quot;&gt;leaf&lt;/a&gt; - Markdown viewer, forked to change shortcuts&lt;/li&gt;
+  &lt;li&gt;Fork of &lt;a href=&quot;https://github.com/sent-hil/ghui&quot;&gt;ghui&lt;/a&gt; - Superseded by review.nvim. TUI Github PR reviewer.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/sent-hil/review.nvim&quot;&gt;review.nvim&lt;/a&gt; - Neovim library to help do Github and local change reviews&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/sent-hil/wt&quot;&gt;wt&lt;/a&gt; - Agent worktree management TUI. Most used.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/sent-hil/spaced&quot;&gt;spaced&lt;/a&gt; - TUI spaced repetition app. 2nd most.&lt;/li&gt;
+  &lt;li&gt;bookmarks - New. Replacement for pinboard.in.
+&lt;!-- The lifeline poster, from ~/play/home-design/lifeline-artifact.html.
+   Lives here rather than in the Obsidian note so `rake obsidian` cannot
+   overwrite it; the note carries a one-line include tag instead. --&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;lifeline&quot;&gt;
+&lt;style&gt;
+  /* Poster-specific rules only. Everything else -- colour, type, dark mode --
+     comes from the site&apos;s own tokens, so the chart follows the theme.
+     Scoped to .lifeline so these generic names cannot leak into a post. */
+  .lifeline{margin:1.6rem 0}
+  .lifeline .chart{width:100%;overflow-x:auto}
+  .lifeline .chart svg{display:block;width:100%;height:auto;min-width:44rem}
+  .lifeline .grid{stroke:var(--rule);stroke-width:1}
+  .lifeline .ax{font-family:var(--mono);font-size:12px;fill:var(--faint)}
+  .lifeline .life-bar{fill:var(--ink)}
+  .lifeline .life-x{stroke:var(--muted);stroke-width:1.25;fill:none}
+  .lifeline .life-arc{stroke:var(--ink);stroke-width:1;stroke-dasharray:3 3;fill:none}
+  .lifeline .life-head{fill:var(--ink)}
+  .lifeline .life-arclab{font-family:var(--mono);font-size:11px;fill:var(--muted)}
+  .lifeline .life-name{font-family:var(--mono);font-size:12.5px;fill:var(--ink)}
+  .lifeline .life-status{font-family:var(--mono);font-size:12.5px;fill:var(--ink)}
+  .lifeline .life-status.dim{fill:var(--faint)}
+  .lifeline .legend{
+    display:flex;flex-wrap:wrap;gap:.5rem 2rem;margin-top:.9rem;
+    font-family:var(--mono);font-size:var(--xs);color:var(--muted);
+  }
+  .lifeline .legend span{display:inline-flex;align-items:center;gap:.5rem}
+  .lifeline .legend svg{flex:0 0 auto}
+  .lifeline figcaption{
+    margin-top:.9rem;font-family:var(--mono);font-size:var(--xs);color:var(--faint);
+  }
+&lt;/style&gt;
+  &lt;div class=&quot;chart&quot;&gt;&lt;svg viewBox=&quot;0 0 1040 406&quot; role=&quot;img&quot; aria-label=&quot;Lifeline of eleven apps. Six were built between December and February and none is still used. After a gap of 149 days with no activity, five more were built and all five are still used.&quot;&gt;&lt;line class=&quot;grid&quot; x1=&quot;229.4&quot; y1=&quot;40.0&quot; x2=&quot;229.4&quot; y2=&quot;356.0&quot; /&gt;&lt;text class=&quot;ax&quot; x=&quot;229.4&quot; y=&quot;376.0&quot; text-anchor=&quot;middle&quot;&gt;Jan&lt;/text&gt;&lt;line class=&quot;grid&quot; x1=&quot;300.2&quot; y1=&quot;40.0&quot; x2=&quot;300.2&quot; y2=&quot;356.0&quot; /&gt;&lt;text class=&quot;ax&quot; x=&quot;300.2&quot; y=&quot;376.0&quot; text-anchor=&quot;middle&quot;&gt;Feb&lt;/text&gt;&lt;line class=&quot;grid&quot; x1=&quot;364.2&quot; y1=&quot;40.0&quot; x2=&quot;364.2&quot; y2=&quot;356.0&quot; /&gt;&lt;text class=&quot;ax&quot; x=&quot;364.2&quot; y=&quot;376.0&quot; text-anchor=&quot;middle&quot;&gt;Mar&lt;/text&gt;&lt;line class=&quot;grid&quot; x1=&quot;435.0&quot; y1=&quot;40.0&quot; x2=&quot;435.0&quot; y2=&quot;356.0&quot; /&gt;&lt;text class=&quot;ax&quot; x=&quot;435.0&quot; y=&quot;376.0&quot; text-anchor=&quot;middle&quot;&gt;Apr&lt;/text&gt;&lt;line class=&quot;grid&quot; x1=&quot;503.6&quot; y1=&quot;40.0&quot; x2=&quot;503.6&quot; y2=&quot;356.0&quot; /&gt;&lt;text class=&quot;ax&quot; x=&quot;503.6&quot; y=&quot;376.0&quot; text-anchor=&quot;middle&quot;&gt;May&lt;/text&gt;&lt;line class=&quot;grid&quot; x1=&quot;574.4&quot; y1=&quot;40.0&quot; x2=&quot;574.4&quot; y2=&quot;356.0&quot; /&gt;&lt;text class=&quot;ax&quot; x=&quot;574.4&quot; y=&quot;376.0&quot; text-anchor=&quot;middle&quot;&gt;Jun&lt;/text&gt;&lt;line class=&quot;grid&quot; x1=&quot;642.9&quot; y1=&quot;40.0&quot; x2=&quot;642.9&quot; y2=&quot;356.0&quot; /&gt;&lt;text class=&quot;ax&quot; x=&quot;642.9&quot; y=&quot;376.0&quot; text-anchor=&quot;middle&quot;&gt;Jul&lt;/text&gt;&lt;line class=&quot;grid&quot; x1=&quot;713.8&quot; y1=&quot;40.0&quot; x2=&quot;713.8&quot; y2=&quot;356.0&quot; /&gt;&lt;text class=&quot;ax&quot; x=&quot;713.8&quot; y=&quot;376.0&quot; text-anchor=&quot;middle&quot;&gt;Aug&lt;/text&gt;&lt;line class=&quot;grid&quot; x1=&quot;784.6&quot; y1=&quot;40.0&quot; x2=&quot;784.6&quot; y2=&quot;356.0&quot; /&gt;&lt;text class=&quot;ax&quot; x=&quot;784.6&quot; y=&quot;376.0&quot; text-anchor=&quot;middle&quot;&gt;Sep&lt;/text&gt;&lt;text class=&quot;life-name&quot; x=&quot;188&quot; y=&quot;66.0&quot; text-anchor=&quot;end&quot;&gt;mochi-claude-code-gen&lt;/text&gt;&lt;rect class=&quot;life-bar&quot; x=&quot;220.3&quot; y=&quot;52.0&quot; width=&quot;2.5&quot; height=&quot;20.0&quot;&gt;&lt;title&gt;mochi-claude-code-gen: 0 days of pushes, abandoned&lt;/title&gt;&lt;/rect&gt;&lt;path class=&quot;life-x&quot; d=&quot;M229.8 57.0 l8 10 M237.8 57.0 l-8 10&quot; /&gt;&lt;text class=&quot;life-status dim&quot; x=&quot;810.0&quot; y=&quot;66.0&quot;&gt;abandoned&lt;/text&gt;&lt;text class=&quot;life-name&quot; x=&quot;188&quot; y=&quot;94.0&quot; text-anchor=&quot;end&quot;&gt;cache-hit&lt;/text&gt;&lt;rect class=&quot;life-bar&quot; x=&quot;227.1&quot; y=&quot;80.0&quot; width=&quot;123.4&quot; height=&quot;20.0&quot;&gt;&lt;title&gt;cache-hit: 54 days of pushes, abandoned&lt;/title&gt;&lt;/rect&gt;&lt;path class=&quot;life-x&quot; d=&quot;M357.5 85.0 l8 10 M365.5 85.0 l-8 10&quot; /&gt;&lt;text class=&quot;life-status dim&quot; x=&quot;810.0&quot; y=&quot;94.0&quot;&gt;abandoned&lt;/text&gt;&lt;text class=&quot;life-name&quot; x=&quot;188&quot; y=&quot;122.0&quot; text-anchor=&quot;end&quot;&gt;geometric-art-generator&lt;/text&gt;&lt;rect class=&quot;life-bar&quot; x=&quot;229.4&quot; y=&quot;108.0&quot; width=&quot;2.5&quot; height=&quot;20.0&quot;&gt;&lt;title&gt;geometric-art-generator: 0 days of pushes, forgotten&lt;/title&gt;&lt;/rect&gt;&lt;path class=&quot;life-x&quot; d=&quot;M238.9 113.0 l8 10 M246.9 113.0 l-8 10&quot; /&gt;&lt;text class=&quot;life-status dim&quot; x=&quot;810.0&quot; y=&quot;122.0&quot;&gt;forgotten&lt;/text&gt;&lt;text class=&quot;life-name&quot; x=&quot;188&quot; y=&quot;150.0&quot; text-anchor=&quot;end&quot;&gt;nee-reads&lt;/text&gt;&lt;rect class=&quot;life-bar&quot; x=&quot;238.6&quot; y=&quot;136.0&quot; width=&quot;6.9&quot; height=&quot;20.0&quot;&gt;&lt;title&gt;nee-reads: 3 days of pushes, abandoned&lt;/title&gt;&lt;/rect&gt;&lt;path class=&quot;life-x&quot; d=&quot;M252.4 141.0 l8 10 M260.4 141.0 l-8 10&quot; /&gt;&lt;text class=&quot;life-status dim&quot; x=&quot;810.0&quot; y=&quot;150.0&quot;&gt;abandoned&lt;/text&gt;&lt;text class=&quot;life-name&quot; x=&quot;188&quot; y=&quot;178.0&quot; text-anchor=&quot;end&quot;&gt;agent-sandbox&lt;/text&gt;&lt;rect class=&quot;life-bar&quot; x=&quot;238.6&quot; y=&quot;164.0&quot; width=&quot;4.6&quot; height=&quot;20.0&quot;&gt;&lt;title&gt;agent-sandbox: 2 days of pushes, abandoned&lt;/title&gt;&lt;/rect&gt;&lt;path class=&quot;life-x&quot; d=&quot;M250.1 169.0 l8 10 M258.1 169.0 l-8 10&quot; /&gt;&lt;text class=&quot;life-status dim&quot; x=&quot;810.0&quot; y=&quot;178.0&quot;&gt;abandoned&lt;/text&gt;&lt;text class=&quot;life-name&quot; x=&quot;188&quot; y=&quot;206.0&quot; text-anchor=&quot;end&quot;&gt;saas-ticker&lt;/text&gt;&lt;rect class=&quot;life-bar&quot; x=&quot;329.9&quot; y=&quot;192.0&quot; width=&quot;2.5&quot; height=&quot;20.0&quot;&gt;&lt;title&gt;saas-ticker: 1 days of pushes, abandoned&lt;/title&gt;&lt;/rect&gt;&lt;path class=&quot;life-x&quot; d=&quot;M339.4 197.0 l8 10 M347.4 197.0 l-8 10&quot; /&gt;&lt;text class=&quot;life-status dim&quot; x=&quot;810.0&quot; y=&quot;206.0&quot;&gt;abandoned&lt;/text&gt;&lt;text class=&quot;life-name&quot; x=&quot;188&quot; y=&quot;234.0&quot; text-anchor=&quot;end&quot;&gt;leaf (fork)&lt;/text&gt;&lt;rect class=&quot;life-bar&quot; x=&quot;690.9&quot; y=&quot;220.0&quot; width=&quot;2.5&quot; height=&quot;20.0&quot;&gt;&lt;title&gt;leaf (fork): 0 days of pushes, still used&lt;/title&gt;&lt;/rect&gt;&lt;text class=&quot;life-status&quot; x=&quot;810.0&quot; y=&quot;234.0&quot;&gt;still used&lt;/text&gt;&lt;text class=&quot;life-name&quot; x=&quot;188&quot; y=&quot;262.0&quot; text-anchor=&quot;end&quot;&gt;ghui (fork)&lt;/text&gt;&lt;rect class=&quot;life-bar&quot; x=&quot;690.9&quot; y=&quot;248.0&quot; width=&quot;16.0&quot; height=&quot;20.0&quot;&gt;&lt;title&gt;ghui (fork): 7 days of pushes, still used&lt;/title&gt;&lt;/rect&gt;&lt;text class=&quot;life-status&quot; x=&quot;810.0&quot; y=&quot;262.0&quot;&gt;still used&lt;/text&gt;&lt;text class=&quot;life-name&quot; x=&quot;188&quot; y=&quot;290.0&quot; text-anchor=&quot;end&quot;&gt;review.nvim&lt;/text&gt;&lt;rect class=&quot;life-bar&quot; x=&quot;690.9&quot; y=&quot;276.0&quot; width=&quot;22.8&quot; height=&quot;20.0&quot;&gt;&lt;title&gt;review.nvim: 10 days of pushes, still used&lt;/title&gt;&lt;/rect&gt;&lt;text class=&quot;life-status&quot; x=&quot;810.0&quot; y=&quot;290.0&quot;&gt;still used&lt;/text&gt;&lt;text class=&quot;life-name&quot; x=&quot;188&quot; y=&quot;318.0&quot; text-anchor=&quot;end&quot;&gt;wt&lt;/text&gt;&lt;rect class=&quot;life-bar&quot; x=&quot;697.8&quot; y=&quot;304.0&quot; width=&quot;16.0&quot; height=&quot;20.0&quot;&gt;&lt;title&gt;wt: 7 days of pushes, most used&lt;/title&gt;&lt;/rect&gt;&lt;text class=&quot;life-status&quot; x=&quot;810.0&quot; y=&quot;318.0&quot;&gt;most used&lt;/text&gt;&lt;text class=&quot;life-name&quot; x=&quot;188&quot; y=&quot;346.0&quot; text-anchor=&quot;end&quot;&gt;spaced&lt;/text&gt;&lt;rect class=&quot;life-bar&quot; x=&quot;709.2&quot; y=&quot;332.0&quot; width=&quot;61.7&quot; height=&quot;20.0&quot;&gt;&lt;title&gt;spaced: 27 days of pushes, 2nd most used&lt;/title&gt;&lt;/rect&gt;&lt;text class=&quot;life-status&quot; x=&quot;810.0&quot; y=&quot;346.0&quot;&gt;2nd most used&lt;/text&gt;&lt;path class=&quot;life-arc&quot; id=&quot;arc-1&quot; d=&quot;M366.5 90.0 C534.3 90.0 534.3 342.0 702.2 342.0&quot; /&gt;&lt;path class=&quot;life-head&quot; d=&quot;M702.2 342.0 l-6 -3.5 l0 7 Z&quot; /&gt;&lt;text class=&quot;life-arclab&quot; dy=&quot;-7&quot;&gt;&lt;textPath href=&quot;#arc-1&quot; startOffset=&quot;18%&quot; text-anchor=&quot;start&quot;&gt;replaced by&lt;/textPath&gt;&lt;/text&gt;&lt;path class=&quot;life-arc&quot; id=&quot;arc-4&quot; d=&quot;M259.1 174.0 C474.9 174.0 474.9 314.0 690.8 314.0&quot; /&gt;&lt;path class=&quot;life-head&quot; d=&quot;M690.8 314.0 l-6 -3.5 l0 7 Z&quot; /&gt;&lt;text class=&quot;life-arclab&quot; dy=&quot;-7&quot;&gt;&lt;textPath href=&quot;#arc-4&quot; startOffset=&quot;18%&quot; text-anchor=&quot;start&quot;&gt;replaced by&lt;/textPath&gt;&lt;/text&gt;&lt;path class=&quot;life-arc&quot; id=&quot;arc-7&quot; d=&quot;M722.9 258.0 C632.9 258.0 593.9 286.0 683.9 286.0&quot; /&gt;&lt;path class=&quot;life-head&quot; d=&quot;M683.9 286.0 l-6 -3.5 l0 7 Z&quot; /&gt;&lt;text class=&quot;life-arclab&quot; x=&quot;609.9&quot; y=&quot;276.0&quot; text-anchor=&quot;end&quot;&gt;replaced by&lt;/text&gt;&lt;/svg&gt;&lt;/div&gt;
+  &lt;div class=&quot;legend&quot; style=&quot;margin-top:8px&quot;&gt;
+  &lt;span&gt;&lt;b style=&quot;display:inline-block;width:18px;height:12px;background:var(--ink)&quot;&gt;&lt;/b&gt; being built&lt;/span&gt;
+  &lt;span&gt;&lt;svg width=&quot;30&quot; height=&quot;12&quot; viewBox=&quot;0 0 30 12&quot;&gt;&lt;path class=&quot;life-arc&quot; d=&quot;M1 6 H22&quot; /&gt;&lt;path class=&quot;life-head&quot; d=&quot;M28 6 l-6 -3.5 l0 7 Z&quot; /&gt;&lt;/svg&gt; became&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;Around 3 months ago, I started building more TUI apps with &lt;a href=&quot;https://opentui.com&quot;&gt;OpenTUI&lt;/a&gt; . I spend a lot of time in the terminal, so this made it easier to integrate it with my regular workflow.&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>How do Rails/Golang/Python handle canceling a HTTP request mid transaction?</title>
