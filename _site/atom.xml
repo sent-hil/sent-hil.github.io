@@ -4,13 +4,26 @@
  <title>Senthil Arivudainambi</title>
  <link href="http://sent-hil.com/atom.xml" rel="self"/>
  <link href="http://sent-hil.com/"/>
- <updated>2026-08-29T23:11:37-07:00</updated>
+ <updated>2026-09-08T22:48:28-07:00</updated>
  <id>http://sent-hil.com/</id>
  <author>
    <name>Senthil Arivudainambi</name>
    <email>senthil196@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>My virtual bookshelf built with astra</title>
+   <link href="http://sent-hil.com/2026/09/08/my-virtual-bookshelf-built-with-astra.html"/>
+   <updated>2026-09-08T00:00:00-07:00</updated>
+   <id>http://sent-hil.com/2026/09/08/my-virtual-bookshelf-built-with-astra</id>
+   <content type="html">&lt;p&gt;I too wanted to get in on the trend of posting Astra generated three.js and Blender demos. Below are some of my wife’s books and mine (no guarantee that I’ve read all or some or any of them; I definitely didn’t read all of the Knuth books). The books were all over the place, so I first used Astra to sort them by subject and size, and then had it build a virtual bookshelf. Click on a book’s title and it opens a modal with the book info, fetched from Open Library.&lt;/p&gt;
+
+&lt;virtual-bookshelf&gt;&lt;/virtual-bookshelf&gt;
+&lt;script type=&quot;module&quot; src=&quot;/bookshelf/bookshelf.js&quot;&gt;&lt;/script&gt;
+
+</content>
+ </entry>
  
  <entry>
    <title>Status Of Vibe Coded Apps 3 Months In</title>

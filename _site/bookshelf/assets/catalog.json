@@ -1,0 +1,4236 @@
+{
+  "schemaVersion": 1,
+  "photos": [
+    {
+      "src": "assets/photos/shelf-left.webp",
+      "label": "Left shelves",
+      "width": 1824,
+      "height": 1368
+    },
+    {
+      "src": "assets/photos/shelf-right.webp",
+      "label": "Right shelves",
+      "width": 1824,
+      "height": 1368
+    }
+  ],
+  "books": [
+    {
+      "id": "C1-08",
+      "title": "Concurrency in Go",
+      "author": "Katherine Cox-Buday",
+      "subject": "Go, JavaScript & web languages",
+      "shelf": "A1",
+      "position": 1,
+      "photo": 0,
+      "quad": [
+        [
+          51.0,
+          0.0
+        ],
+        [
+          80.0,
+          0.0
+        ],
+        [
+          86.0,
+          409.0
+        ],
+        [
+          62.0,
+          405.0
+        ]
+      ],
+      "cover": "assets/covers/C1-08.webp",
+      "description": "A practical guide to concurrent programming in Go, including tools and techniques for developers.",
+      "sourceURL": "https://openlibrary.org/books/OL26834447M",
+      "identification": "spine",
+      "coverURL": "https://covers.openlibrary.org/b/id/8510272-L.jpg?default=false",
+      "isbn": "9781491941195",
+      "editionMatch": "title",
+      "coverNote": "Verified title-level cover; photographed edition or printing may differ."
+    },
+    {
+      "id": "D3-06",
+      "title": "Programming in Go",
+      "author": "Mark Summerfield",
+      "subject": "Go, JavaScript & web languages",
+      "shelf": "A1",
+      "position": 2,
+      "photo": 0,
+      "quad": [
+        [
+          82.0,
+          6.0
+        ],
+        [
+          115.0,
+          6.0
+        ],
+        [
+          121.0,
+          413.0
+        ],
+        [
+          86.0,
+          409.0
+        ]
+      ],
+      "cover": "assets/covers/D3-06.webp",
+      "description": "An introduction to programming in Go by Mark Summerfield.",
+      "sourceURL": "https://openlibrary.org/books/OL25371893M",
+      "identification": "spine",
+      "coverURL": "https://covers.openlibrary.org/b/id/8710715-L.jpg?default=false",
+      "isbn": "9780321774637",
+      "editionMatch": "title",
+      "coverNote": "Verified title-level cover; photographed edition or printing may differ."
+    },
+    {
+      "id": "D3-07",
+      "title": "Learning Go",
+      "author": "Jon Bodner",
+      "subject": "Go, JavaScript & web languages",
+      "shelf": "A1",
+      "position": 3,
+      "photo": 0,
+      "quad": [
+        [
+          117.0,
+          0.0
+        ],
+        [
+          153.0,
+          0.0
+        ],
+        [
+          156.0,
+          417.0
+        ],
+        [
+          121.0,
+          413.0
+        ]
+      ],
+      "cover": "assets/covers/D3-07.webp",
+      "description": "An introduction to Go and its approach to building software.",
+      "sourceURL": "https://openlibrary.org/books/OL33166635M",
+      "identification": "spine",
+      "coverURL": "https://covers.openlibrary.org/b/id/11872181-L.jpg?default=false",
+      "isbn": "9781492077213",
+      "editionMatch": "title",
+      "coverNote": "Verified title-level cover; photographed edition or printing may differ."
+    },
+    {
+      "id": "D3-05",
+      "title": "The Book of CSS3",
+      "author": "Peter Gasston",
+      "subject": "Go, JavaScript & web languages",
+      "shelf": "A1",
+      "position": 4,
+      "photo": 0,
+      "quad": [
+        [
+          154.0,
+          0.0
+        ],
+        [
+          184.0,
+          0.0
+        ],
+        [
+          185.0,
+          420.0
+        ],
+        [
+          156.0,
+          417.0
+        ]
+      ],
+      "cover": "assets/covers/D3-05.webp",
+      "description": "A guide to CSS3 features and their use in web-page styling.",
+      "sourceURL": "https://openlibrary.org/books/OL24838998M",
+      "identification": "spine",
+      "coverURL": "https://covers.openlibrary.org/b/id/8457652-L.jpg?default=false",
+      "isbn": "9781593272869",
+      "editionMatch": "title",
+      "coverNote": "Verified title-level cover; photographed edition or printing may differ."
+    },
+    {
+      "id": "D2-05",
+      "title": "Best of Ruby Quiz",
+      "author": "James Gray",
+      "subject": "Python & Ruby",
+      "shelf": "A1",
+      "position": 5,
+      "photo": 0,
+      "quad": [
+        [
+          185.0,
+          12.0
+        ],
+        [
+          221.0,
+          13.0
+        ],
+        [
+          223.0,
+          424.0
+        ],
+        [
+          185.0,
+          420.0
+        ]
+      ],
+      "cover": "assets/covers/D2-05.webp",
+      "description": "A collection of Ruby programming puzzles and the techniques used to solve them.",
+      "sourceURL": "https://openlibrary.org/books/OL8588699M",
+      "identification": "spine",
+      "coverURL": "https://covers.openlibrary.org/b/id/742458-L.jpg?default=false",
+      "isbn": "9780976694076",
+      "editionMatch": "title",
+      "coverNote": "Verified title-level cover; photographed edition or printing may differ."
+    },
+    {
+      "id": "D2-04",
+      "title": "Ruby Best Practices",
+      "author": "Gregory T. Brown",
+      "subject": "Python & Ruby",
+      "shelf": "A1",
+      "position": 6,
+      "photo": 0,
+      "quad": [
+        [
+          222.0,
+          18.0
+        ],
+        [
+          260.0,
+          19.0
+        ],
+        [
+          257.0,
+          429.0
+        ],
+        [
+          223.0,
+          424.0
+        ]
+      ],
+      "cover": "assets/covers/D2-04.webp",
+      "description": "A guide to effective Ruby programming and practices for producing clear, maintainable programs.",
+      "sourceURL": "https://books.google.com/books?vid=ISBN9780596523008",
+      "identification": "spine",
+      "coverURL": "https://books.google.com/books/content?vid=ISBN9780596523008&printsec=frontcover&img=1&zoom=1",
+      "isbn": "9780596523008",
+      "editionMatch": "title",
+      "coverNote": "Verified title-level cover; photographed edition or printing may differ."
+    },
+    {
+      "id": "C2-03",
+      "title": "Fluent Python, 2nd edition",
+      "author": "Luciano Ramalho",
+      "subject": "Python & Ruby",
+      "shelf": "A1",
+      "position": 7,
+      "photo": 0,
+      "quad": [
+        [
+          262.0,
+          18.0
+        ],
+        [
+          350.0,
+          22.0
+        ],
+        [
+          347.0,
+          435.0
+        ],
+        [
+          257.0,
+          429.0
+        ]
+      ],
+      "cover": "assets/covers/C2-03.webp",
+      "description": "A guide to writing expressive Python programs using the language's data model and programming features.",
+      "sourceURL": "https://openlibrary.org/books/OL28341899M",
+      "identification": "spine",
+      "coverURL": "https://covers.openlibrary.org/b/id/10290195-L.jpg?default=false",
+      "isbn": "9781492056355",
+      "editionMatch": "exact"
+    },
+    {
+      "id": "D2-06",
+      "title": "Learning Python, 5th edition",
+      "author": "Mark Lutz, David Ascher",
+      "subject": "Python & Ruby",
+      "shelf": "A1",
+      "position": 8,
+      "photo": 0,
+      "quad": [
+        [
+          352.0,
+          22.0
+        ],
+        [
+          466.0,
+          37.0
+        ],
+        [
+          465.0,
+          446.0
+        ],
+        [
+          347.0,
+          435.0
+        ]
+      ],
+      "cover": "assets/covers/D2-06.webp",
+      "description": "A comprehensive introduction to Python programming and the language's core features.",
+      "sourceURL": "https://books.google.com/books?vid=ISBN9781449355739",
+      "identification": "spine",
+      "coverURL": "https://books.google.com/books/content?vid=ISBN9781449355739&printsec=frontcover&img=1&zoom=2",
+      "isbn": "9781449355739",
+      "editionMatch": "exact"
+    },
+    {
+      "id": "D2-07",
+      "title": "High Performance Python, 2nd edition",
+      "author": "Micha Gorelick, Ian Ozsvald",
+      "subject": "Python & Ruby",
+      "shelf": "A1",
+      "position": 9,
+      "photo": 0,
+      "quad": [
+        [
+          467.0,
+          36.0
+        ],
+        [
+          526.0,
+          43.0
+        ],
+        [
+          509.0,
+          450.0
+        ],
+        [
+          465.0,
+          446.0
+        ]
+      ],
+      "cover": "assets/covers/D2-07.webp",
+      "description": "A guide to improving the performance of Python programs.",
+      "sourceURL": "https://openlibrary.org/books/OL29465371M",
+      "identification": "spine",
+      "coverURL": "https://covers.openlibrary.org/b/id/13456121-L.jpg?default=false",
+      "isbn": "9781492055020",
+      "editionMatch": "exact"
+    },
+    {
+      "id": "C2-12",
+      "title": "Python Pocket Reference",
+      "author": "Mark Lutz",
+      "subject": "Python & Ruby",
+      "shelf": "A1",
+      "position": 10,
+      "photo": 0,
+      "quad": [
+        [
+          524.0,
+          145.0
+        ],
+        [
+          548.0,
+          148.0
+        ],
+        [
+          534.0,
+          452.0
+        ],
+        [
+          509.0,
+          450.0
+        ]
+      ],
+      "cover": "assets/covers/C2-12.webp",
+      "description": "A compact reference to Python syntax and core language features.",
+      "sourceURL": "https://openlibrary.org/books/OL26838308M",
+      "identification": "spine",
+      "coverURL": "https://covers.openlibrary.org/b/id/8514184-L.jpg?default=false",
+      "isbn": "9781449357016",
+      "editionMatch": "title",
+      "coverNote": "Verified title-level cover; photographed edition or printing may differ."
+    },
+    {
+      "id": "C3-03",
+      "title": "The Art of Computer Programming, Vol. 4A: Combinatorial Algorithms, Part 1",
+      "author": "Donald Knuth",
+      "subject": "Knuth collection",
+      "shelf": "B1",
+      "position": 1,
+      "photo": 0,
+      "quad": [
+        [
+          615.0,
+          26.0
+        ],
+        [
+          701.0,
+          35.0
+        ],
+        [
+          695.0,
+          464.0
+        ],
+        [
+          618.0,
+          454.0
+        ]
+      ],
+      "cover": "assets/covers/C3-03.webp",
+      "description": "Volume 4A of Knuth's reference series introduces combinatorial algorithms.",
+      "sourceURL": "https://www.informit.com/store/art-of-computer-programming-volume-4a-combinatorial-9780201038040",
+      "identification": "spine",
+      "isbn": "9780201038040",
+      "editionMatch": "title",
+      "coverURL": "https://www.informit.com/ShowCover.aspx?isbn=9780201038040&type=f",
+      "coverNote": "Publisher cover for Volume 4A; jacket design may differ from your copy."
+    },
+    {
+      "id": "C3-02",
+      "title": "The Art of Computer Programming, Vol. 4B: Combinatorial Algorithms, Part 2",
+      "author": "Donald Knuth",
+      "subject": "Knuth collection",
+      "shelf": "B1",
+      "position": 2,
+      "photo": 0,
+      "quad": [
+        [
+          702.0,
+          35.0
+        ],
+        [
+          790.0,
+          41.0
+        ],
+        [
+          766.0,
+          472.0
+        ],
+        [
+          695.0,
+          464.0
+        ]
+      ],
+      "cover": "assets/covers/C3-02.webp",
+      "description": "Volume 4B of Knuth's reference series continues the study of combinatorial algorithms.",
+      "sourceURL": "https://books.google.com/books?vid=ISBN9780201038064",
+      "identification": "spine",
+      "coverURL": "https://books.google.com/books/content?vid=ISBN9780201038064&printsec=frontcover&img=1&zoom=1",
+      "isbn": "9780201038064",
+      "editionMatch": "title",
+      "coverNote": "Verified title-level cover; photographed edition or printing may differ."
+    },
+    {
+      "id": "C3-04",
+      "title": "The Art of Computer Programming, Vol. 3: Sorting and Searching",
+      "author": "Donald Knuth",
+      "subject": "Knuth collection",
+      "shelf": "B1",
+      "position": 3,
+      "photo": 0,
+      "quad": [
+        [
+          791.0,
+          43.0
+        ],
+        [
+          852.0,
+          46.0
+        ],
+        [
+          833.0,
+          480.0
+        ],
+        [
+          766.0,
+          472.0
+        ]
+      ],
+      "cover": "assets/covers/C3-04.webp",
+      "description": "Volume 3 of Knuth's reference series examines sorting and searching algorithms.",
+      "sourceURL": "https://openlibrary.org/books/OL5547366M",
+      "identification": "spine",
+      "coverURL": "https://covers.openlibrary.org/b/id/8057262-L.jpg?default=false",
+      "isbn": "9780201896855",
+      "editionMatch": "title",
+      "coverNote": "Verified title-level cover; photographed edition or printing may differ."
+    },
+    {
+      "id": "C3-05",
+      "title": "The Art of Computer Programming, Vol. 2: Seminumerical Algorithms",
+      "author": "Donald Knuth",
+      "subject": "Knuth collection",
+      "shelf": "B1",
+      "position": 4,
+      "photo": 0,
+      "quad": [
+        [
+          853.0,
+          48.0
+        ],
+        [
+          930.0,
+          53.0
+        ],
+        [
+          889.0,
+          486.0
+        ],
+        [
+          833.0,
+          480.0
+        ]
+      ],
+      "cover": "assets/covers/C3-05.webp",
+      "description": "Volume 2 of Knuth's reference series examines seminumerical algorithms.",
+      "sourceURL": "https://openlibrary.org/books/OL657041M",
+      "identification": "spine",
+      "coverURL": "https://covers.openlibrary.org/b/id/136600-L.jpg?default=false",
+      "editionMatch": "title",
+      "coverNote": "Verified title-level cover; photographed edition or printing may differ."
+    },
+    {
+      "id": "C3-06",
+      "title": "The Art of Computer Programming, Vol. 1: Fundamental Algorithms",
+      "author": "Donald Knuth",
+      "subject": "Knuth collection",
+      "shelf": "B1",
+      "position": 5,
+      "photo": 0,
+      "quad": [
+        [
+          932.0,
+          55.0
+        ],
+        [
+          997.0,
+          59.0
+        ],
+        [
+          945.0,
+          491.0
+        ],
+        [
+          889.0,
+          486.0
+        ]
+      ],
+      "cover": "assets/covers/C3-06.webp",
+      "description": "Volume 1 of Knuth's reference series develops fundamental algorithms and their analysis.",
+      "sourceURL": "https://openlibrary.org/books/OL27099309M",
+      "identification": "spine",
+      "coverURL": "https://covers.openlibrary.org/b/id/8738815-L.jpg?default=false",
+      "isbn": "9788177587548",
+      "editionMatch": "title",
+      "coverNote": "Verified title-level cover; photographed edition or printing may differ."
+    },
+    {
+      "id": "B1-01",
+      "title": "The Go Programming Language",
+      "author": "Alan A. A. Donovan, Brian W. Kernighan",
+      "subject": "Go, JavaScript & web languages",
+      "shelf": "B1",
+      "position": 6,
+      "photo": 0,
+      "quad": [
+        [
+          977.0,
+          178.0
+        ],
+        [
+          1005.0,
+          184.0
+        ],
+        [
+          972.0,
+          496.0
+        ],
+        [
+          945.0,
+          491.0
+        ]
+      ],
+      "cover": "assets/covers/B1-01.webp",
+      "description": "Alan Donovan and Brian Kernighan introduce programming in Go. Examples develop the language’s core features, program organization, and approach to concurrency.",
+      "sourceURL": "https://openlibrary.org/works/OL17348524W",
+      "identification": "spine",
+      "coverURL": "https://covers.openlibrary.org/b/id/7427319-L.jpg?default=false",
+      "isbn": "9780134190440",
+      "editionMatch": "title",
+      "coverNote": "Confirmed title and author; cover may differ from the physical edition.",
+      "descriptionBasis": "Original editorial summary of the identified work."
+    },
+    {
+      "id": "C2-11",
+      "title": "Nine Algorithms That Changed the Future",
+      "author": "John MacCormick",
+      "subject": "Algorithms & problem solving",
+      "shelf": "B1",
+      "position": 7,
+      "photo": 0,
+      "quad": [
+        [
+          1006.0,
+          124.0
+        ],
+        [
+          1059.0,
+          135.0
+        ],
+        [
+          1000.0,
+          500.0
+        ],
+        [
+          972.0,
+          496.0
+        ]
+      ],
+      "cover": "assets/covers/C2-11.webp",
+      "description": "An accessible account of nine influential algorithms and the computing capabilities they make possible.",
+      "sourceURL": "https://books.google.com/books?vid=ISBN9780691147147",
+      "identification": "spine",
+      "coverURL": "https://books.google.com/books/content?vid=ISBN9780691147147&printsec=frontcover&img=1&zoom=2",
+      "isbn": "9780691147147",
+      "editionMatch": "title",
+      "coverNote": "Verified title-level cover; photographed edition or printing may differ."
+    },
+    {
+      "id": "B3-03",
+      "title": "Introduction to Automata Theory, Languages, and Computation, 3rd edition",
+      "author": "John E. Hopcroft, Jeffrey D. Ullman, Rajeev Motwani",
+      "subject": "Computing foundations",
+      "shelf": "A2",
+      "position": 1,
+      "photo": 0,
+      "quad": [
+        [
+          76.0,
+          509.0
+        ],
+        [
+          116.0,
+          515.0
+        ],
+        [
+          124.0,
+          881.0
+        ],
+        [
+          88.0,
+          876.0
+        ]
+      ],
+      "cover": "assets/covers/B3-03.webp",
+      "description": "John Hopcroft, Rajeev Motwani, and Jeffrey Ullman introduce formal models of computation. The third edition covers automata, languages, computability, and computational complexity.",
+      "sourceURL": "https://openlibrary.org/works/OL6816375W",
+      "identification": "spine",
+      "coverURL": "https://covers.openlibrary.org/b/id/9620642-L.jpg?default=false",
+      "isbn": "0321455363",
+      "editionMatch": "exact",
+      "coverNote": "Cover and edition number verified against catalog metadata or the retrieved cover.",
+      "descriptionBasis": "Original editorial summary of the identified work."
+    },
+    {
+      "id": "D3-08",
+      "title": "Eloquent JavaScript, 3rd edition",
+      "author": "Marijn Haverbeke",
+      "subject": "Go, JavaScript & web languages",
+      "shelf": "A2",
+      "position": 2,
+      "photo": 0,
+      "quad": [
+        [
+          117.0,
+          524.0
+        ],
+        [
+          159.0,
+          528.0
+        ],
+        [
+          165.0,
+          884.0
+        ],
+        [
+          124.0,
+          881.0
+        ]
+      ],
+      "cover": "assets/covers/D3-08.webp",
+      "description": "An introduction to JavaScript through explanations, examples, and programming exercises.",
+      "sourceURL": "https://openlibrary.org/books/OL26832992M",
+      "identification": "spine",
+      "coverURL": "https://covers.openlibrary.org/b/id/8508178-L.jpg?default=false",
+      "isbn": "9781593279509",
+      "editionMatch": "exact"
+    },
+    {
+      "id": "D3-09",
+      "title": "JavaScript: The Good Parts",
+      "author": "Douglas Crockford",
+      "subject": "Go, JavaScript & web languages",
+      "shelf": "A2",
+      "position": 3,
+      "photo": 0,
+      "quad": [
+        [
+          161.0,
+          531.0
+        ],
+        [
+          183.0,
+          532.0
+        ],
+        [
+          181.0,
+          887.0
+        ],
+        [
+          165.0,
+          884.0
+        ]
+      ],
+      "cover": "assets/covers/D3-09.webp",
+      "description": "A focused guide to the JavaScript features Douglas Crockford considers most useful for reliable programming.",
+      "sourceURL": "https://openlibrary.org/books/OL23093977M",
+      "identification": "spine",
+      "coverURL": "https://covers.openlibrary.org/b/id/9245523-L.jpg?default=false",
+      "isbn": "9780596517748",
+      "editionMatch": "title",
+      "coverNote": "Verified title-level cover; photographed edition or printing may differ."
+    },
+    {
+      "id": "D3-10",
+      "title": "Programming TypeScript",
+      "author": "Boris Cherny",
+      "subject": "Go, JavaScript & web languages",
+      "shelf": "A2",
+      "position": 4,
+      "photo": 0,
+      "quad": [
+        [
+          184.0,
+          536.0
+        ],
+        [
+          209.0,
+          540.0
+        ],
+        [
+          209.0,
+          890.0
+        ],
+        [
+          181.0,
+          887.0
+        ]
+      ],
+      "cover": "assets/covers/D3-10.webp",
+      "description": "A guide to TypeScript and its type system for JavaScript developers.",
+      "sourceURL": "https://openlibrary.org/books/OL27107144M",
+      "identification": "spine",
+      "coverURL": "https://covers.openlibrary.org/b/id/10312489-L.jpg?default=false",
+      "isbn": "9781492037651",
+      "editionMatch": "title",
+      "coverNote": "Verified title-level cover; photographed edition or printing may differ."
+    },
+    {
+      "id": "D3-02",
+      "title": "The Modern Web",
+      "author": "Peter Gasston",
+      "subject": "Web & networking",
+      "shelf": "A2",
+      "position": 5,
+      "photo": 0,
+      "quad": [
+        [
+          211.0,
+          541.0
+        ],
+        [
+          234.0,
+          544.0
+        ],
+        [
+          238.0,
+          893.0
+        ],
+        [
+          209.0,
+          890.0
+        ]
+      ],
+      "cover": "assets/covers/D3-02.webp",
+      "description": "A guide to modern web development with HTML5, CSS3, and JavaScript.",
+      "sourceURL": "https://openlibrary.org/books/OL25427547M",
+      "identification": "spine",
+      "coverURL": "https://covers.openlibrary.org/b/id/7257680-L.jpg?default=false",
+      "isbn": "9781593274870",
+      "editionMatch": "title",
+      "coverNote": "Verified title-level cover; photographed edition or printing may differ."
+    },
+    {
+      "id": "D3-03",
+      "title": "HTTP: The Definitive Guide",
+      "author": "David Gourley, Brian Totty, Linda Mui",
+      "subject": "Web & networking",
+      "shelf": "A2",
+      "position": 6,
+      "photo": 0,
+      "quad": [
+        [
+          236.0,
+          544.0
+        ],
+        [
+          296.0,
+          547.0
+        ],
+        [
+          296.0,
+          899.0
+        ],
+        [
+          238.0,
+          893.0
+        ]
+      ],
+      "cover": "assets/covers/D3-03.webp",
+      "description": "A detailed reference to HTTP and the protocol's role in web communication.",
+      "sourceURL": "https://openlibrary.org/books/OL24929345M",
+      "identification": "spine",
+      "coverURL": "https://covers.openlibrary.org/b/id/6872984-L.jpg?default=false",
+      "isbn": "9781565925090",
+      "editionMatch": "title",
+      "coverNote": "Verified title-level cover; photographed edition or printing may differ."
+    },
+    {
+      "id": "D3-04",
+      "title": "High Performance Browser Networking",
+      "author": "Ilya Grigorik",
+      "subject": "Web & networking",
+      "shelf": "A2",
+      "position": 7,
+      "photo": 0,
+      "quad": [
+        [
+          297.0,
+          549.0
+        ],
+        [
+          329.0,
+          552.0
+        ],
+        [
+          330.0,
+          903.0
+        ],
+        [
+          296.0,
+          899.0
+        ]
+      ],
+      "cover": "assets/covers/D3-04.webp",
+      "description": "A guide to browser networking and the design of faster web applications.",
+      "sourceURL": "https://openlibrary.org/books/OL29221942M",
+      "identification": "spine",
+      "coverURL": "https://covers.openlibrary.org/b/id/14411035-L.jpg?default=false",
+      "isbn": "9781449344726",
+      "editionMatch": "title",
+      "coverNote": "Verified title-level cover; photographed edition or printing may differ."
+    },
+    {
+      "id": "B3-05",
+      "title": "Structure and Interpretation of Computer Programs, 2nd edition",
+      "author": "Harold Abelson and Gerald Jay Sussman",
+      "subject": "Computing foundations",
+      "shelf": "A2",
+      "position": 8,
+      "photo": 0,
+      "quad": [
+        [
+          331.0,
+          554.0
+        ],
+        [
+          377.0,
+          559.0
+        ],
+        [
+          378.0,
+          907.0
+        ],
+        [
+          330.0,
+          903.0
+        ]
+      ],
+      "cover": "assets/covers/B3-05.webp",
+      "description": "Harold Abelson and Gerald Jay Sussman explore how programs are built from procedures, data, and abstractions. The second edition uses Scheme to develop ideas about computation and language implementation.",
+      "sourceURL": "https://openlibrary.org/works/OL3267304W",
+      "identification": "spine",
+      "coverURL": "https://covers.openlibrary.org/b/id/9325174-L.jpg?default=false",
+      "isbn": "0262011530",
+      "editionMatch": "exact",
+      "coverNote": "Cover and edition number verified against catalog metadata or the retrieved cover.",
+      "descriptionBasis": "Original editorial summary of the identified work."
+    },
+    {
+      "id": "B3-07",
+      "title": "The Elements of Computing Systems, 2nd edition",
+      "author": "Noam Nisan, Shimon Schocken",
+      "subject": "Computing foundations",
+      "shelf": "A2",
+      "position": 9,
+      "photo": 0,
+      "quad": [
+        [
+          379.0,
+          561.0
+        ],
+        [
+          411.0,
+          565.0
+        ],
+        [
+          411.0,
+          910.0
+        ],
+        [
+          378.0,
+          907.0
+        ]
+      ],
+      "cover": "assets/covers/B3-07.webp",
+      "description": "Noam Nisan and Shimon Schocken guide readers through building a computer system from elementary components. The second edition connects logic gates, hardware, software, and a working computing platform.",
+      "sourceURL": "https://mitpress.mit.edu/9780262539807/the-elements-of-computing-systems/",
+      "identification": "spine",
+      "coverURL": "https://mit-press-new-us.imgix.net/covers/9780262539807.jpg?auto=format&w=600",
+      "isbn": "9780262539807",
+      "editionMatch": "exact",
+      "coverNote": "Cover and edition number verified against the catalog or publisher.",
+      "descriptionBasis": "Original summary grounded in the publisher description."
+    },
+    {
+      "id": "B3-06",
+      "title": "The Annotated Turing",
+      "author": "Charles Petzold",
+      "subject": "Computing foundations",
+      "shelf": "A2",
+      "position": 10,
+      "photo": 0,
+      "quad": [
+        [
+          413.0,
+          566.0
+        ],
+        [
+          448.0,
+          568.0
+        ],
+        [
+          445.0,
+          913.0
+        ],
+        [
+          411.0,
+          910.0
+        ]
+      ],
+      "cover": "assets/covers/B3-06.webp",
+      "description": "Charles Petzold guides readers through Alan Turing’s foundational paper on computation. Historical context and explanations make the paper’s mathematical argument more approachable.",
+      "sourceURL": "https://openlibrary.org/works/OL9372188W",
+      "identification": "spine",
+      "coverURL": "https://covers.openlibrary.org/b/id/2424450-L.jpg?default=false",
+      "isbn": "9780470229057",
+      "editionMatch": "title",
+      "coverNote": "Confirmed title and author; cover may differ from the physical edition.",
+      "descriptionBasis": "Original editorial summary of the identified work."
+    },
+    {
+      "id": "B3-10",
+      "title": "Code",
+      "author": "Charles Petzold, Charles Petzold",
+      "subject": "Computing foundations",
+      "shelf": "A2",
+      "position": 11,
+      "photo": 0,
+      "quad": [
+        [
+          451.0,
+          576.0
+        ],
+        [
+          487.0,
+          579.0
+        ],
+        [
+          483.0,
+          917.0
+        ],
+        [
+          445.0,
+          913.0
+        ]
+      ],
+      "cover": "assets/covers/B3-10.webp",
+      "description": "Charles Petzold explains how simple signaling and switching mechanisms lead to digital computers. The narrative builds an understanding of hardware from everyday communication and basic logic.",
+      "sourceURL": "https://openlibrary.org/works/OL1972516W",
+      "identification": "spine",
+      "coverURL": "https://covers.openlibrary.org/b/id/460968-L.jpg?default=false",
+      "isbn": "9780735605053",
+      "editionMatch": "title",
+      "coverNote": "Confirmed title and author; cover may differ from the physical edition.",
+      "descriptionBasis": "Original editorial summary of the identified work."
+    },
+    {
+      "id": "D3-12",
+      "title": "The Proof in the Code",
+      "author": "Kevin Hartnett",
+      "subject": "Computing foundations",
+      "shelf": "A2",
+      "position": 12,
+      "photo": 0,
+      "quad": [
+        [
+          489.0,
+          560.0
+        ],
+        [
+          526.0,
+          563.0
+        ],
+        [
+          512.0,
+          921.0
+        ],
+        [
+          483.0,
+          917.0
+        ]
+      ],
+      "cover": "assets/covers/D3-12.webp",
+      "description": "Kevin Hartnett follows the development of Lean and the mathematicians who adopted it to verify proofs. The book explores how computer-checked reasoning is changing mathematics and its relationship with AI.",
+      "sourceURL": "https://academic.macmillan.com/academictrade/9780374620059/theproofinthecode/",
+      "identification": "spine",
+      "coverURL": "https://mpd-biblio-covers.imgix.net/9780374620059.jpg",
+      "isbn": "9780374620059",
+      "editionMatch": "title"
+    },
+    {
+      "id": "C1-03",
+      "title": "Artificial Intelligence: A Modern Approach, 3rd edition",
+      "author": "Stuart J. Russell, Peter Norvig",
+      "subject": "AI & data",
+      "shelf": "B2",
+      "position": 1,
+      "photo": 0,
+      "quad": [
+        [
+          550.0,
+          502.0
+        ],
+        [
+          627.0,
+          503.0
+        ],
+        [
+          606.0,
+          925.0
+        ],
+        [
+          537.0,
+          920.0
+        ]
+      ],
+      "cover": "assets/covers/C1-03.webp",
+      "description": "A broad introduction to artificial intelligence, covering the ideas and methods used to build intelligent systems.",
+      "sourceURL": "https://openlibrary.org/books/OL24990984M",
+      "identification": "spine",
+      "coverURL": "https://covers.openlibrary.org/b/id/6926355-L.jpg?default=false",
+      "isbn": "0136042597",
+      "editionMatch": "exact"
+    },
+    {
+      "id": "C1-02",
+      "title": "Machine Learning System Design Interview",
+      "author": "Simon Callister",
+      "subject": "AI & data",
+      "shelf": "B2",
+      "position": 2,
+      "photo": 0,
+      "quad": [
+        [
+          678.0,
+          512.0
+        ],
+        [
+          714.0,
+          514.0
+        ],
+        [
+          635.0,
+          928.0
+        ],
+        [
+          606.0,
+          925.0
+        ]
+      ],
+      "cover": "assets/covers/C1-02.webp",
+      "description": "A practical guide to machine learning system design and technical interview preparation, presented as a three-in-one collection.",
+      "sourceURL": "https://bookmeter.com/books/22998695",
+      "identification": "spine",
+      "coverURL": "https://m.media-amazon.com/images/I/41mrtj53QSL._SL500_.jpg",
+      "editionMatch": "title"
+    },
+    {
+      "id": "B1-10",
+      "title": "Fundamentals of Data Engineering",
+      "author": "Joe Reis, Matt Housley",
+      "subject": "AI & data",
+      "shelf": "B2",
+      "position": 3,
+      "photo": 0,
+      "quad": [
+        [
+          706.0,
+          588.0
+        ],
+        [
+          738.0,
+          592.0
+        ],
+        [
+          674.0,
+          934.0
+        ],
+        [
+          635.0,
+          928.0
+        ]
+      ],
+      "cover": "assets/covers/B1-10.webp",
+      "description": "Joe Reis and Matt Housley introduce the lifecycle of data engineering. The book connects data generation, storage, ingestion, transformation, and serving with architectural decisions.",
+      "sourceURL": "https://openlibrary.org/works/OL27850217W",
+      "identification": "spine",
+      "coverURL": "https://covers.openlibrary.org/b/id/14831765-L.jpg?default=false",
+      "isbn": "9781098108304",
+      "editionMatch": "title",
+      "coverNote": "Confirmed title and author; cover may differ from the physical edition.",
+      "descriptionBasis": "Original editorial summary of the identified work."
+    },
+    {
+      "id": "B1-09",
+      "title": "Taming Text",
+      "author": "Grant Ingersoll, Thomas S. Morton, Drew Farris",
+      "subject": "AI & data",
+      "shelf": "B2",
+      "position": 4,
+      "photo": 0,
+      "quad": [
+        [
+          739.0,
+          591.0
+        ],
+        [
+          778.0,
+          597.0
+        ],
+        [
+          711.0,
+          939.0
+        ],
+        [
+          674.0,
+          934.0
+        ]
+      ],
+      "cover": "assets/covers/B1-09.webp",
+      "description": "Grant Ingersoll, Thomas Morton, and Drew Farris introduce techniques for working with text as data. The book covers tasks such as search, extracting information, and classifying documents.",
+      "sourceURL": "https://openlibrary.org/works/OL19905630W",
+      "identification": "spine",
+      "coverURL": "https://covers.openlibrary.org/b/id/8725623-L.jpg?default=false",
+      "editionMatch": "title",
+      "coverNote": "Confirmed title and author; cover may differ from the physical edition.",
+      "descriptionBasis": "Original editorial summary of the identified work."
+    },
+    {
+      "id": "B1-08",
+      "title": "Data Smart",
+      "author": "John W. Foreman",
+      "subject": "AI & data",
+      "shelf": "B2",
+      "position": 5,
+      "photo": 0,
+      "quad": [
+        [
+          780.0,
+          600.0
+        ],
+        [
+          815.0,
+          603.0
+        ],
+        [
+          752.0,
+          948.0
+        ],
+        [
+          711.0,
+          939.0
+        ]
+      ],
+      "cover": "assets/covers/B1-08.webp",
+      "description": "John Foreman introduces data science through worked business examples. Spreadsheet-based exercises make analytical methods and their practical uses accessible.",
+      "sourceURL": "https://openlibrary.org/works/OL17308034W",
+      "identification": "spine",
+      "coverURL": "https://covers.openlibrary.org/b/id/7387005-L.jpg?default=false",
+      "isbn": "9781118661468",
+      "editionMatch": "title",
+      "coverNote": "Confirmed title and author; cover may differ from the physical edition.",
+      "descriptionBasis": "Original editorial summary of the identified work."
+    },
+    {
+      "id": "C2-04",
+      "title": "Introduction to Information Retrieval",
+      "author": "Christopher D. Manning, Prabhakar Raghavan, Hinrich Schütze",
+      "subject": "AI & data",
+      "shelf": "B2",
+      "position": 6,
+      "photo": 0,
+      "quad": [
+        [
+          829.0,
+          579.0
+        ],
+        [
+          879.0,
+          591.0
+        ],
+        [
+          804.0,
+          957.0
+        ],
+        [
+          752.0,
+          948.0
+        ]
+      ],
+      "cover": "assets/covers/C2-04.webp",
+      "description": "An introduction to information retrieval, including indexing, ranking, and the organization of searchable document collections.",
+      "sourceURL": "https://openlibrary.org/books/OL22550857M",
+      "identification": "spine",
+      "coverURL": "https://covers.openlibrary.org/b/id/8665087-L.jpg?default=false",
+      "isbn": "9780521865715",
+      "editionMatch": "title",
+      "coverNote": "Verified title-level cover; photographed edition or printing may differ."
+    },
+    {
+      "id": "C1-10",
+      "title": "TREC: Experiment and Evaluation in Information Retrieval",
+      "author": "E. Voorhees, D. K. Harman",
+      "subject": "AI & data",
+      "shelf": "B2",
+      "position": 7,
+      "photo": 0,
+      "quad": [
+        [
+          871.0,
+          624.0
+        ],
+        [
+          917.0,
+          629.0
+        ],
+        [
+          864.0,
+          969.0
+        ],
+        [
+          804.0,
+          957.0
+        ]
+      ],
+      "cover": "assets/covers/C1-10.webp",
+      "description": "A collection about the Text REtrieval Conference and the experimental evaluation of information-retrieval systems.",
+      "sourceURL": "https://openlibrary.org/books/OL3426596M",
+      "identification": "spine",
+      "coverURL": "https://covers.openlibrary.org/b/id/150857-L.jpg?default=false",
+      "isbn": "0262220733",
+      "editionMatch": "title",
+      "coverNote": "Verified title-level cover; photographed edition or printing may differ."
+    },
+    {
+      "id": "C2-01",
+      "title": "Designing Machine Learning Systems",
+      "author": "Chip Huyen",
+      "subject": "AI & data",
+      "shelf": "B2",
+      "position": 8,
+      "photo": 0,
+      "quad": [
+        [
+          920.0,
+          631.0
+        ],
+        [
+          970.0,
+          637.0
+        ],
+        [
+          926.0,
+          982.0
+        ],
+        [
+          864.0,
+          969.0
+        ]
+      ],
+      "cover": "assets/covers/C2-01.webp",
+      "description": "A guide to designing machine-learning systems and the applications that depend on them.",
+      "sourceURL": "https://openlibrary.org/books/OL36277220M",
+      "identification": "spine",
+      "coverURL": "https://covers.openlibrary.org/b/id/13314480-L.jpg?default=false",
+      "isbn": "9781098107963",
+      "editionMatch": "title",
+      "coverNote": "Verified title-level cover; photographed edition or printing may differ."
+    },
+    {
+      "id": "A3-05",
+      "title": "Artificial Intelligence",
+      "author": "Patrick Henry Winston",
+      "subject": "AI & data",
+      "shelf": "B2",
+      "position": 9,
+      "photo": 0,
+      "quad": [
+        [
+          959.0,
+          650.0
+        ],
+        [
+          1002.0,
+          648.0
+        ],
+        [
+          969.0,
+          988.0
+        ],
+        [
+          926.0,
+          982.0
+        ]
+      ],
+      "cover": "assets/covers/A3-05.webp",
+      "description": "Patrick Henry Winston introduces central methods and ideas in artificial intelligence. The text covers ways to represent knowledge, reason, learn, and solve problems computationally.",
+      "sourceURL": "https://openlibrary.org/works/OL2024373W",
+      "identification": "spine",
+      "coverURL": "https://covers.openlibrary.org/b/id/135105-L.jpg?default=false",
+      "isbn": "0201533774",
+      "editionMatch": "title",
+      "coverNote": "Confirmed title and author; cover may differ from the physical edition.",
+      "descriptionBasis": "Original editorial summary of the identified work."
+    },
+    {
+      "id": "B1-07",
+      "title": "Software Estimation",
+      "author": "Steve McConnell",
+      "subject": "Software craft & process",
+      "shelf": "A3",
+      "position": 1,
+      "photo": 0,
+      "quad": [
+        [
+          77.0,
+          987.0
+        ],
+        [
+          115.0,
+          988.0
+        ],
+        [
+          132.0,
+          1297.0
+        ],
+        [
+          94.0,
+          1291.0
+        ]
+      ],
+      "cover": "assets/covers/B1-07.webp",
+      "description": "Steve McConnell examines how to make software estimates more useful and realistic. The book discusses uncertainty, estimation techniques, and the factors that affect project forecasts.",
+      "sourceURL": "https://openlibrary.org/works/OL2722066W",
+      "identification": "spine",
+      "coverURL": "https://covers.openlibrary.org/b/id/460978-L.jpg?default=false",
+      "editionMatch": "title",
+      "coverNote": "Confirmed title and author; cover may differ from the physical edition.",
+      "descriptionBasis": "Original editorial summary of the identified work."
+    },
+    {
+      "id": "B1-03",
+      "title": "Agile Estimating and Planning",
+      "author": "Mike Cohn",
+      "subject": "Software craft & process",
+      "shelf": "A3",
+      "position": 2,
+      "photo": 0,
+      "quad": [
+        [
+          115.0,
+          1001.0
+        ],
+        [
+          154.0,
+          1005.0
+        ],
+        [
+          163.0,
+          1302.0
+        ],
+        [
+          132.0,
+          1297.0
+        ]
+      ],
+      "cover": "assets/covers/B1-03.webp",
+      "description": "Mike Cohn explains ways to estimate and plan software work in an agile process. The book connects release planning, iteration planning, and decisions made under uncertainty.",
+      "sourceURL": "https://openlibrary.org/works/OL2760486W",
+      "identification": "spine",
+      "coverURL": "https://covers.openlibrary.org/b/id/87586-L.jpg?default=false",
+      "isbn": "0131479415",
+      "editionMatch": "title",
+      "coverNote": "Confirmed title and author; cover may differ from the physical edition.",
+      "descriptionBasis": "Original editorial summary of the identified work."
+    },
+    {
+      "id": "B1-04",
+      "title": "The Mythical Man-Month",
+      "author": "Frederick P. Brooks",
+      "subject": "Software craft & process",
+      "shelf": "A3",
+      "position": 3,
+      "photo": 0,
+      "quad": [
+        [
+          155.0,
+          1011.0
+        ],
+        [
+          184.0,
+          1010.0
+        ],
+        [
+          191.0,
+          1308.0
+        ],
+        [
+          163.0,
+          1302.0
+        ]
+      ],
+      "cover": "assets/covers/B1-04.webp",
+      "description": "Frederick Brooks reflects on the challenges of managing large software projects. His essays examine coordination, scheduling, design, and the limits of adding people to late work.",
+      "sourceURL": "https://openlibrary.org/works/OL3510570W",
+      "identification": "spine",
+      "coverURL": "https://covers.openlibrary.org/b/id/6915361-L.jpg?default=false",
+      "isbn": "0201006502",
+      "editionMatch": "title",
+      "coverNote": "Confirmed title and author; cover may differ from the physical edition.",
+      "descriptionBasis": "Original editorial summary of the identified work."
+    },
+    {
+      "id": "B1-02",
+      "title": "Essential Scrum",
+      "author": "Kenneth S. Rubin",
+      "subject": "Software craft & process",
+      "shelf": "A3",
+      "position": 4,
+      "photo": 0,
+      "quad": [
+        [
+          184.0,
+          1008.0
+        ],
+        [
+          229.0,
+          1011.0
+        ],
+        [
+          236.0,
+          1315.0
+        ],
+        [
+          191.0,
+          1308.0
+        ]
+      ],
+      "cover": "assets/covers/B1-02.webp",
+      "description": "Kenneth Rubin presents a practical guide to Scrum’s roles, events, and artifacts. The book explains how teams can use the framework to plan and deliver products.",
+      "sourceURL": "https://openlibrary.org/works/OL16617654W",
+      "identification": "spine",
+      "coverURL": "https://covers.openlibrary.org/b/id/7401605-L.jpg?default=false",
+      "isbn": "9780137043293",
+      "editionMatch": "title",
+      "coverNote": "Confirmed title and author; cover may differ from the physical edition.",
+      "descriptionBasis": "Original editorial summary of the identified work."
+    },
+    {
+      "id": "B3-02",
+      "title": "The Architecture of Open Source Applications, Vol. II",
+      "author": "Amy Brown, Greg Wilson",
+      "subject": "Software craft & process",
+      "shelf": "A3",
+      "position": 5,
+      "photo": 0,
+      "quad": [
+        [
+          231.0,
+          985.0
+        ],
+        [
+          280.0,
+          990.0
+        ],
+        [
+          279.0,
+          1319.0
+        ],
+        [
+          236.0,
+          1315.0
+        ]
+      ],
+      "cover": "assets/covers/B3-02.webp",
+      "description": "Edited by Amy Brown and Greg Wilson, Volume II examines the architecture of open source projects including Git, nginx, matplotlib, and SQLAlchemy. Project contributors explain the choices behind their systems.",
+      "sourceURL": "https://aosabook.org/en/",
+      "identification": "spine",
+      "coverURL": "https://aosabook.org/static/cover2.jpg",
+      "isbn": "9781105571817",
+      "editionMatch": "exact",
+      "coverNote": "Cover and edition number verified against the catalog or publisher.",
+      "descriptionBasis": "Original summary grounded in the official book’s table of contents."
+    },
+    {
+      "id": "D1-11",
+      "title": "Daily Coding Problem",
+      "author": "Lawrence Wu, Alex Miller",
+      "subject": "Interview preparation",
+      "shelf": "A3",
+      "position": 6,
+      "photo": 0,
+      "quad": [
+        [
+          284.0,
+          976.0
+        ],
+        [
+          324.0,
+          980.0
+        ],
+        [
+          322.0,
+          1326.0
+        ],
+        [
+          279.0,
+          1319.0
+        ]
+      ],
+      "cover": "assets/covers/D1-11.webp",
+      "description": "A collection of coding problems intended to build technical-interview problem-solving skills through practice.",
+      "sourceURL": "https://openlibrary.org/books/OL37756898M",
+      "identification": "spine",
+      "coverURL": "https://covers.openlibrary.org/b/id/13825722-L.jpg?default=false",
+      "isbn": "9781793296634",
+      "editionMatch": "title",
+      "coverNote": "Verified title-level cover; photographed edition or printing may differ."
+    },
+    {
+      "id": "C3-01",
+      "title": "Code Complete, 2nd edition",
+      "author": "Steve McConnell",
+      "subject": "Software craft & process",
+      "shelf": "A3",
+      "position": 7,
+      "photo": 0,
+      "quad": [
+        [
+          325.0,
+          1019.0
+        ],
+        [
+          394.0,
+          1021.0
+        ],
+        [
+          398.0,
+          1336.0
+        ],
+        [
+          322.0,
+          1326.0
+        ]
+      ],
+      "cover": "assets/covers/C3-01.webp",
+      "description": "A practical guide to software construction, from detailed design and coding to debugging and improving code.",
+      "sourceURL": "https://openlibrary.org/books/OL7891116M",
+      "identification": "spine",
+      "coverURL": "https://covers.openlibrary.org/b/id/15247726-L.jpg?default=false",
+      "isbn": "9780735619678",
+      "editionMatch": "exact"
+    },
+    {
+      "id": "B3-09",
+      "title": "The Practice of Programming",
+      "author": "Brian W. Kernighan",
+      "subject": "Software craft & process",
+      "shelf": "A3",
+      "position": 8,
+      "photo": 0,
+      "quad": [
+        [
+          395.0,
+          1024.0
+        ],
+        [
+          426.0,
+          1027.0
+        ],
+        [
+          429.0,
+          1339.0
+        ],
+        [
+          398.0,
+          1336.0
+        ]
+      ],
+      "cover": "assets/covers/B3-09.webp",
+      "description": "Brian Kernighan and Rob Pike examine the everyday craft of writing software. The book discusses design, style, algorithms, debugging, testing, and performance through practical examples.",
+      "sourceURL": "https://openlibrary.org/works/OL15333872W",
+      "identification": "spine",
+      "coverURL": "https://covers.openlibrary.org/b/id/135396-L.jpg?default=false",
+      "isbn": "9780201615869",
+      "editionMatch": "title",
+      "coverNote": "Confirmed title and author; cover may differ from the physical edition.",
+      "descriptionBasis": "Original editorial summary of the identified work."
+    },
+    {
+      "id": "C2-10",
+      "title": "Programming Pearls, 2nd edition",
+      "author": "Jon Bentley",
+      "subject": "Software craft & process",
+      "shelf": "A3",
+      "position": 9,
+      "photo": 0,
+      "quad": [
+        [
+          428.0,
+          1023.0
+        ],
+        [
+          462.0,
+          1026.0
+        ],
+        [
+          456.0,
+          1343.0
+        ],
+        [
+          429.0,
+          1339.0
+        ]
+      ],
+      "cover": "assets/covers/C2-10.webp",
+      "description": "A collection of programming problems and techniques that develops practical problem-solving skills.",
+      "sourceURL": "https://openlibrary.org/books/OL7408388M",
+      "identification": "spine",
+      "coverURL": "https://covers.openlibrary.org/b/id/135673-L.jpg?default=false",
+      "isbn": "9780201657883",
+      "editionMatch": "exact"
+    },
+    {
+      "id": "A2-03",
+      "title": "Scrum",
+      "author": "Jeff Sutherland",
+      "subject": "Software craft & process",
+      "shelf": "A3",
+      "position": 10,
+      "photo": 0,
+      "quad": [
+        [
+          464.0,
+          1006.0
+        ],
+        [
+          498.0,
+          1010.0
+        ],
+        [
+          490.0,
+          1346.0
+        ],
+        [
+          456.0,
+          1343.0
+        ]
+      ],
+      "cover": "assets/covers/A2-03.webp",
+      "description": "Jeff Sutherland introduces Scrum as a framework for organizing collaborative work. The book describes short work cycles, feedback, and ways to improve team delivery.",
+      "sourceURL": "https://openlibrary.org/works/OL17817696W",
+      "identification": "spine",
+      "coverURL": "https://covers.openlibrary.org/b/id/8107216-L.jpg?default=false",
+      "isbn": "9780385346450",
+      "editionMatch": "title",
+      "coverNote": "Confirmed title and author; cover may differ from the physical edition.",
+      "descriptionBasis": "Original editorial summary of the identified work."
+    },
+    {
+      "id": "D2-03",
+      "title": "Elements of Programming Interviews in Python",
+      "author": "Adnan Aziz",
+      "subject": "Interview preparation",
+      "shelf": "B3",
+      "position": 1,
+      "photo": 0,
+      "quad": [
+        [
+          520.0,
+          991.0
+        ],
+        [
+          564.0,
+          993.0
+        ],
+        [
+          548.0,
+          1347.0
+        ],
+        [
+          508.0,
+          1343.0
+        ]
+      ],
+      "cover": "assets/covers/D2-03.webp",
+      "description": "A collection of technical-interview problems and solutions presented in Python.",
+      "sourceURL": "https://openlibrary.org/books/OL26943599M",
+      "identification": "spine",
+      "coverURL": "https://covers.openlibrary.org/b/id/13701849-L.jpg?default=false",
+      "isbn": "9781537713946",
+      "editionMatch": "title",
+      "coverNote": "Verified title-level cover; photographed edition or printing may differ."
+    },
+    {
+      "id": "D2-02",
+      "title": "Cracking the Coding Interview, 6th edition",
+      "author": "Gayle Laakmann McDowell",
+      "subject": "Interview preparation",
+      "shelf": "B3",
+      "position": 2,
+      "photo": 0,
+      "quad": [
+        [
+          566.0,
+          998.0
+        ],
+        [
+          630.0,
+          1004.0
+        ],
+        [
+          608.0,
+          1353.0
+        ],
+        [
+          548.0,
+          1347.0
+        ]
+      ],
+      "cover": "assets/covers/D2-02.webp",
+      "description": "A preparation guide for coding interviews, with programming problems and discussion of interview techniques.",
+      "sourceURL": "https://openlibrary.org/books/OL26395119M",
+      "identification": "spine",
+      "coverURL": "https://covers.openlibrary.org/b/id/8091016-L.jpg?default=false",
+      "isbn": "9780984782857",
+      "editionMatch": "exact"
+    },
+    {
+      "id": "A3-01",
+      "title": "The Algorithm Design Manual, 2nd edition",
+      "author": "Steven S. Skiena",
+      "subject": "Algorithms & problem solving",
+      "shelf": "B3",
+      "position": 3,
+      "photo": 0,
+      "quad": [
+        [
+          630.0,
+          1016.0
+        ],
+        [
+          681.0,
+          1020.0
+        ],
+        [
+          659.0,
+          1358.0
+        ],
+        [
+          608.0,
+          1353.0
+        ]
+      ],
+      "cover": "assets/covers/A3-01.webp",
+      "description": "Steven Skiena presents techniques for designing algorithms and choosing appropriate approaches to computational problems. The second edition includes a catalog of algorithmic problems and resources.",
+      "sourceURL": "https://openlibrary.org/works/OL2677499W",
+      "identification": "spine",
+      "coverURL": "https://covers.openlibrary.org/b/id/15226282-L.jpg?default=false",
+      "isbn": "9781848000698",
+      "editionMatch": "exact",
+      "coverNote": "Cover and edition number verified against catalog metadata or the retrieved cover.",
+      "descriptionBasis": "Original editorial summary of the identified work."
+    },
+    {
+      "id": "B3-08",
+      "title": "Unidentified patterned volume",
+      "author": "Author to identify",
+      "subject": "Unidentified",
+      "shelf": "B3",
+      "position": 4,
+      "photo": 0,
+      "quad": [
+        [
+          682.0,
+          1024.0
+        ],
+        [
+          702.0,
+          1028.0
+        ],
+        [
+          686.0,
+          1362.0
+        ],
+        [
+          659.0,
+          1358.0
+        ]
+      ],
+      "cover": null,
+      "description": "The title and author are not readable in the source photograph. A clearer view is needed to identify this volume.",
+      "sourceURL": null,
+      "identification": "uncertain",
+      "editionMatch": "uncertain",
+      "coverNote": "No verified cover available.",
+      "descriptionBasis": "Original editorial summary of the identified work."
+    },
+    {
+      "id": "NEW-VONNEUMANN",
+      "title": "John von Neumann",
+      "author": "Author to confirm",
+      "subject": "Biography",
+      "shelf": "B3",
+      "position": 5,
+      "photo": 0,
+      "quad": [
+        [
+          704.0,
+          1031.0
+        ],
+        [
+          749.0,
+          1037.0
+        ],
+        [
+          724.0,
+          1368.0
+        ],
+        [
+          686.0,
+          1362.0
+        ]
+      ],
+      "cover": null,
+      "description": "The spine reads John von Neumann. The author and edition cannot be confirmed from this photograph.",
+      "sourceURL": "https://openlibrary.org/search?q=title%3AJohn+von+Neumann",
+      "identification": "uncertain",
+      "editionMatch": "uncertain"
+    },
+    {
+      "id": "D2-01",
+      "title": "Cracking the PM Interview",
+      "author": "Gayle Laakmann McDowell, Jackie Bavaro",
+      "subject": "Interview preparation",
+      "shelf": "B3",
+      "position": 6,
+      "photo": 0,
+      "quad": [
+        [
+          751.0,
+          1049.0
+        ],
+        [
+          782.0,
+          1053.0
+        ],
+        [
+          757.0,
+          1368.0
+        ],
+        [
+          724.0,
+          1368.0
+        ]
+      ],
+      "cover": "assets/covers/D2-01.webp",
+      "description": "A guide to preparing for product-management interviews and understanding the product-manager role.",
+      "sourceURL": "https://openlibrary.org/books/OL26136077M",
+      "identification": "spine",
+      "coverURL": "https://covers.openlibrary.org/b/id/7793714-L.jpg?default=false",
+      "isbn": "9780984782819",
+      "editionMatch": "title",
+      "coverNote": "Verified title-level cover; photographed edition or printing may differ."
+    },
+    {
+      "id": "D1-07",
+      "title": "Cracking the Coding Interview",
+      "author": "Gayle Laakmann McDowell",
+      "subject": "Interview preparation",
+      "shelf": "B3",
+      "position": 7,
+      "photo": 0,
+      "quad": [
+        [
+          784.0,
+          1059.0
+        ],
+        [
+          824.0,
+          1061.0
+        ],
+        [
+          791.0,
+          1368.0
+        ],
+        [
+          757.0,
+          1368.0
+        ]
+      ],
+      "cover": "assets/covers/D1-07.webp",
+      "description": "A preparation guide for coding interviews, with programming problems and discussion of interview techniques.",
+      "sourceURL": "https://openlibrary.org/books/OL25536640M",
+      "identification": "spine",
+      "coverURL": "https://covers.openlibrary.org/b/id/8633709-L.jpg?default=false",
+      "isbn": "9781451578270",
+      "editionMatch": "title",
+      "coverNote": "Verified title-level cover; photographed edition or printing may differ."
+    },
+    {
+      "id": "D1-10",
+      "title": "Ace the Programming Interview: 160 Questions and Answers",
+      "author": "Edward Guiness",
+      "subject": "Interview preparation",
+      "shelf": "B3",
+      "position": 8,
+      "photo": 0,
+      "quad": [
+        [
+          825.0,
+          1058.0
+        ],
+        [
+          860.0,
+          1060.0
+        ],
+        [
+          828.0,
+          1368.0
+        ],
+        [
+          791.0,
+          1368.0
+        ]
+      ],
+      "cover": "assets/covers/D1-10.webp",
+      "description": "A programming-interview preparation guide organized around 160 questions and answers.",
+      "sourceURL": "https://openlibrary.org/books/OL26182464M",
+      "identification": "spine",
+      "coverURL": "https://covers.openlibrary.org/b/id/7859594-L.jpg?default=false",
+      "isbn": "9781118518564",
+      "editionMatch": "title",
+      "coverNote": "Verified title-level cover; photographed edition or printing may differ."
+    },
+    {
+      "id": "D1-05",
+      "title": "Programming Interviews Exposed, 3rd edition",
+      "author": "John Mongan, John Mongan, Noah Suojanen, Eric Giguère",
+      "subject": "Interview preparation",
+      "shelf": "B3",
+      "position": 9,
+      "photo": 0,
+      "quad": [
+        [
+          858.0,
+          1042.0
+        ],
+        [
+          879.0,
+          1041.0
+        ],
+        [
+          847.0,
+          1368.0
+        ],
+        [
+          832.0,
+          1368.0
+        ]
+      ],
+      "cover": "assets/covers/D1-05.webp",
+      "description": "A guide to programming interviews and the technical problems candidates encounter.",
+      "sourceURL": "https://openlibrary.org/books/OL7596328M",
+      "identification": "spine",
+      "coverURL": "https://covers.openlibrary.org/b/id/1239724-L.jpg?default=false",
+      "isbn": "9780470121672",
+      "editionMatch": "title",
+      "coverNote": "Verified title-level cover; photographed edition or printing may differ."
+    },
+    {
+      "id": "D1-08",
+      "title": "Algorithms for Interviews",
+      "author": "Adnan Aziz",
+      "subject": "Interview preparation",
+      "shelf": "B3",
+      "position": 10,
+      "photo": 0,
+      "quad": [
+        [
+          879.0,
+          1042.0
+        ],
+        [
+          908.0,
+          1047.0
+        ],
+        [
+          865.0,
+          1368.0
+        ],
+        [
+          828.0,
+          1368.0
+        ]
+      ],
+      "cover": "assets/covers/D1-08.webp",
+      "description": "A collection of algorithmic problems designed to help prepare for technical interviews.",
+      "sourceURL": "https://books.google.com/books?vid=ISBN9781453792995",
+      "identification": "spine",
+      "coverURL": "https://books.google.com/books/content?vid=ISBN9781453792995&printsec=frontcover&img=1&zoom=1",
+      "isbn": "9781453792995",
+      "editionMatch": "title",
+      "coverNote": "Verified title-level cover; photographed edition or printing may differ."
+    },
+    {
+      "id": "NEW-INFORMATION",
+      "title": "The Information",
+      "author": "James Gleick",
+      "subject": "Computing history",
+      "shelf": "B3",
+      "position": 11,
+      "photo": 0,
+      "quad": [
+        [
+          910.0,
+          1069.0
+        ],
+        [
+          950.0,
+          1075.0
+        ],
+        [
+          910.0,
+          1368.0
+        ],
+        [
+          865.0,
+          1368.0
+        ]
+      ],
+      "cover": "assets/covers/NEW-INFORMATION.webp",
+      "description": "James Gleick follows the history of information and communication, from early signals to the ideas behind modern information theory.",
+      "sourceURL": "https://openlibrary.org/works/OL15586927W",
+      "identification": "spine",
+      "coverURL": "https://covers.openlibrary.org/b/id/6699475-L.jpg?default=false",
+      "isbn": "9780375423727",
+      "editionMatch": "title"
+    },
+    {
+      "id": "C1-07",
+      "title": "Introduction to Algorithms and Machine Learning",
+      "author": "Justin Skycak",
+      "subject": "Algorithms & problem solving",
+      "shelf": "C1",
+      "position": 1,
+      "photo": 1,
+      "quad": [
+        [
+          789.0,
+          72.0
+        ],
+        [
+          827.0,
+          71.0
+        ],
+        [
+          825.0,
+          484.0
+        ],
+        [
+          786.0,
+          483.0
+        ]
+      ],
+      "cover": "assets/covers/C1-07.webp",
+      "description": "Justin Skycak introduces algorithms and machine learning through a progression from sorting to strategic agents. The text grew out of an advanced school program centered on implementing ideas from scratch in Python.",
+      "sourceURL": "https://www.justinmath.com/books/#introduction-to-algorithms-and-machine-learning",
+      "identification": "spine",
+      "coverURL": "https://justinmath.com/files/icon-introduction-to-algorithms-and-machine-learning.png",
+      "editionMatch": "title"
+    },
+    {
+      "id": "D1-04",
+      "title": "The Algorithm Design Manual, 2nd edition",
+      "author": "Steven S. Skiena",
+      "subject": "Algorithms & problem solving",
+      "shelf": "C1",
+      "position": 2,
+      "photo": 1,
+      "quad": [
+        [
+          827.0,
+          87.0
+        ],
+        [
+          884.0,
+          88.0
+        ],
+        [
+          884.0,
+          485.0
+        ],
+        [
+          825.0,
+          484.0
+        ]
+      ],
+      "cover": "assets/covers/D1-04.webp",
+      "description": "A practical guide to algorithm design, with a catalog of algorithmic problems and approaches.",
+      "sourceURL": "https://openlibrary.org/books/OL22855493M",
+      "identification": "spine",
+      "coverURL": "https://covers.openlibrary.org/b/id/15226282-L.jpg?default=false",
+      "isbn": "9781848000698",
+      "editionMatch": "exact"
+    },
+    {
+      "id": "D1-03",
+      "title": "Introduction to Algorithms, 2nd edition",
+      "author": "Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest, Clifford Stein",
+      "subject": "Algorithms & problem solving",
+      "shelf": "C1",
+      "position": 3,
+      "photo": 1,
+      "quad": [
+        [
+          887.0,
+          100.0
+        ],
+        [
+          971.0,
+          100.0
+        ],
+        [
+          961.0,
+          486.0
+        ],
+        [
+          884.0,
+          485.0
+        ]
+      ],
+      "cover": "assets/covers/D1-03.webp",
+      "description": "A textbook introducing algorithms, data structures, and the mathematical analysis of their efficiency.",
+      "sourceURL": "https://openlibrary.org/books/OL9801324M",
+      "identification": "spine",
+      "coverURL": "https://covers.openlibrary.org/b/id/151333-L.jpg?default=false",
+      "isbn": "9780262531962",
+      "editionMatch": "exact"
+    },
+    {
+      "id": "D1-06",
+      "title": "Problem Solving with Algorithms and Data Structures Using Python, 2nd edition",
+      "author": "Bradley N. Miller, David L. Ranum",
+      "subject": "Algorithms & problem solving",
+      "shelf": "C1",
+      "position": 4,
+      "photo": 1,
+      "quad": [
+        [
+          973.0,
+          100.0
+        ],
+        [
+          1009.0,
+          103.0
+        ],
+        [
+          997.0,
+          486.0
+        ],
+        [
+          961.0,
+          486.0
+        ]
+      ],
+      "cover": "assets/covers/D1-06.webp",
+      "description": "An introduction to algorithms and data structures through problem solving in Python.",
+      "sourceURL": "https://openlibrary.org/books/OL37111204M",
+      "identification": "spine",
+      "coverURL": "https://covers.openlibrary.org/b/id/13265050-L.jpg?default=false",
+      "isbn": "9781590282571",
+      "editionMatch": "exact"
+    },
+    {
+      "id": "D2-08",
+      "title": "Mastering Algorithms with C",
+      "author": "Kyle Loudon, Andy Oram",
+      "subject": "Algorithms & problem solving",
+      "shelf": "C1",
+      "position": 5,
+      "photo": 1,
+      "quad": [
+        [
+          1010.0,
+          108.0
+        ],
+        [
+          1048.0,
+          108.0
+        ],
+        [
+          1042.0,
+          487.0
+        ],
+        [
+          997.0,
+          486.0
+        ]
+      ],
+      "cover": "assets/covers/D2-08.webp",
+      "description": "An introduction to implementing fundamental algorithms and data structures in C.",
+      "sourceURL": "https://openlibrary.org/books/OL6805155M",
+      "identification": "spine",
+      "coverURL": "https://covers.openlibrary.org/b/id/805790-L.jpg?default=false",
+      "isbn": "1565924533",
+      "editionMatch": "title",
+      "coverNote": "Verified title-level cover; photographed edition or printing may differ."
+    },
+    {
+      "id": "D1-09",
+      "title": "Algorithms Unlocked",
+      "author": "Thomas H. Cormen",
+      "subject": "Algorithms & problem solving",
+      "shelf": "C1",
+      "position": 6,
+      "photo": 1,
+      "quad": [
+        [
+          1050.0,
+          116.0
+        ],
+        [
+          1084.0,
+          119.0
+        ],
+        [
+          1073.0,
+          487.0
+        ],
+        [
+          1042.0,
+          487.0
+        ]
+      ],
+      "cover": "assets/covers/D1-09.webp",
+      "description": "An accessible introduction to algorithms and how they solve computational problems.",
+      "sourceURL": "https://openlibrary.org/books/OL26420430M",
+      "identification": "spine",
+      "coverURL": "https://covers.openlibrary.org/b/id/8126209-L.jpg?default=false",
+      "isbn": "9780262313223",
+      "editionMatch": "title",
+      "coverNote": "Verified title-level cover; photographed edition or printing may differ."
+    },
+    {
+      "id": "A2-10",
+      "title": "Infinite Powers",
+      "author": "Steven H. Strogatz",
+      "subject": "Mathematics & statistics",
+      "shelf": "C1",
+      "position": 7,
+      "photo": 1,
+      "quad": [
+        [
+          1084.0,
+          162.0
+        ],
+        [
+          1125.0,
+          164.0
+        ],
+        [
+          1118.0,
+          488.0
+        ],
+        [
+          1073.0,
+          487.0
+        ]
+      ],
+      "cover": "assets/covers/A2-10.webp",
+      "description": "Steven Strogatz explains how calculus makes changing quantities understandable. Historical stories and practical examples connect its central ideas to the modern world.",
+      "sourceURL": "https://openlibrary.org/works/OL20152236W",
+      "identification": "spine",
+      "coverURL": "https://covers.openlibrary.org/b/id/8796821-L.jpg?default=false",
+      "isbn": "9781328879981",
+      "editionMatch": "title",
+      "coverNote": "Confirmed title and author; cover may differ from the physical edition.",
+      "descriptionBasis": "Original editorial summary of the identified work."
+    },
+    {
+      "id": "C2-08",
+      "title": "How to Solve It",
+      "author": "George Pólya",
+      "subject": "Mathematics & statistics",
+      "shelf": "C1",
+      "position": 8,
+      "photo": 1,
+      "quad": [
+        [
+          1134.0,
+          150.0
+        ],
+        [
+          1162.0,
+          149.0
+        ],
+        [
+          1145.0,
+          488.0
+        ],
+        [
+          1118.0,
+          488.0
+        ]
+      ],
+      "cover": "assets/covers/C2-08.webp",
+      "description": "A classic guide to mathematical problem solving and the habits that help turn a question into a solution.",
+      "sourceURL": "https://openlibrary.org/books/OL6220908M",
+      "identification": "spine",
+      "coverURL": "https://covers.openlibrary.org/b/id/15177896-L.jpg?default=false",
+      "editionMatch": "title",
+      "coverNote": "Verified title-level cover; photographed edition or printing may differ."
+    },
+    {
+      "id": "B2-01",
+      "title": "Vector",
+      "author": "Robyn Arianrhod",
+      "subject": "Mathematics & statistics",
+      "shelf": "C1",
+      "position": 9,
+      "photo": 1,
+      "quad": [
+        [
+          1164.0,
+          119.0
+        ],
+        [
+          1211.0,
+          119.0
+        ],
+        [
+          1193.0,
+          489.0
+        ],
+        [
+          1145.0,
+          488.0
+        ]
+      ],
+      "cover": "assets/covers/B2-01.webp",
+      "description": "Robyn Arianrhod follows the development of vectors and tensors across the history of mathematics and physics. The story shows how these ideas helped researchers describe electromagnetism, space-time, and the quantum world.",
+      "sourceURL": "https://newsouthbooks.com.au/books/vector/",
+      "identification": "spine",
+      "coverURL": "https://assets.unsw.press/media/images/9781761170089.original_14Siv1C.jpg",
+      "isbn": "9781761170089",
+      "editionMatch": "title",
+      "coverNote": "Confirmed title and author; cover may differ from the physical edition.",
+      "descriptionBasis": "Original summary of publisher description."
+    },
+    {
+      "id": "D3-11",
+      "title": "Mathematics for Computing",
+      "author": "G. P. McKeown",
+      "subject": "Mathematics & statistics",
+      "shelf": "C1",
+      "position": 10,
+      "photo": 1,
+      "quad": [
+        [
+          1215.0,
+          97.0
+        ],
+        [
+          1250.0,
+          96.0
+        ],
+        [
+          1226.0,
+          488.0
+        ],
+        [
+          1193.0,
+          489.0
+        ]
+      ],
+      "cover": "assets/covers/D3-11.webp",
+      "description": "An introduction to the mathematics used in computing.",
+      "sourceURL": "https://openlibrary.org/books/OL4261246M",
+      "identification": "spine",
+      "coverURL": "https://covers.openlibrary.org/b/id/11677746-L.jpg?default=false",
+      "isbn": "0470272686",
+      "editionMatch": "title",
+      "coverNote": "Verified title-level cover; photographed edition or printing may differ."
+    },
+    {
+      "id": "A3-09",
+      "title": "Zero",
+      "author": "Charles Seife",
+      "subject": "Mathematics & statistics",
+      "shelf": "D1",
+      "position": 1,
+      "photo": 1,
+      "quad": [
+        [
+          1277.0,
+          150.0
+        ],
+        [
+          1301.0,
+          148.0
+        ],
+        [
+          1272.0,
+          488.0
+        ],
+        [
+          1253.0,
+          488.0
+        ]
+      ],
+      "cover": "assets/covers/A3-09.webp",
+      "description": "Charles Seife follows the history of zero as a mathematical idea. The book examines why nothingness caused controversy and how zero became essential to science.",
+      "sourceURL": "https://openlibrary.org/works/OL41168W",
+      "identification": "spine",
+      "coverURL": "https://covers.openlibrary.org/b/id/9321912-L.jpg?default=false",
+      "editionMatch": "title",
+      "coverNote": "Confirmed title and author; cover may differ from the physical edition.",
+      "descriptionBasis": "Original editorial summary of the identified work."
+    },
+    {
+      "id": "A3-03",
+      "title": "Shape",
+      "author": "Jordan Ellenberg",
+      "subject": "Mathematics & statistics",
+      "shelf": "D1",
+      "position": 2,
+      "photo": 1,
+      "quad": [
+        [
+          1302.0,
+          132.0
+        ],
+        [
+          1349.0,
+          133.0
+        ],
+        [
+          1324.0,
+          490.0
+        ],
+        [
+          1272.0,
+          488.0
+        ]
+      ],
+      "cover": "assets/covers/A3-03.webp",
+      "description": "Jordan Ellenberg explores geometry and its influence beyond shapes and measurements. The book connects geometric thinking with practical questions about the world.",
+      "sourceURL": "https://openlibrary.org/works/OL24311715W",
+      "identification": "spine",
+      "coverURL": "https://covers.openlibrary.org/b/id/10827887-L.jpg?default=false",
+      "isbn": "9781984879059",
+      "editionMatch": "title",
+      "coverNote": "Confirmed title and author; cover may differ from the physical edition.",
+      "descriptionBasis": "Original editorial summary of the identified work."
+    },
+    {
+      "id": "C1-09",
+      "title": "Linear Algebra",
+      "author": "Justin Skycak",
+      "subject": "Mathematics & statistics",
+      "shelf": "D1",
+      "position": 3,
+      "photo": 1,
+      "quad": [
+        [
+          1349.0,
+          128.0
+        ],
+        [
+          1376.0,
+          125.0
+        ],
+        [
+          1353.0,
+          490.0
+        ],
+        [
+          1324.0,
+          490.0
+        ]
+      ],
+      "cover": "assets/covers/C1-09.webp",
+      "description": "A concise introduction to vectors, volume, matrices, and eigenspaces. Geometric explanations connect core linear algebra concepts to linear systems and differential equations.",
+      "sourceURL": "https://www.justinmath.com/books/#linear-algebra",
+      "identification": "spine",
+      "coverURL": "https://justinmath.com/files/icon-justinmath-linearAlgebra.png",
+      "isbn": "9781679236532",
+      "editionMatch": "title"
+    },
+    {
+      "id": "C2-06",
+      "title": "Introduction to Graph Theory",
+      "author": "Richard J. Trudeau",
+      "subject": "Mathematics & statistics",
+      "shelf": "D1",
+      "position": 4,
+      "photo": 1,
+      "quad": [
+        [
+          1378.0,
+          124.0
+        ],
+        [
+          1404.0,
+          123.0
+        ],
+        [
+          1377.0,
+          491.0
+        ],
+        [
+          1353.0,
+          490.0
+        ]
+      ],
+      "cover": "assets/covers/C2-06.webp",
+      "description": "An introductory exploration of graph theory and the mathematical study of connected structures.",
+      "sourceURL": "https://openlibrary.org/books/OL1422588M",
+      "identification": "spine",
+      "coverURL": "https://covers.openlibrary.org/b/id/315179-L.jpg?default=false",
+      "isbn": "0486678709",
+      "editionMatch": "title",
+      "coverNote": "Verified title-level cover; photographed edition or printing may differ."
+    },
+    {
+      "id": "A2-02",
+      "title": "The Joy of x",
+      "author": "Steven H. Strogatz",
+      "subject": "Mathematics & statistics",
+      "shelf": "D1",
+      "position": 5,
+      "photo": 1,
+      "quad": [
+        [
+          1411.0,
+          90.0
+        ],
+        [
+          1468.0,
+          87.0
+        ],
+        [
+          1440.0,
+          493.0
+        ],
+        [
+          1387.0,
+          491.0
+        ]
+      ],
+      "cover": "assets/covers/A2-02.webp",
+      "description": "Steven Strogatz offers an accessible tour through mathematical ideas, from arithmetic to calculus. Everyday examples show how different parts of mathematics fit together.",
+      "sourceURL": "https://openlibrary.org/works/OL16681334W",
+      "identification": "spine",
+      "coverURL": "https://covers.openlibrary.org/b/id/9266506-L.jpg?default=false",
+      "isbn": "9780547517650",
+      "editionMatch": "title",
+      "coverNote": "Confirmed title and author; cover may differ from the physical edition.",
+      "descriptionBasis": "Original editorial summary of the identified work."
+    },
+    {
+      "id": "D1-02",
+      "title": "Guide to Competitive Programming, 2nd edition",
+      "author": "Antti Laaksonen",
+      "subject": "Interview preparation",
+      "shelf": "D1",
+      "position": 6,
+      "photo": 1,
+      "quad": [
+        [
+          1474.0,
+          91.0
+        ],
+        [
+          1508.0,
+          91.0
+        ],
+        [
+          1474.0,
+          494.0
+        ],
+        [
+          1440.0,
+          493.0
+        ]
+      ],
+      "cover": "assets/covers/D1-02.webp",
+      "description": "A guide to learning algorithms and improving problem-solving skills through programming contests.",
+      "sourceURL": "https://openlibrary.org/books/OL28253400M",
+      "identification": "spine",
+      "coverURL": "https://covers.openlibrary.org/b/id/10183192-L.jpg?default=false",
+      "isbn": "9783030393564",
+      "editionMatch": "exact"
+    },
+    {
+      "id": "C1-05",
+      "title": "Introductory Discrete Mathematics",
+      "author": "V. K. Balakrishnan",
+      "subject": "Mathematics & statistics",
+      "shelf": "D1",
+      "position": 7,
+      "photo": 1,
+      "quad": [
+        [
+          1510.0,
+          88.0
+        ],
+        [
+          1541.0,
+          89.0
+        ],
+        [
+          1508.0,
+          495.0
+        ],
+        [
+          1474.0,
+          494.0
+        ]
+      ],
+      "cover": "assets/covers/C1-05.webp",
+      "description": "An introductory treatment of discrete mathematics and its connections to computer science.",
+      "sourceURL": "https://openlibrary.org/books/OL814860M",
+      "identification": "spine",
+      "coverURL": "https://covers.openlibrary.org/b/id/315235-L.jpg?default=false",
+      "isbn": "0486691152",
+      "editionMatch": "title",
+      "coverNote": "Verified title-level cover; photographed edition or printing may differ."
+    },
+    {
+      "id": "C1-06",
+      "title": "The Language of Mathematics",
+      "author": "Keith J. Devlin",
+      "subject": "Mathematics & statistics",
+      "shelf": "D1",
+      "position": 8,
+      "photo": 1,
+      "quad": [
+        [
+          1544.0,
+          88.0
+        ],
+        [
+          1582.0,
+          85.0
+        ],
+        [
+          1552.0,
+          497.0
+        ],
+        [
+          1508.0,
+          495.0
+        ]
+      ],
+      "cover": "assets/covers/C1-06.webp",
+      "description": "A popular account of mathematics as a language for recognizing and describing patterns.",
+      "sourceURL": "https://openlibrary.org/books/OL376107M",
+      "identification": "spine",
+      "coverURL": "https://covers.openlibrary.org/b/id/455747-L.jpg?default=false",
+      "isbn": "071673379X",
+      "editionMatch": "title",
+      "coverNote": "Verified title-level cover; photographed edition or printing may differ."
+    },
+    {
+      "id": "B2-10",
+      "title": "Introduction to Mathematical Philosophy",
+      "author": "Bertrand Russell",
+      "subject": "Mathematics & statistics",
+      "shelf": "D1",
+      "position": 9,
+      "photo": 1,
+      "quad": [
+        [
+          1586.0,
+          91.0
+        ],
+        [
+          1608.0,
+          86.0
+        ],
+        [
+          1577.0,
+          497.0
+        ],
+        [
+          1552.0,
+          497.0
+        ]
+      ],
+      "cover": "assets/covers/B2-10.webp",
+      "description": "Bertrand Russell examines the logical foundations of mathematics. The book introduces ideas about number, classes, relations, and infinity for readers approaching mathematical philosophy.",
+      "sourceURL": "https://openlibrary.org/works/OL1088545W",
+      "identification": "spine",
+      "coverURL": "https://covers.openlibrary.org/b/id/263150-L.jpg?default=false",
+      "isbn": "0415096049",
+      "editionMatch": "title",
+      "coverNote": "Confirmed title and author; cover may differ from the physical edition.",
+      "descriptionBasis": "Original editorial summary of the identified work."
+    },
+    {
+      "id": "D1-01",
+      "title": "Graph Theory 1736–1936",
+      "author": "Norman Biggs",
+      "subject": "Mathematics & statistics",
+      "shelf": "D1",
+      "position": 10,
+      "photo": 1,
+      "quad": [
+        [
+          1613.0,
+          86.0
+        ],
+        [
+          1656.0,
+          83.0
+        ],
+        [
+          1614.0,
+          498.0
+        ],
+        [
+          1577.0,
+          497.0
+        ]
+      ],
+      "cover": "assets/covers/D1-01.webp",
+      "description": "A historical account of graph theory spanning the years 1736 to 1936.",
+      "sourceURL": "https://openlibrary.org/books/OL22635427M",
+      "identification": "spine",
+      "coverURL": "https://covers.openlibrary.org/b/id/10037962-L.jpg?default=false",
+      "isbn": "0198539169",
+      "editionMatch": "title",
+      "coverNote": "Verified title-level cover; photographed edition or printing may differ."
+    },
+    {
+      "id": "C2-02",
+      "title": "Book of Proof",
+      "author": "Richard Hammack",
+      "subject": "Mathematics & statistics",
+      "shelf": "D1",
+      "position": 11,
+      "photo": 1,
+      "quad": [
+        [
+          1662.0,
+          50.0
+        ],
+        [
+          1707.0,
+          50.0
+        ],
+        [
+          1654.0,
+          499.0
+        ],
+        [
+          1614.0,
+          498.0
+        ]
+      ],
+      "cover": "assets/covers/C2-02.webp",
+      "description": "An introduction to mathematical proof and the reasoning used to establish mathematical statements.",
+      "sourceURL": "https://books.google.com/books?vid=ISBN9780989472128",
+      "identification": "spine",
+      "coverURL": "https://books.google.com/books/content?vid=ISBN9780989472128&printsec=frontcover&img=1&zoom=1",
+      "isbn": "9780989472128",
+      "editionMatch": "title",
+      "coverNote": "Verified title-level cover; photographed edition or printing may differ."
+    },
+    {
+      "id": "B3-01",
+      "title": "Elementary Statistics, 6th edition",
+      "author": "Allan G. Bluman",
+      "subject": "Mathematics & statistics",
+      "shelf": "D1",
+      "position": 12,
+      "photo": 1,
+      "quad": [
+        [
+          1712.0,
+          9.0
+        ],
+        [
+          1770.0,
+          10.0
+        ],
+        [
+          1720.0,
+          500.0
+        ],
+        [
+          1654.0,
+          499.0
+        ]
+      ],
+      "cover": "assets/covers/B3-01.webp",
+      "description": "Allan Bluman introduces foundational statistical methods and their applications. The sixth edition develops descriptive statistics, probability, estimation, and hypothesis testing.",
+      "sourceURL": "https://openlibrary.org/books/OL3296245M",
+      "identification": "spine",
+      "coverURL": "https://covers.openlibrary.org/b/id/4243599-L.jpg?default=false",
+      "editionMatch": "title",
+      "coverNote": "Title-level fallback; small catalog cover. The sixth edition is not confirmed.",
+      "descriptionBasis": "Original editorial summary of the identified work."
+    },
+    {
+      "id": "C1-01",
+      "title": "How We Got from There to Here: A Story of Real Analysis",
+      "author": "Eugene Boman",
+      "subject": "Mathematics & statistics",
+      "shelf": "D1",
+      "position": 13,
+      "photo": 1,
+      "quad": [
+        [
+          1774.0,
+          0.0
+        ],
+        [
+          1808.0,
+          0.0
+        ],
+        [
+          1744.0,
+          501.0
+        ],
+        [
+          1720.0,
+          500.0
+        ]
+      ],
+      "cover": "assets/covers/C1-01.webp",
+      "description": "An open textbook that introduces real analysis through the historical development of its central ideas.",
+      "sourceURL": "https://books.google.com/books?vid=ISBN9781312348691",
+      "identification": "spine",
+      "coverURL": "https://books.google.com/books/content?vid=ISBN9781312348691&printsec=frontcover&img=1&zoom=2",
+      "isbn": "9781312348691",
+      "editionMatch": "title",
+      "coverNote": "Verified title-level cover; photographed edition or printing may differ."
+    },
+    {
+      "id": "C1-04",
+      "title": "Modern Operating Systems, 3rd edition",
+      "author": "Andrew S. Tanenbaum, Herbert Bos",
+      "subject": "Systems & Linux",
+      "shelf": "C2",
+      "position": 1,
+      "photo": 1,
+      "quad": [
+        [
+          785.0,
+          577.0
+        ],
+        [
+          843.0,
+          578.0
+        ],
+        [
+          840.0,
+          919.0
+        ],
+        [
+          785.0,
+          915.0
+        ]
+      ],
+      "cover": "assets/covers/C1-04.webp",
+      "description": "An introduction to operating-system design, including the management of processes, memory, and files.",
+      "sourceURL": "https://books.google.com/books?vid=ISBN9780136006633",
+      "identification": "spine",
+      "coverURL": "https://books.google.com/books/content?vid=ISBN9780136006633&printsec=frontcover&img=1&zoom=1",
+      "isbn": "9780136006633",
+      "editionMatch": "exact"
+    },
+    {
+      "id": "B2-07",
+      "title": "Understanding the Linux Kernel, 3rd edition",
+      "author": "Daniel P. Bovet",
+      "subject": "Systems & Linux",
+      "shelf": "C2",
+      "position": 2,
+      "photo": 1,
+      "quad": [
+        [
+          845.0,
+          594.0
+        ],
+        [
+          902.0,
+          595.0
+        ],
+        [
+          897.0,
+          922.0
+        ],
+        [
+          840.0,
+          919.0
+        ]
+      ],
+      "cover": "assets/covers/B2-07.webp",
+      "description": "Daniel Bovet and Marco Cesati examine the internal operation of the Linux kernel. The third edition explains mechanisms for processes, memory, filesystems, and related subsystems.",
+      "sourceURL": "https://openlibrary.org/works/OL3940957W",
+      "identification": "spine",
+      "coverURL": "https://covers.openlibrary.org/b/id/388839-L.jpg?default=false",
+      "isbn": "9780596005658",
+      "editionMatch": "exact",
+      "coverNote": "Cover and edition number verified against catalog metadata or the retrieved cover.",
+      "descriptionBasis": "Original editorial summary of the identified work."
+    },
+    {
+      "id": "B2-03",
+      "title": "Computer Systems: A Programmer’s Perspective",
+      "author": "Randal E. Bryant, David R. O'Hallaron",
+      "subject": "Systems & Linux",
+      "shelf": "C2",
+      "position": 3,
+      "photo": 1,
+      "quad": [
+        [
+          905.0,
+          581.0
+        ],
+        [
+          965.0,
+          581.0
+        ],
+        [
+          955.0,
+          925.0
+        ],
+        [
+          897.0,
+          922.0
+        ]
+      ],
+      "cover": "assets/covers/B2-03.webp",
+      "description": "Randal Bryant and David O’Hallaron explain how computer systems behave from a programmer’s perspective. The text connects machine-level execution, memory, linking, and operating-system services.",
+      "sourceURL": "https://openlibrary.org/works/OL19545341W",
+      "identification": "spine",
+      "coverURL": "https://covers.openlibrary.org/b/id/8511531-L.jpg?default=false",
+      "isbn": "9780134092669",
+      "editionMatch": "title",
+      "coverNote": "Confirmed title and author; cover may differ from the physical edition.",
+      "descriptionBasis": "Original editorial summary of the identified work."
+    },
+    {
+      "id": "C2-05",
+      "title": "Linux System Programming, 2nd edition",
+      "author": "Robert Love",
+      "subject": "Systems & Linux",
+      "shelf": "C2",
+      "position": 4,
+      "photo": 1,
+      "quad": [
+        [
+          967.0,
+          593.0
+        ],
+        [
+          1003.0,
+          594.0
+        ],
+        [
+          992.0,
+          927.0
+        ],
+        [
+          955.0,
+          925.0
+        ]
+      ],
+      "cover": "assets/covers/C2-05.webp",
+      "description": "A guide to Linux system programming and the operating-system interfaces available to application developers.",
+      "sourceURL": "https://openlibrary.org/books/OL26838869M",
+      "identification": "spine",
+      "coverURL": "https://covers.openlibrary.org/b/id/8515057-L.jpg?default=false",
+      "isbn": "9781449339531",
+      "editionMatch": "exact"
+    },
+    {
+      "id": "B2-09",
+      "title": "Parallel Programming",
+      "author": "Peter Pacheco, Matthew Malensek",
+      "subject": "Systems & Linux",
+      "shelf": "C2",
+      "position": 5,
+      "photo": 1,
+      "quad": [
+        [
+          1005.0,
+          587.0
+        ],
+        [
+          1029.0,
+          588.0
+        ],
+        [
+          1021.0,
+          929.0
+        ],
+        [
+          992.0,
+          927.0
+        ]
+      ],
+      "cover": "assets/covers/B2-09.webp",
+      "description": "Peter Pacheco introduces parallel programming and the coordination of work across multiple processors. The precise title and edition should be checked against the physical volume.",
+      "sourceURL": "https://openlibrary.org/works/OL21835917W",
+      "identification": "spine",
+      "coverURL": "https://covers.openlibrary.org/b/id/14098620-L.jpg?default=false",
+      "isbn": "9780128046050",
+      "editionMatch": "title",
+      "coverNote": "Confirmed title and author; cover may differ from the physical edition.",
+      "descriptionBasis": "Original editorial summary of the identified work."
+    },
+    {
+      "id": "B3-11",
+      "title": "Operating Systems: Three Easy Pieces",
+      "author": "Remzi H Arpaci-Dusseau, Andrea C Arpaci-Dusseau",
+      "subject": "Systems & Linux",
+      "shelf": "C2",
+      "position": 6,
+      "photo": 1,
+      "quad": [
+        [
+          1031.0,
+          600.0
+        ],
+        [
+          1101.0,
+          601.0
+        ],
+        [
+          1088.0,
+          931.0
+        ],
+        [
+          1021.0,
+          929.0
+        ]
+      ],
+      "cover": "assets/covers/B3-11.webp",
+      "description": "Remzi and Andrea Arpaci-Dusseau explain operating systems through virtualization, concurrency, and persistence. The text connects fundamental ideas with the mechanisms used in real systems.",
+      "sourceURL": "https://openlibrary.org/works/OL21738416W",
+      "identification": "spine",
+      "coverURL": "https://covers.openlibrary.org/b/id/10401368-L.jpg?default=false",
+      "isbn": "9781985086593",
+      "editionMatch": "title",
+      "coverNote": "Confirmed title and author; cover may differ from the physical edition.",
+      "descriptionBasis": "Original editorial summary of the identified work."
+    },
+    {
+      "id": "B2-05",
+      "title": "Linux Device Drivers, 3rd edition",
+      "author": "Jonathan Corbet, Alessandro Rubini, Greg Kroah-Hartman",
+      "subject": "Systems & Linux",
+      "shelf": "C2",
+      "position": 7,
+      "photo": 1,
+      "quad": [
+        [
+          1104.0,
+          594.0
+        ],
+        [
+          1150.0,
+          595.0
+        ],
+        [
+          1130.0,
+          933.0
+        ],
+        [
+          1088.0,
+          931.0
+        ]
+      ],
+      "cover": "assets/covers/B2-05.webp",
+      "description": "Jonathan Corbet, Alessandro Rubini, and Greg Kroah-Hartman explain how Linux device drivers connect hardware with the kernel. The third edition develops driver concepts through code and examples.",
+      "sourceURL": "https://openlibrary.org/isbn/9780596005900",
+      "identification": "spine",
+      "coverURL": "https://covers.openlibrary.org/b/isbn/9780596005900-L.jpg?default=false",
+      "isbn": "9780596005900",
+      "editionMatch": "exact",
+      "coverNote": "Cover and edition number verified against the catalog or publisher.",
+      "descriptionBasis": "Original editorial summary of the identified work."
+    },
+    {
+      "id": "B2-04",
+      "title": "Linux Kernel Development, 3rd edition",
+      "author": "Robert Love",
+      "subject": "Systems & Linux",
+      "shelf": "C2",
+      "position": 8,
+      "photo": 1,
+      "quad": [
+        [
+          1153.0,
+          604.0
+        ],
+        [
+          1195.0,
+          604.0
+        ],
+        [
+          1173.0,
+          936.0
+        ],
+        [
+          1130.0,
+          933.0
+        ]
+      ],
+      "cover": "assets/covers/B2-04.webp",
+      "description": "Robert Love explains the Linux kernel’s design and implementation. The third edition introduces major subsystems and the mechanisms that support processes, memory, and concurrency.",
+      "sourceURL": "https://openlibrary.org/works/OL5739563W",
+      "identification": "spine",
+      "coverURL": "https://covers.openlibrary.org/b/id/8706243-L.jpg?default=false",
+      "isbn": "9780672329463",
+      "editionMatch": "exact",
+      "coverNote": "Cover and edition number verified against catalog metadata or the retrieved cover.",
+      "descriptionBasis": "Original editorial summary of the identified work."
+    },
+    {
+      "id": "B1-11",
+      "title": "Designing Data-Intensive Applications",
+      "author": "Martin Kleppmann",
+      "subject": "Cloud & distributed systems",
+      "shelf": "D2",
+      "position": 1,
+      "photo": 1,
+      "quad": [
+        [
+          1240.0,
+          600.0
+        ],
+        [
+          1297.0,
+          604.0
+        ],
+        [
+          1275.0,
+          945.0
+        ],
+        [
+          1222.0,
+          939.0
+        ]
+      ],
+      "cover": "assets/covers/B1-11.webp",
+      "description": "Martin Kleppmann examines the design of systems that store and process data. The book explains tradeoffs involving reliability, scalability, consistency, and distributed computation.",
+      "sourceURL": "https://openlibrary.org/works/OL19293745W",
+      "identification": "spine",
+      "coverURL": "https://covers.openlibrary.org/b/id/8434671-L.jpg?default=false",
+      "isbn": "9781449373320",
+      "editionMatch": "title",
+      "coverNote": "Confirmed title and author; cover may differ from the physical edition.",
+      "descriptionBasis": "Original editorial summary of the identified work."
+    },
+    {
+      "id": "B1-05",
+      "title": "AWS for Solutions Architects, 2nd edition",
+      "author": "Saurabh Shrivastava, Neelanjali Srivastav, Alberto Artasanchez",
+      "subject": "Cloud & distributed systems",
+      "shelf": "D2",
+      "position": 2,
+      "photo": 1,
+      "quad": [
+        [
+          1299.0,
+          599.0
+        ],
+        [
+          1373.0,
+          602.0
+        ],
+        [
+          1346.0,
+          950.0
+        ],
+        [
+          1275.0,
+          945.0
+        ]
+      ],
+      "cover": "assets/covers/B1-05.webp",
+      "description": "Saurabh Shrivastava, Neelanjali Srivastav, and Alberto Artasanchez explain how to build and migrate systems on AWS. The second edition covers cloud architecture, networking, security, and operational practices.",
+      "sourceURL": "https://www.packtpub.com/en-CA/product/aws-for-solutions-architects-9781803238951",
+      "identification": "spine",
+      "coverURL": "https://covers.openlibrary.org/b/isbn/9781803238951-L.jpg?default=false",
+      "isbn": "9781803238951",
+      "editionMatch": "exact",
+      "coverNote": "Cover and edition number verified against the catalog or publisher.",
+      "descriptionBasis": "Original summary grounded in the publisher page."
+    },
+    {
+      "id": "B1-06",
+      "title": "AWS Certified Cloud Practitioner Study Guide",
+      "author": "Ben Piper, David Clinton",
+      "subject": "Cloud & distributed systems",
+      "shelf": "D2",
+      "position": 3,
+      "photo": 1,
+      "quad": [
+        [
+          1376.0,
+          603.0
+        ],
+        [
+          1404.0,
+          605.0
+        ],
+        [
+          1371.0,
+          954.0
+        ],
+        [
+          1346.0,
+          950.0
+        ]
+      ],
+      "cover": "assets/covers/B1-06.webp",
+      "description": "Ben Piper and David Clinton introduce AWS services and foundational cloud concepts for the Cloud Practitioner certification. The guide supports study of cloud infrastructure, security, and service selection.",
+      "sourceURL": "https://openlibrary.org/works/OL20866461W",
+      "identification": "spine",
+      "coverURL": "https://covers.openlibrary.org/b/id/10184193-L.jpg?default=false",
+      "isbn": "9781119490708",
+      "editionMatch": "title",
+      "coverNote": "Confirmed title and author; cover may differ from the physical edition.",
+      "descriptionBasis": "Original editorial summary of the identified work."
+    },
+    {
+      "id": "D3-01",
+      "title": "Graph Databases",
+      "author": "Ian Robinson, Jim Webber, Emil Eifrem",
+      "subject": "Cloud & distributed systems",
+      "shelf": "D2",
+      "position": 4,
+      "photo": 1,
+      "quad": [
+        [
+          1406.0,
+          607.0
+        ],
+        [
+          1433.0,
+          609.0
+        ],
+        [
+          1394.0,
+          957.0
+        ],
+        [
+          1371.0,
+          954.0
+        ]
+      ],
+      "cover": "assets/covers/D3-01.webp",
+      "description": "An introduction to graph databases and the use of connected data in applications.",
+      "sourceURL": "https://openlibrary.org/books/OL26838786M",
+      "identification": "spine",
+      "coverURL": "https://covers.openlibrary.org/b/id/8514919-L.jpg?default=false",
+      "isbn": "9781449356262",
+      "editionMatch": "title",
+      "coverNote": "Verified title-level cover; photographed edition or printing may differ."
+    },
+    {
+      "id": "B2-08",
+      "title": "Distributed Systems, 2nd edition",
+      "author": "Andrew S. Tanenbaum, Maarten Van Steen, Maarten van Steen",
+      "subject": "Cloud & distributed systems",
+      "shelf": "D2",
+      "position": 5,
+      "photo": 1,
+      "quad": [
+        [
+          1434.0,
+          609.0
+        ],
+        [
+          1488.0,
+          613.0
+        ],
+        [
+          1452.0,
+          961.0
+        ],
+        [
+          1394.0,
+          957.0
+        ]
+      ],
+      "cover": "assets/covers/B2-08.webp",
+      "description": "Andrew Tanenbaum and Maarten van Steen explain the principles behind distributed systems. The second edition addresses communication, coordination, naming, consistency, and fault tolerance.",
+      "sourceURL": "https://openlibrary.org/works/OL1970672W",
+      "identification": "spine",
+      "coverURL": "https://covers.openlibrary.org/b/id/89663-L.jpg?default=false",
+      "isbn": "9780132392273",
+      "editionMatch": "exact",
+      "coverNote": "Cover and edition number verified against catalog metadata or the retrieved cover.",
+      "descriptionBasis": "Original editorial summary of the identified work."
+    },
+    {
+      "id": "A1-03",
+      "title": "Journey to the Edge of Reason",
+      "author": "Stephen Budiansky",
+      "subject": "Biography & science",
+      "shelf": "D2",
+      "position": 6,
+      "photo": 1,
+      "quad": [
+        [
+          1490.0,
+          615.0
+        ],
+        [
+          1547.0,
+          618.0
+        ],
+        [
+          1493.0,
+          963.0
+        ],
+        [
+          1452.0,
+          961.0
+        ]
+      ],
+      "cover": "assets/covers/A1-03.webp",
+      "description": "Stephen Budiansky examines the life of logician Kurt Gödel. The biography follows his mathematical work, friendships, and years in Europe and America.",
+      "sourceURL": "https://openlibrary.org/works/OL24569073W",
+      "identification": "spine",
+      "coverURL": "https://covers.openlibrary.org/b/id/11220546-L.jpg?default=false",
+      "isbn": "9781324005445",
+      "editionMatch": "title",
+      "coverNote": "Confirmed title and author; cover may differ from the physical edition.",
+      "descriptionBasis": "Original editorial summary of the identified work."
+    },
+    {
+      "id": "B2-06",
+      "title": "Mastering Regular Expressions, 3rd edition",
+      "author": "Jeffrey E. F. Friedl",
+      "subject": "Software craft & process",
+      "shelf": "D2",
+      "position": 7,
+      "photo": 1,
+      "quad": [
+        [
+          1549.0,
+          618.0
+        ],
+        [
+          1584.0,
+          620.0
+        ],
+        [
+          1528.0,
+          966.0
+        ],
+        [
+          1493.0,
+          963.0
+        ]
+      ],
+      "cover": "assets/covers/B2-06.webp",
+      "description": "Jeffrey Friedl explains regular expressions and how matching engines work. The third edition develops techniques for writing patterns that are correct, efficient, and maintainable.",
+      "sourceURL": "https://openlibrary.org/works/OL2807549W",
+      "identification": "spine",
+      "coverURL": "https://covers.openlibrary.org/b/id/389320-L.jpg?default=false",
+      "isbn": "9780596528126",
+      "editionMatch": "exact",
+      "coverNote": "Cover and edition number verified against catalog metadata or the retrieved cover.",
+      "descriptionBasis": "Original editorial summary of the identified work."
+    },
+    {
+      "id": "C2-07",
+      "title": "Natural Language Processing with Python",
+      "author": "Edward Loper, Steven Bird, Ewan Klein",
+      "subject": "AI & data",
+      "shelf": "D2",
+      "position": 8,
+      "photo": 1,
+      "quad": [
+        [
+          1588.0,
+          622.0
+        ],
+        [
+          1622.0,
+          627.0
+        ],
+        [
+          1568.0,
+          969.0
+        ],
+        [
+          1528.0,
+          966.0
+        ]
+      ],
+      "cover": "assets/covers/C2-07.webp",
+      "description": "An introduction to processing and analyzing human language with Python.",
+      "sourceURL": "https://openlibrary.org/books/OL23978297M",
+      "identification": "spine",
+      "coverURL": "https://covers.openlibrary.org/b/id/6296394-L.jpg?default=false",
+      "isbn": "9780596516499",
+      "editionMatch": "title",
+      "coverNote": "Verified title-level cover; photographed edition or printing may differ."
+    },
+    {
+      "id": "NEW-CRYPTO",
+      "title": "Crypto",
+      "author": "Steven Levy",
+      "subject": "Security",
+      "shelf": "D2",
+      "position": 9,
+      "photo": 1,
+      "quad": [
+        [
+          1625.0,
+          669.0
+        ],
+        [
+          1678.0,
+          673.0
+        ],
+        [
+          1624.0,
+          980.0
+        ],
+        [
+          1568.0,
+          969.0
+        ]
+      ],
+      "cover": "assets/covers/NEW-CRYPTO.webp",
+      "description": "Steven Levy traces the people and conflicts behind modern cryptography, following the struggle to protect privacy in the digital age.",
+      "sourceURL": "https://openlibrary.org/works/OL15835594W",
+      "identification": "spine",
+      "coverURL": "https://covers.openlibrary.org/b/id/6799421-L.jpg?default=false",
+      "isbn": "9780670859504",
+      "editionMatch": "title"
+    },
+    {
+      "id": "A1-04",
+      "title": "Moonwalking with Einstein",
+      "author": "Joshua Foer, Mike Chamberlain (Narrator) Joshua Foer",
+      "subject": "Life & business",
+      "shelf": "C3",
+      "position": 1,
+      "photo": 1,
+      "quad": [
+        [
+          790.0,
+          990.0
+        ],
+        [
+          824.0,
+          992.0
+        ],
+        [
+          823.0,
+          1294.0
+        ],
+        [
+          787.0,
+          1289.0
+        ]
+      ],
+      "cover": "assets/covers/A1-04.webp",
+      "description": "Joshua Foer investigates how memory works while training for a memory competition. His experiences connect practical memory techniques with the history of remembering.",
+      "sourceURL": "https://openlibrary.org/works/OL15683431W",
+      "identification": "spine",
+      "coverURL": "https://covers.openlibrary.org/b/id/14426425-L.jpg?default=false",
+      "editionMatch": "title",
+      "coverNote": "Confirmed title and author; cover may differ from the physical edition.",
+      "descriptionBasis": "Original editorial summary of the identified work."
+    },
+    {
+      "id": "A1-05",
+      "title": "Atomic Habits",
+      "author": "James Clear",
+      "subject": "Life & business",
+      "shelf": "C3",
+      "position": 2,
+      "photo": 1,
+      "quad": [
+        [
+          826.0,
+          1001.0
+        ],
+        [
+          870.0,
+          1005.0
+        ],
+        [
+          864.0,
+          1298.0
+        ],
+        [
+          823.0,
+          1294.0
+        ]
+      ],
+      "cover": "assets/covers/A1-05.webp",
+      "description": "James Clear explains how small, repeated actions can develop into lasting habits. The book focuses on cues, routines, environments, and gradual improvement.",
+      "sourceURL": "https://openlibrary.org/works/OL17930368W",
+      "identification": "spine",
+      "coverURL": "https://covers.openlibrary.org/b/id/12886417-L.jpg?default=false",
+      "isbn": "9780735211292",
+      "editionMatch": "title",
+      "coverNote": "Confirmed title and author; cover may differ from the physical edition.",
+      "descriptionBasis": "Original editorial summary of the identified work."
+    },
+    {
+      "id": "C1-11",
+      "title": "The Mind Illuminated",
+      "author": "Culadasa John Yates, Matthew Immergut PhD, Sean Runnette, Jeremy Graves",
+      "subject": "Life & business",
+      "shelf": "C3",
+      "position": 3,
+      "photo": 1,
+      "quad": [
+        [
+          872.0,
+          1007.0
+        ],
+        [
+          909.0,
+          1009.0
+        ],
+        [
+          901.0,
+          1302.0
+        ],
+        [
+          864.0,
+          1298.0
+        ]
+      ],
+      "cover": "assets/covers/C1-11.webp",
+      "description": "A guide to meditation practice that brings Buddhist training into conversation with modern understandings of the mind.",
+      "sourceURL": "https://openlibrary.org/books/OL26932820M",
+      "identification": "spine",
+      "coverURL": "https://covers.openlibrary.org/b/id/15098358-L.jpg?default=false",
+      "isbn": "9781501156984",
+      "editionMatch": "title",
+      "coverNote": "Verified title-level cover; photographed edition or printing may differ."
+    },
+    {
+      "id": "A3-07",
+      "title": "Venture Deals, 4th edition",
+      "author": "Brad Feld",
+      "subject": "Life & business",
+      "shelf": "C3",
+      "position": 4,
+      "photo": 1,
+      "quad": [
+        [
+          910.0,
+          1003.0
+        ],
+        [
+          951.0,
+          1007.0
+        ],
+        [
+          939.0,
+          1305.0
+        ],
+        [
+          901.0,
+          1302.0
+        ]
+      ],
+      "cover": "assets/covers/A3-07.webp",
+      "description": "Brad Feld and Jason Mendelson explain venture financing and the terms used in investment deals. The fourth edition discusses negotiation, deal structure, and the relationships between founders and investors.",
+      "sourceURL": "https://openlibrary.org/works/OL16134369W",
+      "identification": "spine",
+      "coverURL": "https://covers.openlibrary.org/b/id/8732100-L.jpg?default=false",
+      "isbn": "9781118443613",
+      "editionMatch": "title",
+      "coverNote": "Confirmed title and author; cover may differ from the physical edition.",
+      "descriptionBasis": "Original editorial summary of the identified work."
+    },
+    {
+      "id": "NEW-MINDFULNESS",
+      "title": "The Miracle of Mindfulness",
+      "author": "Thích Nhất Hạnh",
+      "subject": "Mindfulness",
+      "shelf": "C3",
+      "position": 5,
+      "photo": 1,
+      "quad": [
+        [
+          952.0,
+          1054.0
+        ],
+        [
+          969.0,
+          1053.0
+        ],
+        [
+          958.0,
+          1310.0
+        ],
+        [
+          939.0,
+          1305.0
+        ]
+      ],
+      "cover": "assets/covers/NEW-MINDFULNESS.webp",
+      "description": "Thich Nhat Hanh introduces mindfulness through everyday activities, gentle anecdotes, and practical meditation exercises.",
+      "sourceURL": "https://openlibrary.org/works/OL12381026W",
+      "identification": "spine",
+      "coverURL": "https://covers.openlibrary.org/b/id/8262944-L.jpg?default=false",
+      "isbn": "0807012017",
+      "editionMatch": "title"
+    },
+    {
+      "id": "NEW-ANNIHILATION",
+      "title": "Annihilation",
+      "author": "Jeff VanderMeer",
+      "subject": "Fiction",
+      "shelf": "C3",
+      "position": 6,
+      "photo": 1,
+      "quad": [
+        [
+          973.0,
+          1057.0
+        ],
+        [
+          995.0,
+          1058.0
+        ],
+        [
+          984.0,
+          1312.0
+        ],
+        [
+          958.0,
+          1310.0
+        ]
+      ],
+      "cover": "assets/covers/NEW-ANNIHILATION.webp",
+      "description": "A scientific expedition enters the isolated and mysterious Area X, where unfamiliar life and the explorers’ secrets unsettle their mission.",
+      "sourceURL": "https://openlibrary.org/works/OL17268007W",
+      "identification": "spine",
+      "coverURL": "https://covers.openlibrary.org/b/id/8408974-L.jpg?default=false",
+      "isbn": "9780374710774",
+      "editionMatch": "title"
+    },
+    {
+      "id": "A3-06",
+      "title": "Meditations",
+      "author": "Marcus Aurelius",
+      "subject": "Life & business",
+      "shelf": "C3",
+      "position": 7,
+      "photo": 1,
+      "quad": [
+        [
+          997.0,
+          1060.0
+        ],
+        [
+          1020.0,
+          1063.0
+        ],
+        [
+          1010.0,
+          1315.0
+        ],
+        [
+          984.0,
+          1312.0
+        ]
+      ],
+      "cover": "assets/covers/A3-06.webp",
+      "description": "Marcus Aurelius reflects on conduct, judgment, and human life through Stoic philosophy. These personal notes consider how to act with steadiness amid events beyond one’s control.",
+      "sourceURL": "https://openlibrary.org/works/OL1317211W",
+      "identification": "spine",
+      "coverURL": "https://covers.openlibrary.org/b/id/211529-L.jpg?default=false",
+      "isbn": "9780345472373",
+      "editionMatch": "title",
+      "coverNote": "Confirmed title and author; cover may differ from the physical edition.",
+      "descriptionBasis": "Original editorial summary of the identified work."
+    },
+    {
+      "id": "A2-01",
+      "title": "Algebra",
+      "author": "Justin Skycak",
+      "subject": "Mathematics",
+      "shelf": "C3",
+      "position": 8,
+      "photo": 1,
+      "quad": [
+        [
+          1024.0,
+          1037.0
+        ],
+        [
+          1053.0,
+          1038.0
+        ],
+        [
+          1046.0,
+          1318.0
+        ],
+        [
+          1010.0,
+          1315.0
+        ]
+      ],
+      "cover": "assets/covers/A2-01.webp",
+      "description": "Justin Skycak introduces algebra through equations, inequalities, polynomials, and functions. The book develops these topics with explanations and worked mathematical practice.",
+      "sourceURL": "https://www.justinmath.com/books/#algebra",
+      "identification": "spine",
+      "coverURL": "https://justinmath.com/files/icon-justinmath-algebra.png",
+      "isbn": "1730993044",
+      "editionMatch": "title",
+      "coverNote": "Confirmed title and author; cover may differ from the physical edition.",
+      "descriptionBasis": "Original summary grounded in the chapter list on the author’s book page."
+    },
+    {
+      "id": "A1-01",
+      "title": "Steve Jobs",
+      "author": "Walter Isaacson",
+      "subject": "Biography & science",
+      "shelf": "C3",
+      "position": 9,
+      "photo": 1,
+      "quad": [
+        [
+          1057.0,
+          1007.0
+        ],
+        [
+          1129.0,
+          1012.0
+        ],
+        [
+          1109.0,
+          1324.0
+        ],
+        [
+          1046.0,
+          1318.0
+        ]
+      ],
+      "cover": "assets/covers/A1-01.webp",
+      "description": "Walter Isaacson traces Steve Jobs’s life, leadership, and role in building Apple. The biography explores the ambition and exacting design standards behind his products.",
+      "sourceURL": "https://openlibrary.org/works/OL16085155W",
+      "identification": "spine",
+      "coverURL": "https://covers.openlibrary.org/b/id/15091624-L.jpg?default=false",
+      "isbn": "1451648537",
+      "editionMatch": "title",
+      "coverNote": "Confirmed title and author; cover may differ from the physical edition.",
+      "descriptionBasis": "Original editorial summary of the identified work."
+    },
+    {
+      "id": "A1-02",
+      "title": "The Making of the Atomic Bomb",
+      "author": "Richard Rhodes",
+      "subject": "Biography & science",
+      "shelf": "C3",
+      "position": 10,
+      "photo": 1,
+      "quad": [
+        [
+          1132.0,
+          1025.0
+        ],
+        [
+          1193.0,
+          1028.0
+        ],
+        [
+          1174.0,
+          1330.0
+        ],
+        [
+          1109.0,
+          1324.0
+        ]
+      ],
+      "cover": "assets/covers/A1-02.webp",
+      "description": "Richard Rhodes tells the history of nuclear physics and the people who developed the atomic bomb. Scientific discovery unfolds alongside the wartime decisions that brought it into use.",
+      "sourceURL": "https://openlibrary.org/works/OL2617750W",
+      "identification": "spine",
+      "coverURL": "https://covers.openlibrary.org/b/id/6919988-L.jpg?default=false",
+      "isbn": "9780671441333",
+      "editionMatch": "title",
+      "coverNote": "Confirmed title and author; cover may differ from the physical edition.",
+      "descriptionBasis": "Original editorial summary of the identified work."
+    },
+    {
+      "id": "A2-04",
+      "title": "Significant Figures",
+      "author": "Ian Stewart",
+      "subject": "Biography & science",
+      "shelf": "D3",
+      "position": 1,
+      "photo": 1,
+      "quad": [
+        [
+          1218.0,
+          1025.0
+        ],
+        [
+          1257.0,
+          1027.0
+        ],
+        [
+          1238.0,
+          1340.0
+        ],
+        [
+          1195.0,
+          1335.0
+        ]
+      ],
+      "cover": "assets/covers/A2-04.webp",
+      "description": "Ian Stewart profiles mathematicians whose discoveries changed the field. Their lives provide a route through major ideas in the history of mathematics.",
+      "sourceURL": "https://openlibrary.org/works/OL19722153W",
+      "identification": "spine",
+      "coverURL": "https://covers.openlibrary.org/b/id/9199789-L.jpg?default=false",
+      "isbn": "9781781254301",
+      "editionMatch": "title",
+      "coverNote": "Confirmed title and author; cover may differ from the physical edition.",
+      "descriptionBasis": "Original editorial summary of the identified work."
+    },
+    {
+      "id": "A1-08",
+      "title": "The Man Who Loved Only Numbers",
+      "author": "Paul Hoffman",
+      "subject": "Biography & science",
+      "shelf": "D3",
+      "position": 2,
+      "photo": 1,
+      "quad": [
+        [
+          1258.0,
+          1087.0
+        ],
+        [
+          1285.0,
+          1089.0
+        ],
+        [
+          1267.0,
+          1344.0
+        ],
+        [
+          1238.0,
+          1340.0
+        ]
+      ],
+      "cover": "assets/covers/A1-08.webp",
+      "description": "Paul Hoffman portrays the mathematician Paul Erdős and his unusual life of continuous collaboration. The biography introduces the people and mathematical problems that occupied him.",
+      "sourceURL": "https://openlibrary.org/works/OL1857638W",
+      "identification": "spine",
+      "coverURL": "https://covers.openlibrary.org/b/id/5547150-L.jpg?default=false",
+      "isbn": "1857028112",
+      "editionMatch": "title",
+      "coverNote": "Confirmed title and author; cover may differ from the physical edition.",
+      "descriptionBasis": "Original editorial summary of the identified work."
+    },
+    {
+      "id": "A1-09",
+      "title": "Isaac Newton",
+      "author": "James Gleick",
+      "subject": "Biography & science",
+      "shelf": "D3",
+      "position": 3,
+      "photo": 1,
+      "quad": [
+        [
+          1288.0,
+          1085.0
+        ],
+        [
+          1313.0,
+          1086.0
+        ],
+        [
+          1293.0,
+          1346.0
+        ],
+        [
+          1267.0,
+          1344.0
+        ]
+      ],
+      "cover": "assets/covers/A1-09.webp",
+      "description": "James Gleick presents Isaac Newton’s life and intellectual work. The biography connects his investigations of motion, mathematics, and light with the world in which he lived.",
+      "sourceURL": "https://openlibrary.org/works/OL15894W",
+      "identification": "spine",
+      "coverURL": "https://covers.openlibrary.org/b/id/11552-L.jpg?default=false",
+      "isbn": "0007163177",
+      "editionMatch": "title",
+      "coverNote": "Confirmed title and author; cover may differ from the physical edition.",
+      "descriptionBasis": "Original editorial summary of the identified work."
+    },
+    {
+      "id": "A1-06",
+      "title": "Turing’s Cathedral",
+      "author": "George Dyson",
+      "subject": "Biography & science",
+      "shelf": "D3",
+      "position": 4,
+      "photo": 1,
+      "quad": [
+        [
+          1315.0,
+          1081.0
+        ],
+        [
+          1356.0,
+          1087.0
+        ],
+        [
+          1346.0,
+          1350.0
+        ],
+        [
+          1293.0,
+          1346.0
+        ]
+      ],
+      "cover": "assets/covers/A1-06.webp",
+      "description": "George Dyson recounts the origins of electronic computing through the people gathered around John von Neumann. The history connects mathematical ideas with the construction of early computers.",
+      "sourceURL": "https://openlibrary.org/works/OL16126241W",
+      "identification": "spine",
+      "coverURL": "https://covers.openlibrary.org/b/id/7254958-L.jpg?default=false",
+      "editionMatch": "title",
+      "coverNote": "Confirmed title and author; cover may differ from the physical edition.",
+      "descriptionBasis": "Original editorial summary of the identified work."
+    },
+    {
+      "id": "A1-07",
+      "title": "Alan Turing: The Enigma",
+      "author": "Andrew Hodges",
+      "subject": "Biography & science",
+      "shelf": "D3",
+      "position": 5,
+      "photo": 1,
+      "quad": [
+        [
+          1359.0,
+          1092.0
+        ],
+        [
+          1420.0,
+          1098.0
+        ],
+        [
+          1398.0,
+          1359.0
+        ],
+        [
+          1346.0,
+          1350.0
+        ]
+      ],
+      "cover": "assets/covers/A1-07.webp",
+      "description": "Andrew Hodges follows Alan Turing’s life, from mathematical breakthroughs to wartime codebreaking. The biography also examines the personal circumstances and persecution that shaped his final years.",
+      "sourceURL": "https://openlibrary.org/works/OL61215W",
+      "identification": "spine",
+      "coverURL": "https://covers.openlibrary.org/b/id/6381830-L.jpg?default=false",
+      "isbn": "0671492071",
+      "editionMatch": "title",
+      "coverNote": "Confirmed title and author; cover may differ from the physical edition.",
+      "descriptionBasis": "Original editorial summary of the identified work."
+    },
+    {
+      "id": "A2-05",
+      "title": "In Code: A Mathematical Journey",
+      "author": "Sarah Flannery, Sarah Flannery, David Flannery",
+      "subject": "Biography & science",
+      "shelf": "D3",
+      "position": 6,
+      "photo": 1,
+      "quad": [
+        [
+          1423.0,
+          1066.0
+        ],
+        [
+          1467.0,
+          1076.0
+        ],
+        [
+          1450.0,
+          1364.0
+        ],
+        [
+          1398.0,
+          1359.0
+        ]
+      ],
+      "cover": "assets/covers/A2-05.webp",
+      "description": "Sarah Flannery recounts her path into mathematics, with David Flannery. The story introduces number theory and cryptography through puzzles and her own investigations.",
+      "sourceURL": "https://openlibrary.org/works/OL13551820W",
+      "identification": "spine",
+      "coverURL": "https://covers.openlibrary.org/b/id/917661-L.jpg?default=false",
+      "isbn": "9781861972224",
+      "editionMatch": "title",
+      "coverNote": "Confirmed title and author; cover may differ from the physical edition.",
+      "descriptionBasis": "Original editorial summary of the identified work."
+    },
+    {
+      "id": "A3-02",
+      "title": "A Little History of the World",
+      "author": "E. H. Gombrich",
+      "subject": "Biography & science",
+      "shelf": "D3",
+      "position": 7,
+      "photo": 1,
+      "quad": [
+        [
+          1469.0,
+          1090.0
+        ],
+        [
+          1513.0,
+          1099.0
+        ],
+        [
+          1491.0,
+          1368.0
+        ],
+        [
+          1450.0,
+          1364.0
+        ]
+      ],
+      "cover": "assets/covers/A3-02.webp",
+      "description": "E. H. Gombrich tells a broad history of the world in short, accessible chapters. The narrative introduces people, civilizations, and events across many centuries.",
+      "sourceURL": "https://openlibrary.org/works/OL686184W",
+      "identification": "spine",
+      "coverURL": "https://covers.openlibrary.org/b/id/6757946-L.jpg?default=false",
+      "editionMatch": "title",
+      "coverNote": "Confirmed title and author; cover may differ from the physical edition.",
+      "descriptionBasis": "Original editorial summary of the identified work."
+    },
+    {
+      "id": "A2-08",
+      "title": "A Mind at Play",
+      "author": "Jimmy Soni, Rob Goodman",
+      "subject": "Biography & science",
+      "shelf": "D3",
+      "position": 8,
+      "photo": 1,
+      "quad": [
+        [
+          1517.0,
+          1124.0
+        ],
+        [
+          1550.0,
+          1127.0
+        ],
+        [
+          1531.0,
+          1368.0
+        ],
+        [
+          1491.0,
+          1368.0
+        ]
+      ],
+      "cover": "assets/covers/A2-08.webp",
+      "description": "Jimmy Soni and Rob Goodman tell the story of Claude Shannon, a founder of information theory. The biography follows his research, inventions, and playful approach to difficult problems.",
+      "sourceURL": "https://openlibrary.org/works/OL19710901W",
+      "identification": "spine",
+      "coverURL": "https://covers.openlibrary.org/b/id/13157757-L.jpg?default=false",
+      "isbn": "9781476766683",
+      "editionMatch": "title",
+      "coverNote": "Confirmed title and author; cover may differ from the physical edition.",
+      "descriptionBasis": "Original editorial summary of the identified work."
+    },
+    {
+      "id": "A3-08",
+      "title": "Stuff Matters",
+      "author": "Mark Miodownik",
+      "subject": "Biography & science",
+      "shelf": "D3",
+      "position": 9,
+      "photo": 1,
+      "quad": [
+        [
+          1553.0,
+          1133.0
+        ],
+        [
+          1584.0,
+          1137.0
+        ],
+        [
+          1566.0,
+          1368.0
+        ],
+        [
+          1531.0,
+          1368.0
+        ]
+      ],
+      "cover": "assets/covers/A3-08.webp",
+      "description": "Mark Miodownik explores the science of materials found in everyday objects. Stories about substances such as steel, glass, and concrete reveal how their properties shape our lives.",
+      "sourceURL": "https://openlibrary.org/works/OL17778974W",
+      "identification": "spine",
+      "coverURL": "https://covers.openlibrary.org/b/id/8055563-L.jpg?default=false",
+      "isbn": "9780544483941",
+      "editionMatch": "title",
+      "coverNote": "Confirmed title and author; cover may differ from the physical edition.",
+      "descriptionBasis": "Original editorial summary of the identified work."
+    },
+    {
+      "id": "B2-02",
+      "title": "Skunk Works",
+      "author": "Ben R. Rich, Leo Janos, Ben R./Janos, Leo Rich",
+      "subject": "Biography & science",
+      "shelf": "D3",
+      "position": 10,
+      "photo": 1,
+      "quad": [
+        [
+          1586.0,
+          1121.0
+        ],
+        [
+          1621.0,
+          1125.0
+        ],
+        [
+          1607.0,
+          1368.0
+        ],
+        [
+          1566.0,
+          1368.0
+        ]
+      ],
+      "cover": "assets/covers/B2-02.webp",
+      "description": "Ben Rich, with Leo Janos, recounts the work of Lockheed’s advanced aircraft development team. The memoir describes engineering challenges, secrecy, and the organization behind its aircraft.",
+      "sourceURL": "https://openlibrary.org/works/OL3466236W",
+      "identification": "spine",
+      "coverURL": "https://covers.openlibrary.org/b/id/7321776-L.jpg?default=false",
+      "editionMatch": "title",
+      "coverNote": "Confirmed title and author; cover may differ from the physical edition.",
+      "descriptionBasis": "Original editorial summary of the identified work."
+    },
+    {
+      "id": "A2-06",
+      "title": "The Man Who Loved Only Numbers",
+      "author": "Paul Hoffman",
+      "subject": "Biography & science",
+      "shelf": "D3",
+      "position": 11,
+      "photo": 1,
+      "quad": [
+        [
+          1623.0,
+          1140.0
+        ],
+        [
+          1657.0,
+          1144.0
+        ],
+        [
+          1639.0,
+          1368.0
+        ],
+        [
+          1607.0,
+          1368.0
+        ]
+      ],
+      "cover": "assets/covers/A2-06.webp",
+      "description": "Paul Hoffman portrays the mathematician Paul Erdős and his unusual life of continuous collaboration. This is a second physical copy in the collection.",
+      "sourceURL": "https://openlibrary.org/works/OL1857638W",
+      "identification": "spine",
+      "coverURL": "https://covers.openlibrary.org/b/id/5547150-L.jpg?default=false",
+      "isbn": "1857028112",
+      "editionMatch": "title",
+      "coverNote": "Confirmed title and author; cover may differ from the physical edition.",
+      "descriptionBasis": "Original editorial summary of the identified work."
+    }
+  ]
+}

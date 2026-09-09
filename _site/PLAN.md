@@ -1,58 +1,58 @@
-# Publish Obsidian notes tagged `#post`
+# Publish the 3D bookshelf as a blog post
 
 ### What we're doing
 
-A `rake obsidian` task that reads a configurable Obsidian vault, finds every note tagged `#post`,
-and writes each one into `_posts/` as a Jekyll post, copying any embedded images into the repo along
-the way. Run it again and notes that changed in Obsidian get rewritten in place, keeping their
-original filename and URL. Posts written by hand stay untouched forever: the task only ever writes a
-file carrying an `obsidian_source:` key in its frontmatter, so the 24 existing posts are
-structurally out of reach. It never commits or pushes — that stays manual.
+Copy the bookshelf app from `~/play/home-design/bookshelf` into this repo as static files under
+`bookshelf/`, and add a post whose only content is the `<virtual-bookshelf>` element. Jekyll copies
+a plain directory into `_site` untouched, so a file copy is the whole import. No Node, no rake task.
 
-Title comes from the note's filename. The date is the day the task first publishes the note, and
-is frozen from then on, so a post never moves once it is out.
+Before the copy, shrink the payload in the source repo: swap three.js for its minified builds and
+resize and recompress the covers and photos. The app's own `theme.css` is dropped. The component
+reads its colours and fonts from the host page's CSS variables through its shadow root, and
+`css/paprika.css` defines the same variables, so the blog's paprika theme, Inter/Figtree, and dark
+mode apply. The component's hard-coded pixel sizes and control styles get replaced with the blog's
+tokens so it reads as part of the page.
 
 ### Steps
 
-1. ~~DONE~~ Add `scripts/publish.yml` (vault path, tag name, `OBSIDIAN_VAULT` env override) and the scan that
-   finds tagged notes. Word-boundary match so `#postgres` and `#to-be-mochi` do not count. Prints
-   the list, writes nothing.
-2. ~~DONE~~ Read `_posts/` and pair each note with its post via the `obsidian_source:` key. Classify every
-   note as new, changed, or unchanged, and every post as ours or hand-written. Still writes nothing.
-3. ~~DONE~~ Convert one note to a post: frontmatter (`layout`, `title`, `obsidian_source`, `obsidian_hash`),
-   body cleaned of the `#post` line and other stray inline tags, written to
-   `_posts/YYYY-MM-DD-slug.md` where the date is today — the day it is first published. Demote a
-   note's headings one level (`#` becomes `##`) when it contains an H1, since the layout already
-   renders the title as the page's only h1.
-4. ~~DONE~~ Attachments: resolve `![[file.png]]` and `![](some/path.png)` by basename anywhere in the vault,
-   copy into `images/posts/<slug>/` under a slugified filename, and rewrite the embed to
-   `![](/images/posts/<slug>/file.png)`. An `![[…]]` with no file extension is a note transclusion,
-   not an image — report it and leave the line alone.
-5. ~~DONE~~ The update path: rewrite a changed note into its existing file, keeping its original publish
-   date and filename so the URL never moves, and re-copy any attachment whose bytes changed. Assert that a file without
-   `obsidian_source` is never opened for writing.
-6. ~~DONE~~ Reporting and wiring: `--dry-run`, a summary of added / updated / unchanged / skipped, exposed as
-   `rake obsidian`. Fix `rake post` and `scripts/new_blog_post.go`, which still generate the old
-   `{{ page.title }}` + `<p class="meta">` format.
-7. ~~DONE~~ Run it for real on the one tagged note, build, and look at the result.
+1. In the source repo, replace `vendor/three.core.js` and `vendor/three.module.js` with the
+   `.min.js` builds from `node_modules/three/build`, and point the import in `scene.js` and
+   `vendor/OrbitControls.js` at `three.module.min.js`. 2.7 MB becomes 0.7 MB. Confirm the
+   standalone `index.html` still renders with `python -m http.server`.
+2. In the source repo, resize covers to 500px wide max, JPEG quality 82, strip metadata, keep each
+   file's name and format so the catalog stays untouched. Resize the two photos to 1824x1368 at
+   quality 85. One cover first, compare in the modal, then the batch. Run the app's
+   `node scripts/validate.mjs` once to confirm every asset still passes.
+3. Copy `bookshelf.js`, `scene.js`, `bookshelf.css`, `assets/`, and `vendor/` into `bookshelf/`.
+   Leave out `index.html`, `embed.html`, `theme.css`.
+4. `jekyll build`, confirm `_site/bookshelf/` has every file byte-identical.
+5. Create `_posts/2026-09-08-my-virtual-bookshelf-built-with-astra.md`, title
+   "My virtual bookshelf built with astra", `layout: post`. Body is only
+   `<virtual-bookshelf></virtual-bookshelf>` and `<script type="module" src="/bookshelf/bookshelf.js">`.
+6. Serve locally and check the post: 3D view, photo view, a book modal, keyboard selection, dark
+   mode via the OS toggle.
+7. Restyle `bookshelf/bookshelf.css` on the blog's tokens: `--base`, `--sm`, `--xs` in place of
+   16px/14px/13px, links with paprika's inset box-shadow underline, hairline borders on buttons and
+   selects, the `+` marker on the "Browse all books" summary. One change first, check, then the rest.
 
 ### What we're NOT doing
 
-- No commit and no push. You do that.
-- No unpublishing. Removing the tag in Obsidian reports the orphan; it deletes neither post nor
-  copied images.
-- No note transclusion. `![[Weekly Goals/2026-W30]]` stays as written and is reported.
-- No image processing — no resizing, recompression, or `|400` size hints. Copy the bytes as they
-  are; the stylesheet already caps width at the column.
-- No watching, cron, or git hook. You run the task when you want to publish.
-- No Obsidian plugin or API — plain filesystem reads, vault never written to.
-- No re-dating. A post keeps its first publish date however often the note changes afterwards.
-- No touching the existing hand-written posts, under any circumstance.
+- No Node, npm, package.json, or build step in this repo. Node runs once in the source repo for
+  its existing validate script, nothing new is installed.
+- No rake task. The copy is a one-time `cp`.
+- No iframe embed and no `theme.css`. Direct embed only.
+- No prose in the post beyond the element.
+- No WebP or format conversion. JPEGs stay JPEG, the three PNGs stay PNG, so the catalog is untouched.
+- No changes to `bookshelf.js`, the catalog, or the 3D scene beyond the one import line.
+- No edit to `CLAUDE.md`.
+- No commit and no push, in either repo. You do that.
 
 ### How we'll know it works
 
-1. Run it: "Status of vibe coded apps 3 months in" appears in `_posts/`, renders at localhost, and
-   `git status` shows one new post and no other post modified.
-2. Add an image to that note in Obsidian, run again: the file lands in `images/posts/<slug>/`, the
-   post shows it, and the post's filename and URL have not moved.
-3. Edit a hand-written post, run again: the edit survives untouched and the report says so.
+1. `du -sh bookshelf/` is about 2.5 MB, down from 9.6 MB.
+2. `bundle exec jekyll server`, open the post: the shelf renders in 3D, dragging rotates it,
+   clicking a spine opens the modal with a cover that looks sharp at its display size, Escape
+   closes it.
+3. Toggle the OS to dark mode and reload: stage, controls, and modal turn paprika dark with no
+   white patches. Buttons and links look like the rest of the post.
+4. `git status` shows `bookshelf/`, one new post, and the matching `_site` output, nothing else.
